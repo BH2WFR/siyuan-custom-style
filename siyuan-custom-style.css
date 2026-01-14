@@ -1073,7 +1073,7 @@ span[data-type~="mark"][data-type~="kbd"]
 
 
 /** 标题层级显示 */
-div[data-subtype^="h1"]:not([type])>div:first-child:after{
+/* div[data-subtype^="h1"]:not([type])>div:first-child:after{
 	content:"  ❶";
 	font-size: 11pt;
 	opacity: 0.4;
@@ -1102,7 +1102,7 @@ div[data-subtype^="h6"]>div:first-child:after{
 	content:"  ❻";
 	font-size: 11pt;
 	opacity: 0.4;
-}
+} */
 
 /** 标题 显示章节序号 */
 /* 统一在编辑区作用域内计数，避免被 DOM 拆分导致断号 */
