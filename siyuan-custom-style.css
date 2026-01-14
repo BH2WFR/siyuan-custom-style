@@ -8,267 +8,288 @@
 
 
 /** 变量定义 */
+:root {
+	--test-highlight-padding: 0.5px 1.0px 0.5px 1.0px;
+	--test-highlight-margin: 0px 1px 0px 1px;
+	--test-highlight-border-radius: 4px;
+	--test-highlight-continuous-padding-size: 1px;
+	--test-highlight-continuous-margin-size: 0px;
+	
+	--test-highlight-code-padding-side: 0px;
+	--test-highlight-code-margin-side: 0px;
+	--test-highlight-equation-padding-side: 2px;
+	--test-highlight-equation-margin-side: 0px;
+	--test-highlight-equation-padding-top-bottom: 4px;
+	
+	--test-inline-code-margin: 0px 2.0px 0px 2.0px;
+	--test-inline-code-padding: 0.4px 3.0px 0.4px 3.0px;
+	
+}
 :root[data-theme-mode=light] {
 	/* 文本颜色样式 */
-	--b3-font-color1:  #888888 !important;
-	--b3-font-color2:  #da0000 !important;
-	--b3-font-color3:  #e7613f !important;
-	--b3-font-color4:  #a79600 !important;
-	--b3-font-color5:  #5d8f00 !important;
-	--b3-font-color6:  #008d13 !important;
-	--b3-font-color7:  #00949e !important;
-	--b3-font-color8:  #0068f1 !important;
-	--b3-font-color9:  #6e22e9 !important;
-	--b3-font-color10: #dc31e2 !important;
-	--b3-font-color11: #000000 !important;
-	--b3-font-color12: #ffffff !important; /* 特殊：伪代码块 */
+	--b3-font-color1:  #888888;
+	--b3-font-color2:  #da0000;
+	--b3-font-color3:  #e7613f;
+	--b3-font-color4:  #a79600;
+	--b3-font-color5:  #5d8f00;
+	--b3-font-color6:  #008d13;
+	--b3-font-color7:  #00949e;
+	--b3-font-color8:  #0068f1;
+	--b3-font-color9:  #6e22e9;
+	--b3-font-color10: #dc31e2;
+	--b3-font-color11: #000000;
+	--b3-font-color12: #ffffff; /* 特殊：伪代码块 */
 	--b3-font-color13: #000000; /* 特殊：挖空 */
-	--b3-database-font-color11: #FFFFFF  !important;
+	--b3-database-font-color11: #FFFFFF ;
 	
-	--b3-font-background1:  #dfdfdf !important;
-	--b3-font-background2:  #ffb7c4 !important;
-	--b3-font-background3:  #ffd4b7 !important;
-	--b3-font-background4:  #fff3be !important;
-	--b3-font-background5:  #d9ff94 !important;
-	--b3-font-background6:  #bef5bc !important;
-	--b3-font-background7:  #b1fffb !important;
-	--b3-font-background8:  #b0d0ff !important;
-	--b3-font-background9:  #d9c2ff !important;
-	--b3-font-background10: #fbb5fd !important;
-	--b3-font-background11: #FFFFFF !important;
-	--b3-font-background12: #007500 !important; /* 特殊：伪代码块 */
-	--b3-font-background13: #1052b4 !important; /* 特殊：挖空 */
-	--b3-database-font-background11: #b40000 !important;
-	--b3-database-font-background14: #8a5e00 !important;
+	--b3-font-background1:  #dfdfdf;
+	--b3-font-background2:  #ffb7c4;
+	--b3-font-background3:  #ffd4b7;
+	--b3-font-background4:  #fff3bb;
+	--b3-font-background5:  #d9ff94;
+	--b3-font-background6:  #bef5bc;
+	--b3-font-background7:  #b1fffb;
+	--b3-font-background8:  #b0d0ff;
+	--b3-font-background9:  #d9c2ff;
+	--b3-font-background10: #fbb5fd;
+	--b3-font-background11: #FFFFFF;
+	--b3-font-background12: #007500; /* 特殊：伪代码块 */
+	--b3-font-background13: #1052b4; /* 特殊：挖空 */
+	--b3-database-font-background11: #b40000;
+	--b3-database-font-background14: #8a5e00;
 	
 	/* 4 种样式中文字的颜色 */
-	--b3-card-error-color:   #740000 !important;
-	--b3-card-warning-color: #4d4900 !important;
-	--b3-card-info-color:    #003e79 !important;
-	--b3-card-success-color: #005504 !important;
-	--b3-card-error-background:   rgba(255, 205, 205, 1) !important;
-	--b3-card-warning-background: rgba(255, 255, 175, 1) !important;
-	--b3-card-info-background:    rgba(211, 255, 255, 1) !important;
-	--b3-card-success-background: rgba(211, 255, 207, 1) !important;
+	--b3-card-error-color:   #740000;
+	--b3-card-warning-color: #4d4900;
+	--b3-card-info-color:    #003e79;
+	--b3-card-success-color: #005504;
+	--b3-card-error-background:   rgba(255, 205, 205, 1);
+	--b3-card-warning-background: rgba(255, 255, 175, 1);
+	--b3-card-info-background:    rgba(211, 255, 255, 1);
+	--b3-card-success-background: rgba(211, 255, 207, 1);
 	
 	/* 其他 */
-	/* --b3-search-highlight: #FFFF00 !important */;
-	--test-font-color-default: #000000 !important; /* 自定义变量，用于数据库中的单选/多选项颜色 */
+	/* --b3-search-highlight: #FFFF00 */;
+	--test-font-color-default: #000000; /* 自定义变量，用于数据库中的单选/多选项颜色 */
 	
-	--test-highlight-border-color: rgba(0, 0, 0, 0.315) !important; /* 自定义变量，用于高亮边框颜色 */
-	--test-highlight-shadow-color: rgba(0, 0, 0, 0.322) !important; /* 自定义变量，用于高亮阴影颜色 */
-	--test-highlight-text-color: #000000 !important; /* 自定义变量，用于高亮文字颜色 */
+	--test-highlight-border-color: rgba(0, 0, 0, 0.315); /* 自定义变量，用于高亮边框颜色 */
+	--test-highlight-shadow-color: rgba(0, 0, 0, 0.322); /* 自定义变量，用于高亮阴影颜色 */
+	--test-highlight-text-color: #000000; /* 自定义变量，用于高亮文字颜色 */
 	
-	--test-inline-code-color: #003881 !important; /* 自定义变量，用于行内代码颜色 */
-	--test-inline-code-border-color: rgba(0, 0, 0, 0.342) !important; /* 自定义变量，用于行内代码边框颜色 */
-	--test-inline-code-shadow-color: rgba(0, 0, 0, 0.281) !important; /* 自定义变量，用于行内代码阴影颜色 */
-	--test-inline-code-background: #66e8ff13 !important;
+	--test-inline-code-color: #003881; /* 自定义变量，用于行内代码颜色 */
+	--test-inline-code-border-color: rgba(0, 0, 0, 0.342); /* 自定义变量，用于行内代码边框颜色 */
+	--test-inline-code-shadow-color: rgba(0, 0, 0, 0.281); /* 自定义变量，用于行内代码阴影颜色 */
+	--test-inline-code-background: #66e8ff13;
 	
-	--test-inline-kbd-color: #660000 !important;
-	--test-inline-kbd-border-color: rgba(0, 0, 0, 0.342) !important;
-	--test-inline-kbd-shadow-color: rgba(0, 0, 0, 0.281) !important;
-	--test-inline-kbd-background: #ff8d8d13 !important;
+	--test-inline-kbd-color: #660000;
+	--test-inline-kbd-border-color: rgba(0, 0, 0, 0.342);
+	--test-inline-kbd-shadow-color: rgba(0, 0, 0, 0.281);
+	--test-inline-kbd-background: #ff8d8d13;
 	
-	--test-code-background: #caf4ff21 !important; /* 自定义变量，用于行内代码背景颜色 */
-	--test-code-border-color: rgba(0, 68, 114, 1) !important; /* 自定义变量，用于行内代码边框颜色 */
-	--test-code-shadow-color: rgba(0, 88, 138, 0.281) !important; /* 自定义变量，用于行内代码阴影颜色 */
-	--test-code-color: #000000 !important; /* 自定义变量，用于伪代码块文字颜色 */
+	--test-code-background: #caf4ff21; /* 自定义变量，用于行内代码背景颜色 */
+	--test-code-border-color: rgba(0, 68, 114, 1); /* 自定义变量，用于行内代码边框颜色 */
+	--test-code-shadow-color: rgba(0, 88, 138, 0.281); /* 自定义变量，用于行内代码阴影颜色 */
+	--test-code-color: #000000; /* 自定义变量，用于伪代码块文字颜色 */
 	
-	--test-database-option-border-color: rgba(0, 0, 0, 0.55) !important; /* 自定义变量，用于数据库选项边框颜色 */
+	--test-database-option-border-color: rgba(0, 0, 0, 0.55); /* 自定义变量，用于数据库选项边框颜色 */
 	
-	--test-quote-background-color: #9e9e9e18 !important; /* 自定义变量，用于引用块背景颜色 */
-	--test-quote-font-color: #001947 !important;
-	--test-quote-border-color: rgba(0, 0, 0, 0.699) !important; /* 自定义变量，用于引用块边框颜色 */
-	--test-quote-shadow-color: rgba(0, 0, 0, 0.521) !important; /* 自定义变量，用于引用块阴影颜色 */
-	--test-quote-left-color: #3b3b3b83 !important; /* 自定义变量，用于引用块左侧竖线颜色 */
+	--test-quote-background-color: #9e9e9e18; /* 自定义变量，用于引用块背景颜色 */
+	--test-quote-font-color: #001947;
+	--test-quote-border-color: rgba(0, 0, 0, 0.699); /* 自定义变量，用于引用块边框颜色 */
+	--test-quote-shadow-color: rgba(0, 0, 0, 0.521); /* 自定义变量，用于引用块阴影颜色 */
+	--test-quote-left-color: #3b3b3b83; /* 自定义变量，用于引用块左侧竖线颜色 */
 	
-	--test-table-border-color: rgba(0, 0, 0, 0.623) !important; /* 自定义变量，用于表格外框颜色 */
-	--test-table-cell-border-color: rgba(0, 0, 0, 0.171) !important; /* 自定义变量，用于表格单元格边框颜色 */
-	--test-table-text-color: #000000 !important; /* 自定义变量，用于表格文字颜色 */
-	--test-table-first-row-background: #e0ffd6 !important; /* 自定义变量，用于表格表头背景颜色 */
-	--test-table-odd-row-background: #ffffff !important; /* 自定义变量，用于表格奇数行背景颜色 */
-	--test-table-even-row-background: #f8f8f8 !important; /* 自定义变量，用于表格偶数行背景颜色 */
+	--test-table-border-color: rgba(0, 0, 0, 0.623); /* 自定义变量，用于表格外框颜色 */
+	--test-table-cell-border-color: rgba(0, 0, 0, 0.171); /* 自定义变量，用于表格单元格边框颜色 */
+	--test-table-text-color: #000000; /* 自定义变量，用于表格文字颜色 */
+	--test-table-first-row-background: #e0ffd6; /* 自定义变量，用于表格表头背景颜色 */
+	--test-table-odd-row-background: #ffffff; /* 自定义变量，用于表格奇数行背景颜色 */
+	--test-table-even-row-background: #f8f8f8; /* 自定义变量，用于表格偶数行背景颜色 */
 	
-	--test-tag-background-color: #003d83 !important;
-	--test-tag-text-color: #ffffff !important;
-	--test-tag-hash-color: #00ffff !important;
+	--test-tag-background-color: #003d83;
+	--test-tag-text-color: #ffffff;
+	--test-tag-hash-color: #00ffff;
 	
-	--test-splitter-color: #0070a3c9 !important;
+	--test-splitter-color: #0070a3c9;
 	
-	--test-heading-color-1: #000000 !important;
-	--test-heading-color-2: #006edb !important;
-	--test-heading-color-3: #00a000 !important;
-	--test-heading-color-4: #e77b00 !important;
-	--test-heading-color-5: #8c00ff !important;
-	--test-heading-color-6: #6b6b6b !important;
+	--test-heading-color-1: #000000;
+	--test-heading-color-2: #006edb;
+	--test-heading-color-3: #00a000;
+	--test-heading-color-4: #e77b00;
+	--test-heading-color-5: #8c00ff;
+	--test-heading-color-6: #6b6b6b;
 	
-	--test-list-color-1: #000000 !important;
-	--test-list-color-2: #0080ff !important;
-	--test-list-color-3: #00b600 !important;
-	--test-list-color-4: #fd8700 !important;
-	--test-list-color-5: #be6fff !important;
-	--test-list-color-6: #888888 !important;
+	--test-list-color-1: #000000;
+	--test-list-color-2: #0080ff;
+	--test-list-color-3: #00b600;
+	--test-list-color-4: #fd8700;
+	--test-list-color-5: #be6fff;
+	--test-list-color-6: #888888;
 	
-	--test-callout-note-background: #50d6ff15 !important;
-	--test-callout-note-border: #0091cfff !important;
-	/* --test-callout-note-shadow: #0077b386 !important; */
+	--test-callout-note-background: #50d6ff15;
+	--test-callout-note-border: #0091cfff;
+	/* --test-callout-note-shadow: #0077b386; */
 	--test-callout-tip-background: #6fff5915!important;
-	--test-callout-tip-border: #00a334ff !important;
-	--test-callout-important-background: #f478ff15 !important;
-	--test-callout-important-border: #c900dbff !important;
-	--test-callout-warning-background: #ffe77c15 !important;
-	--test-callout-warning-border: #815f00ff !important;
-	--test-callout-caution-background: #ff747418 !important;
-	--test-callout-caution-border: #dd0000ff !important;
+	--test-callout-tip-border: #00a334ff;
+	--test-callout-important-background: #f478ff15;
+	--test-callout-important-border: #c900dbff;
+	--test-callout-warning-background: #ffe77c15;
+	--test-callout-warning-border: #815f00ff;
+	--test-callout-caution-background: #ff747418;
+	--test-callout-caution-border: #dd0000ff;
 	
-	--test-mark-color: #cc0000 !important;
-	--test-mark-background-color: #FFFF00 !important;
-	--test-mark-border-color: rgba(0, 0, 0, 0.329) !important;
-	--test-mark-shadow-color: rgba(0,0,0,0.25) !important;
+	--test-mark-color: #cc0000;
+	--test-mark-background-color: #eaea00;
+	--test-mark-border-color: rgba(0, 0, 0, 0.329);
+	--test-mark-shadow-color: rgba(0,0,0,0.25);
 	
-	--test-toolbar-background-color: #ffffff !important;
-	--test-toolbar-border-color: rgba(0, 0, 0, 0.39) !important;
-	--test-toolbar-shadow-color: rgba(0, 0, 0, 0.24) !important;
-	--test-toolbar-icon-color: #333333 !important;
+	--test-toolbar-background-color: #ffffff;
+	--test-toolbar-border-color: rgba(0, 0, 0, 0.39);
+	--test-toolbar-shadow-color: rgba(0, 0, 0, 0.24);
+	--test-toolbar-icon-color: #333333;
 	
-	--test-database-background-color: #ffffff !important;
-	--test-database-border-color: rgba(0, 0, 0, 0.39) !important;
-	--test-database-container-color: #f6f6f6 !important;
-	--test-database-footer-background: #f0f0f0 !important;
+	--test-database-background-color: #ffffff;
+	--test-database-border-color: rgba(0, 0, 0, 0.39);
+	--test-database-container-color: #f6f6f6;
+	--test-database-footer-background: #f0f0f0;
 	
-	--test-top-title-background-color: #e9f4f5 !important;
+	--test-top-title-background-color: #e9f4f5;
+	
+	--test-katex-background-color: #ffffff;
 	
 }
 :root[data-theme-mode=dark] {
 	/* 文本颜色样式 */
-	--b3-font-color1:  #a0a0a0  !important;
-	--b3-font-color2:  #ff5252  !important;
-	--b3-font-color3:  #ffa46f  !important;
-	--b3-font-color4:  #fdfa54  !important;
-	--b3-font-color5:  #c9fc69  !important;
-	--b3-font-color6:  #2aff16  !important;
-	--b3-font-color7:  #2fd5ff  !important;
-	--b3-font-color8:  #7499ff  !important;
-	--b3-font-color9:  #ba7dff  !important;
-	--b3-font-color10: #ea47ff  !important;
-	--b3-font-color11: #ffffff  !important;
-	--b3-font-color12: #000000  !important; /* 特殊：伪代码块 */
+	--b3-font-color1:  #a0a0a0 ;
+	--b3-font-color2:  #ff5252 ;
+	--b3-font-color3:  #ffa46f ;
+	--b3-font-color4:  #fdfa54 ;
+	--b3-font-color5:  #c9fc69 ;
+	--b3-font-color6:  #2aff16 ;
+	--b3-font-color7:  #2fd5ff ;
+	--b3-font-color8:  #7499ff ;
+	--b3-font-color9:  #ba7dff ;
+	--b3-font-color10: #ea47ff ;
+	--b3-font-color11: #ffffff ;
+	--b3-font-color12: #000000 ; /* 特殊：伪代码块 */
 	--b3-font-color13: #000000; /* 特殊：挖空 */
-	--b3-database-font-color11: #000000  !important;
+	--b3-database-font-color11: #000000 ;
 	
-	--b3-font-background1:  #5f5f5f !important;
-	--b3-font-background2:  #862828 !important;
-	--b3-font-background3:  #884d2b !important;
-	--b3-font-background4:  #7a6315 !important;
-	--b3-font-background5:  #5b8115 !important;
-	--b3-font-background6:  #158d15 !important;
-	--b3-font-background7:  #157f83 !important;
-	--b3-font-background8:  #1952a8 !important;
-	--b3-font-background9:  #6138a3 !important;
+	--b3-font-background1:  #5f5f5f;
+	--b3-font-background2:  #862828;
+	--b3-font-background3:  #884d2b;
+	--b3-font-background4:  #7a6315;
+	--b3-font-background5:  #5b8115;
+	--b3-font-background6:  #158d15;
+	--b3-font-background7:  #157f83;
+	--b3-font-background8:  #1952a8;
+	--b3-font-background9:  #6138a3;
 	--b3-font-background10: #86267d!important;
-	--b3-font-background11: #000000 !important;
-	--b3-font-background12: #00d100 !important; /* 特殊：伪代码块 */
-	--b3-font-background13: #00c7c7 !important; /* 特殊：挖空 */
-	--b3-database-font-background11: #f78282 !important;
-	--b3-database-font-background14: #d3d300 !important;
+	--b3-font-background11: #000000;
+	--b3-font-background12: #00d100; /* 特殊：伪代码块 */
+	--b3-font-background13: #00c7c7; /* 特殊：挖空 */
+	--b3-database-font-background11: #f78282;
+	--b3-database-font-background14: #d3d300;
 	
 	/* 4种样式中文字的颜色 */
-	--b3-card-error-color:   #ffbfbf !important;
-	--b3-card-warning-color: #ffff77 !important;
-	--b3-card-info-color:    #4fffff !important;
-	--b3-card-success-color: #8fff8f !important;
-	--b3-card-error-background:   rgba(94, 0, 0, 1) !important;
-	--b3-card-warning-background: rgba(80, 80, 0, 1) !important;
-	--b3-card-info-background:    rgba(0, 66, 66, 1) !important;
-	--b3-card-success-background: rgba(6, 75, 0, 1) !important;
+	--b3-card-error-color:   #ffbfbf;
+	--b3-card-warning-color: #ffff77;
+	--b3-card-info-color:    #4fffff;
+	--b3-card-success-color: #8fff8f;
+	--b3-card-error-background:   rgba(94, 0, 0, 1);
+	--b3-card-warning-background: rgba(80, 80, 0, 1);
+	--b3-card-info-background:    rgba(0, 66, 66, 1);
+	--b3-card-success-background: rgba(6, 75, 0, 1);
 	
 	/* 其他 */
-	/* --b3-search-highlight: #FFFF00 !important */;
-	--test-font-color-default: #ffffff !important; /* 自定义变量，用于数据库中的单选/多选项颜色 */
+	/* --b3-search-highlight: #FFFF00 */;
+	--test-font-color-default: #ffffff; /* 自定义变量，用于数据库中的单选/多选项颜色 */
 	
-	--test-highlight-border-color: rgba(255, 255, 255, 0.479) !important; /* 自定义变量，用于高亮边框颜色 */
-	--test-highlight-shadow-color: rgba(255, 255, 255, 0) !important; /* 自定义变量，用于高亮阴影颜色 */
-	--test-highlight-text-color: #ffffff !important; /* 自定义变量，用于高亮文字颜色 */
+	--test-highlight-border-color: rgba(255, 255, 255, 0.479); /* 自定义变量，用于高亮边框颜色 */
+	--test-highlight-shadow-color: rgba(255, 255, 255, 0); /* 自定义变量，用于高亮阴影颜色 */
+	--test-highlight-text-color: #ffffff; /* 自定义变量，用于高亮文字颜色 */
 	
 	
-	--test-inline-code-color: #8de9f0 !important; /* 自定义变量，用于行内代码颜色 */
-	--test-inline-code-border-color: rgba(255, 255, 255, 0.39) !important; /* 自定义变量，用于行内代码边框颜色 */
-	--test-inline-code-shadow-color: rgba(255, 255, 255, 0) !important; /* 自定义变量，用于行内代码阴影颜色 */
-	--test-inline-code-background: #66faff1c !important;
+	--test-inline-code-color: #8de9f0; /* 自定义变量，用于行内代码颜色 */
+	--test-inline-code-border-color: rgba(255, 255, 255, 0.39); /* 自定义变量，用于行内代码边框颜色 */
+	--test-inline-code-shadow-color: rgba(255, 255, 255, 0); /* 自定义变量，用于行内代码阴影颜色 */
+	--test-inline-code-background: #66faff1c;
 	
-	--test-inline-kbd-color: #ff8e8e !important;
-	--test-inline-kbd-border-color: rgba(255, 255, 255, 0.39) !important;
-	--test-inline-kbd-shadow-color: rgba(255, 255, 255, 0) !important;
-	--test-inline-kbd-background: #ff66661c !important;
+	--test-inline-kbd-color: #ff8e8e;
+	--test-inline-kbd-border-color: rgba(255, 255, 255, 0.39);
+	--test-inline-kbd-shadow-color: rgba(255, 255, 255, 0);
+	--test-inline-kbd-background: #ff66661c;
 	
-	--test-code-background: #00689425 !important; /* 自定义变量，用于行内代码背景颜色 */
-	--test-code-border-color: #00ccff !important; /* 自定义变量，用于行内代码边框颜色 */
-	--test-code-shadow-color: rgba(0, 218, 247, 0.667) !important; /* 自定义变量，用于行内代码阴影颜色 */
-	--test-code-color: #ffffff !important; /* 自定义变量，用于伪代码块文字颜色 */
+	--test-code-background: #00689425; /* 自定义变量，用于行内代码背景颜色 */
+	--test-code-border-color: #00ccff; /* 自定义变量，用于行内代码边框颜色 */
+	--test-code-shadow-color: rgba(0, 218, 247, 0.667); /* 自定义变量，用于行内代码阴影颜色 */
+	--test-code-color: #ffffff; /* 自定义变量，用于伪代码块文字颜色 */
 	
-	--test-database-option-border-color: rgba(255, 255, 255, 0.55) !important; /* 自定义变量，用于数据库选项边框颜色 */
+	--test-database-option-border-color: rgba(255, 255, 255, 0.55); /* 自定义变量，用于数据库选项边框颜色 */
 	
-	--test-quote-background-color: #83838327 !important; /* 自定义变量，用于引用块背景颜色 */
-	--test-quote-font-color: #e8f0ff !important;
-	--test-quote-border-color: rgba(255, 255, 255, 0.801) !important; /* 自定义变量，用于引用块边框颜色 */
-	--test-quote-shadow-color: rgba(255, 255, 255, 0.438) !important; /* 自定义变量，用于引用块阴影颜色 */
-	--test-quote-left-color: #cccccc9d !important; /* 自定义变量，用于引用块左侧竖线颜色 */
+	--test-quote-background-color: #83838327; /* 自定义变量，用于引用块背景颜色 */
+	--test-quote-font-color: #e8f0ff;
+	--test-quote-border-color: rgba(255, 255, 255, 0.801); /* 自定义变量，用于引用块边框颜色 */
+	--test-quote-shadow-color: rgba(255, 255, 255, 0.438); /* 自定义变量，用于引用块阴影颜色 */
+	--test-quote-left-color: #cccccc9d; /* 自定义变量，用于引用块左侧竖线颜色 */
 	
-	--test-table-border-color: rgba(255, 255, 255, 0.705) !important; /* 自定义变量，用于表格外框颜色 */
-	--test-table-cell-border-color: rgba(255, 255, 255, 0.24) !important; /* 自定义变量，用于表格单元格边框颜色 */
-	--test-table-text-color: #FFFFFF !important; /* 自定义变量，用于表格文字颜色 */
-	--test-table-first-row-background: #004b17 !important; /* 自定义变量，用于表格表头背景颜色 */
-	--test-table-odd-row-background: #161616 !important; /* 自定义变量，用于表格奇数行背景颜色 */
-	--test-table-even-row-background: #292929 !important; /* 自定义变量，用于表格偶数行背景颜色 */
+	--test-table-border-color: rgba(255, 255, 255, 0.705); /* 自定义变量，用于表格外框颜色 */
+	--test-table-cell-border-color: rgba(255, 255, 255, 0.24); /* 自定义变量，用于表格单元格边框颜色 */
+	--test-table-text-color: #FFFFFF; /* 自定义变量，用于表格文字颜色 */
+	--test-table-first-row-background: #004b17; /* 自定义变量，用于表格表头背景颜色 */
+	--test-table-odd-row-background: #161616; /* 自定义变量，用于表格奇数行背景颜色 */
+	--test-table-even-row-background: #292929; /* 自定义变量，用于表格偶数行背景颜色 */
 
-	--test-tag-background-color: #00f3fc !important;
-	--test-tag-text-color: #000000 !important;
-	--test-tag-hash-color: #005fdb !important;
+	--test-tag-background-color: #00f3fc;
+	--test-tag-text-color: #000000;
+	--test-tag-hash-color: #005fdb;
 	
-	--test-splitter-color: #51e5ffd3 !important;
+	--test-splitter-color: #51e5ffd3;
 	
-	--test-heading-color-1: #ffffff !important;
-	--test-heading-color-2: #52b1ff !important;
-	--test-heading-color-3: #00cc00 !important;
-	--test-heading-color-4: #f38200 !important;
-	--test-heading-color-5: #bb67ff !important;
-	--test-heading-color-6: #a1a1a1 !important;
+	--test-heading-color-1: #ffffff;
+	--test-heading-color-2: #52b1ff;
+	--test-heading-color-3: #00cc00;
+	--test-heading-color-4: #f38200;
+	--test-heading-color-5: #bb67ff;
+	--test-heading-color-6: #a1a1a1;
 	
-	--test-list-color-1: #d1d1d1 !important;
-	--test-list-color-2: #52b1ff !important;
-	--test-list-color-3: #00cc00 !important;
-	--test-list-color-4: #f38200 !important;
-	--test-list-color-5: #bb67ff !important;
-	--test-list-color-6: #919191 !important;
+	--test-list-color-1: #d1d1d1;
+	--test-list-color-2: #52b1ff;
+	--test-list-color-3: #00cc00;
+	--test-list-color-4: #f38200;
+	--test-list-color-5: #bb67ff;
+	--test-list-color-6: #919191;
 	
-	--test-callout-note-background: #50d6ff15 !important;
-	--test-callout-note-border: #2abfffff !important;
-	/* --test-callout-note-shadow: #0077b386 !important; */
+	--test-callout-note-background: #50d6ff15;
+	--test-callout-note-border: #2abfffff;
+	/* --test-callout-note-shadow: #0077b386; */
 	--test-callout-tip-background: #6fff5915!important;
-	--test-callout-tip-border: #00c940ff !important;
-	--test-callout-important-background: #f478ff15 !important;
-	--test-callout-important-border: #ee35ffff !important;
-	--test-callout-warning-background: #ffe77c15 !important;
-	--test-callout-warning-border: #f3cf00ff !important;
-	--test-callout-caution-background: #ff747418 !important;
-	--test-callout-caution-border: #ff0000ff !important;
+	--test-callout-tip-border: #00c940ff;
+	--test-callout-important-background: #f478ff15;
+	--test-callout-important-border: #ee35ffff;
+	--test-callout-warning-background: #ffe77c15;
+	--test-callout-warning-border: #f3cf00ff;
+	--test-callout-caution-background: #ff747418;
+	--test-callout-caution-border: #ff0000ff;
 	
-	--test-mark-color: #FFFF00 !important;
-	--test-mark-background-color: #662400FF !important;
-	--test-mark-border-color: rgba(255, 252, 58, 0.85) !important;
-	--test-mark-shadow-color: rgba(255,255,255,0.25) !important;
+	--test-mark-color: #FFFF00;
+	--test-mark-background-color: #662400FF;
+	--test-mark-border-color: rgba(255, 252, 58, 0.85);
+	--test-mark-shadow-color: rgba(255,255,255,0.25);
 	
-	--test-toolbar-background-color: #3f3f3f !important;
-	--test-toolbar-border-color: rgba(255, 255, 255, 0.473) !important;
-	--test-toolbar-shadow-color: rgba(255, 255, 255, 0.12) !important;
-	--test-toolbar-icon-color: #ebebeb !important;
+	--test-toolbar-background-color: #3f3f3f;
+	--test-toolbar-border-color: rgba(255, 255, 255, 0.473);
+	--test-toolbar-shadow-color: rgba(255, 255, 255, 0.12);
+	--test-toolbar-icon-color: #ebebeb;
 	
-	--test-database-background-color: #161d20 !important;
-	--test-database-border-color: rgba(255, 255, 255, 0.445) !important;
-	--test-databse-container-color: #262f33 !important;
-	--test-database-footer-background: #2b3a3f !important;
+	--test-database-background-color: #161d20;
+	--test-database-border-color: rgba(255, 255, 255, 0.445);
+	--test-databse-container-color: #262f33;
+	--test-database-footer-background: #2b3a3f;
 	
-	--test-top-title-background-color: #2e3b40 !important;
+	--test-top-title-background-color: #2e3b40;
+	
+	--test-katex-background-color: #111111;
 }
 
 /*
@@ -297,44 +318,46 @@
 span[data-type~="mark"] {
 	font-weight: bold;
 	text-decoration: none !important;
-	padding: 0.5px 1.0px 0.5px 1.0px;
-	border-radius: 4px;
-	margin: 0px 2px 0px 2px;
 	color: var(--test-mark-color) !important;
 	background-color: var(--test-mark-background-color) !important;
-	border: 1px solid var(--test-mark-border-color);   /* 用固定灰色；也可以改成 currentColor */
+	border-radius: var(--test-highlight-border-radius);
+	padding: var(--test-highlight-padding);
+	margin: var(--test-highlight-margin) !important;
+	border: 1px solid var(--test-mark-border-color) !important;
 	box-shadow: 0 1px 2px var(--test-mark-shadow-color);
 }
 /* 连续 mark 连成一个框：去掉相邻处的间隙与“中间竖线” */
 span[data-type~="mark"] + span[data-type~="mark"] {
-	margin-left: 0 !important;      /* 相邻处不留缝 */
+	margin-left: var(--test-highlight-continuous-margin-size) !important;      /* 相邻处不留缝 */
 	border-left: none !important;   /* 去掉内侧左边框 */
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 /* 前一个 mark 后面还跟着 mark：把内侧右边框也去掉（否则会看到一条竖线） */
 span[data-type~="mark"]:has(+ span[data-type~="mark"]) {
-	margin-right: 0 !important;     /* 相邻处不留缝 */
+	margin-right: var(--test-highlight-continuous-margin-size) !important;     /* 相邻处不留缝 */
 	border-right: none !important;  /* 去掉内侧右边框（关键） */
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 /* 数学公式，不显示上下边框，防止挡住  */
 span[data-type~="mark"][data-type~="inline-math"]{
-    border-top: none !important;
-    border-bottom: none !important;
-    padding-top: 3 !important;
-    padding-bottom: 3 !important;
+	border-top: none !important;
+	border-bottom: none !important;
 	box-shadow: none !important;
+	padding-inline: var(--test-highlight-equation-padding-side) !important;
+	margin-inline: var(--test-highlight-equation-margin-side) !important;
+	padding-top: var(--test-highlight-equation-padding-top-bottom) !important;
+	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
+
 }
 /* 代码块 */
 span[data-type~="mark"][data-type~="code"],
 span[data-type~="mark"][data-type~="kbd"]
 {
-	border-radius: 4px !important;
-	/* border: none !important; */
-	/* box-shadow: none !important; */
-	margin-inline: 1.5px !important;
+	border-radius: var(--test-highlight-border-radius) !important;
+	margin-inline: var(--test-highlight-code-margin-side) !important;
+	
 }
 
 /** 样式颜色 */
@@ -344,19 +367,19 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-card-success-background)"] {
 	border: 1px solid var(--test-highlight-border-color);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
-	padding: 0.5px 1.2px 0.5px 1.2px;
-	border-radius: 4px;
-	margin: 0px 1.0px 0px 1.0px;
+	padding: var(--test-highlight-padding) !important;
+	border-radius: var(--test-highlight-border-radius);
+	margin: var(--test-highlight-margin) !important;
 	/* font-weight: bold !important; */
 }
-
+/* 连续的样式块 */
 [style*="var(--b3-card-error-background)"] + [style*="var(--b3-card-error-background)"],
 [style*="var(--b3-card-warning-background)"] + [style*="var(--b3-card-warning-background)"],
 [style*="var(--b3-card-info-background)"] + [style*="var(--b3-card-info-background)"],
 [style*="var(--b3-card-success-background)"] + [style*="var(--b3-card-success-background)"]
 {
-	margin-left: 0 !important;      /* 相邻处不留缝 */
-	border-left: none !important;   /* 去掉内侧左边框 */
+	margin-left: var(--test-highlight-continuous-margin-size) !important;
+	border-left: none !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -366,12 +389,12 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-card-info-background)"]:has(+ [style*="var(--b3-card-info-background)"]),
 [style*="var(--b3-card-success-background)"]:has(+ [style*="var(--b3-card-success-background)"])
 {
-	margin-right: 0 !important;     /* 相邻处不留缝 */
-	border-right: none !important;  /* 去掉内侧右边框（关键） */
+	margin-right: var(--test-highlight-continuous-margin-size) !important;
+	border-right: none !important;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-
+/* 与公式块连接时 */
 [style*="var(--b3-card-error-background)"][data-type~="inline-math"],
 [style*="var(--b3-card-warning-background)"][data-type~="inline-math"],
 [style*="var(--b3-card-info-background)"][data-type~="inline-math"],
@@ -379,11 +402,13 @@ span[data-type~="mark"][data-type~="kbd"]
 {
 	border-top: none !important;
 	border-bottom: none !important;
-	padding-top: 3 !important;
-	padding-bottom: 3 !important;
 	box-shadow: none !important;
+	padding-inline: var(--test-highlight-equation-padding-side) !important;
+	margin-inline: var(--test-highlight-equation-margin-side) !important;
+	padding-top: var(--test-highlight-equation-padding-top-bottom) !important;
+	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
 }
-
+/* 与行内代码块或快捷键块连接时 */
 [style*="var(--b3-card-error-background)"][data-type~="code"],
 [style*="var(--b3-card-error-background)"][data-type~="kbd"],
 [style*="var(--b3-card-warning-background)"][data-type~="code"],
@@ -393,10 +418,8 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-card-success-background)"][data-type~="code"],
 [style*="var(--b3-card-success-background)"][data-type~="kbd"]
 {
-	border-radius: 4px !important;
-	/* border: none !important; */
-	/* box-shadow: none !important; */
-	margin-inline: 1.5px !important;
+	border-radius: var(--test-highlight-border-radius) !important;
+	margin-inline: var(--test-highlight-code-margin-side) !important;
 }
 
 /** 高亮颜色 */
@@ -412,15 +435,16 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background10)"][style*="background"],
 [style*="var(--b3-font-background11)"][style*="background"]
 {
-	/* display: inline-block; 让圆角/边框/间距控制更稳定 */
+	/* display: inline-block;*/
 	border: 1px solid var(--test-highlight-border-color);
 	/* border-top: 1px solid var(--test-highlight-border-color); */
 	/* border-bottom: 1px solid var(--test-highlight-border-color); */
 	/* border-left: none; */
 	/* border-right: none; */
 	box-shadow: 0 1px 2px var(--test-highlight-shadow-color);
-	padding: 1.0px 1.0px 1.0px 1.0px;
-	border-radius: 4px; /* 可选：想要“整体胶囊”效果就留着；不想要就删掉 */
+	padding: var(--test-highlight-padding) !important;
+	border-radius: var(--test-highlight-border-radius);
+	margin: var(--test-highlight-margin) !important;
 }
 
 /* 连续高亮：后一个贴上去，去掉左侧圆角 */
@@ -435,7 +459,7 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background9)"][style*="background"] + [style*="var(--b3-font-background9)"][style*="background"],
 [style*="var(--b3-font-background10)"][style*="background"] + [style*="var(--b3-font-background10)"][style*="background"],
 [style*="var(--b3-font-background11)"][style*="background"] + [style*="var(--b3-font-background11)"][style*="background"] {
-	margin-left: 0px !important;
+	margin-left: var(--test-highlight-continuous-margin-size) !important;
 	border-left: none !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -453,12 +477,12 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background9)"][style*="background"]:has(+ [style*="var(--b3-font-background9)"][style*="background"]),
 [style*="var(--b3-font-background10)"][style*="background"]:has(+ [style*="var(--b3-font-background10)"][style*="background"]),
 [style*="var(--b3-font-background11)"][style*="background"]:has(+ [style*="var(--b3-font-background11)"][style*="background"]) {
-	margin-right: 0 !important;
+	margin-right: var(--test-highlight-continuous-margin-size) !important;
 	border-right: none !important;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-
+/* 与公式块连接时 */
 [style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
 [style*="var(--b3-font-background2)"][style*="background"][data-type~="inline-math"],
 [style*="var(--b3-font-background3)"][style*="background"][data-type~="inline-math"],
@@ -473,38 +497,45 @@ span[data-type~="mark"][data-type~="kbd"]
 {
 	border-top: none !important;
 	border-bottom: none !important;
-	padding-top: 3 !important;
-	padding-bottom: 3 !important;
 	box-shadow: none !important;
+	padding-inline: var(--test-highlight-equation-padding-side) !important;
+	margin-inline: var(--test-highlight-equation-margin-side) !important;
+	padding-top: var(--test-highlight-equation-padding-top-bottom) !important;
+	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
 }
-
-[style*="var(--b3-font-background1)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background1)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background2)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background2)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background3)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background3)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background4)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background4)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background5)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background5)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background6)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background6)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background7)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background7)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background8)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background8)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background9)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background9)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background10)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background10)"][style*="background"][data-type~="kbd"],
-[style*="var(--b3-font-background11)"][style*="background"][data-type~="code"],
-[style*="var(--b3-font-background11)"][style*="background"][data-type~="kbd"]
+/* 与行内代码块或快捷键块连接时 */
+:is(
+  [style*="var(--b3-font-background1)"][style*="background"],
+  [style*="var(--b3-font-background2)"][style*="background"],
+  [style*="var(--b3-font-background3)"][style*="background"],
+  [style*="var(--b3-font-background4)"][style*="background"],
+  [style*="var(--b3-font-background5)"][style*="background"],
+  [style*="var(--b3-font-background6)"][style*="background"],
+  [style*="var(--b3-font-background7)"][style*="background"],
+  [style*="var(--b3-font-background8)"][style*="background"],
+  [style*="var(--b3-font-background9)"][style*="background"],
+  [style*="var(--b3-font-background10)"][style*="background"],
+  [style*="var(--b3-font-background11)"][style*="background"]
+)[data-type~="kbd"],
+:is(
+  [style*="var(--b3-font-background1)"][style*="background"],
+  [style*="var(--b3-font-background2)"][style*="background"],
+  [style*="var(--b3-font-background3)"][style*="background"],
+  [style*="var(--b3-font-background4)"][style*="background"],
+  [style*="var(--b3-font-background5)"][style*="background"],
+  [style*="var(--b3-font-background6)"][style*="background"],
+  [style*="var(--b3-font-background7)"][style*="background"],
+  [style*="var(--b3-font-background8)"][style*="background"],
+  [style*="var(--b3-font-background9)"][style*="background"],
+  [style*="var(--b3-font-background10)"][style*="background"],
+  [style*="var(--b3-font-background11)"][style*="background"]
+)[data-type~="code"]
 {
-	border-radius: 4px !important;
-	/* border: none !important; */
-	/* box-shadow: none !important; */
-	margin-inline: 1.5px !important;
+	border-radius: var(--test-highlight-border-radius) !important;
+	margin-left: var(--test-highlight-code-margin-side) !important;
+	margin-right: var(--test-highlight-code-margin-side) !important;
+	/* border-left: 1px solid var(--test-inline-kbd-border-color) !important;
+	border-right: 1px solid var(--test-inline-kbd-border-color) !important; */
 }
 
 
@@ -534,7 +565,7 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background13)"][style*="color"] {
 	padding: 0.5px 1.0px 0.5px 1.0px;
 	color: transparent !important;
-	background:linear-gradient(145deg, #909090, #e4e4e4);
+	background:linear-gradient(145deg, #a0a0a0, #e4e4e4);
 	/* cursor: pointer; */
 	border-radius: 4px;
 	margin: 0px 1.0px 0px 1.0px;
@@ -544,11 +575,11 @@ span[data-type~="mark"][data-type~="kbd"]
 }
 [style*="var(--b3-font-background13)"][style*="color"]:hover{
 	color: var(--b3-font-color13) !important;
-	transition-duration: 0.2s !important;
+	transition-duration: 0.1s !important;
 }
 [style*="var(--b3-font-background13)"][style*="color"]:active{
 	color: var(--b3-font-color13) !important;
-	transition-duration: 0.2s !important;
+	transition-duration: 0.1s !important;
 }
 
 
@@ -799,18 +830,18 @@ span[data-type~="mark"][data-type~="kbd"]
 	background-color: var(--test-inline-code-background) !important;
 	border: 1px solid var(--test-inline-code-border-color)  !important;
 	box-shadow: 0 1px 2px var(--test-inline-code-shadow-color);
-	margin: 0px 2.0px 0px 2.0px;
-	padding: 0.4px 3.0px 0.4px 3.0px;
+	margin: var(--test-inline-code-margin);
+	padding: var(--test-inline-code-padding);
 }
 
-/* 键盘按键块 */
+/* 快捷键块 */
 .fn__kbd, .b3-typography kbd:not(.hljs), .b3-typography span[data-type~=kbd], .protyle-wysiwyg kbd:not(.hljs), .protyle-wysiwyg span[data-type~=kbd]{
 	color:var(--test-inline-kbd-color)  !important;
 	background-color: var(--test-inline-kbd-background) !important;
 	border: 1px solid var(--test-inline-kbd-border-color)  !important;
 	box-shadow: 0 1px 2px var(--test-inline-kbd-shadow-color);
-	margin: 0px 2.0px 0px 2.0px;
-	padding: 0.4px 3.0px 0.4px 3.0px;
+	margin: var(--test-inline-code-margin);
+	padding: var(--test-inline-code-padding);
 	font-family: var(--b3-font-family-code) !important;
 	font-size: 85% !important;
 }
@@ -927,6 +958,11 @@ span[data-type~="mark"][data-type~="kbd"]
 .katex span[background*="magenta"],
 .katex span[background*="pink"]    {background-color: var(--b3-font-background10) !important;}
 .katex span[background*="gray"]    {background-color: var(--b3-font-background1) !important;} */
+
+/* 块公式的背景颜色 */
+/* .katex-display .katex .base {
+	background-color: var(--test-katex-background-color) !important;
+} */
 
 
 /** 分割线 */
