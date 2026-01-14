@@ -1,0 +1,1235 @@
+/*------------- 思源笔记 个人样式 -----------*/
+
+/** 页面护眼色（仅亮色模式下） */
+:root[data-theme-mode=light] .protyle-wysiwyg.protyle-wysiwyg--attr {
+	background-color: #fffbf1 !important;
+}
+
+
+
+/** 变量定义 */
+:root[data-theme-mode=light] {
+	/* 文本颜色样式 */
+	--b3-font-color1:  #888888 !important;
+	--b3-font-color2:  #da0000 !important;
+	--b3-font-color3:  #e7613f !important;
+	--b3-font-color4:  #a79600 !important;
+	--b3-font-color5:  #5d8f00 !important;
+	--b3-font-color6:  #008d13 !important;
+	--b3-font-color7:  #00949e !important;
+	--b3-font-color8:  #0068f1 !important;
+	--b3-font-color9:  #6e22e9 !important;
+	--b3-font-color10: #dc31e2 !important;
+	--b3-font-color11: #000000 !important;
+	--b3-font-color12: #ffffff !important; /* 特殊：伪代码块 */
+	--b3-font-color13: #000000; /* 特殊：挖空 */
+	--b3-database-font-color11: #FFFFFF  !important;
+	
+	--b3-font-background1:  #dfdfdf !important;
+	--b3-font-background2:  #ffb7c4 !important;
+	--b3-font-background3:  #ffd4b7 !important;
+	--b3-font-background4:  #fff3be !important;
+	--b3-font-background5:  #d9ff94 !important;
+	--b3-font-background6:  #bef5bc !important;
+	--b3-font-background7:  #b1fffb !important;
+	--b3-font-background8:  #b0d0ff !important;
+	--b3-font-background9:  #d9c2ff !important;
+	--b3-font-background10: #fbb5fd !important;
+	--b3-font-background11: #FFFFFF !important;
+	--b3-font-background12: #007500 !important; /* 特殊：伪代码块 */
+	--b3-font-background13: #1052b4 !important; /* 特殊：挖空 */
+	--b3-database-font-background11: #b40000 !important;
+	--b3-database-font-background14: #8a5e00 !important;
+	
+	/* 4 种样式中文字的颜色 */
+	--b3-card-error-color:   #740000 !important;
+	--b3-card-warning-color: #4d4900 !important;
+	--b3-card-info-color:    #003e79 !important;
+	--b3-card-success-color: #005504 !important;
+	--b3-card-error-background:   rgba(255, 205, 205, 1) !important;
+	--b3-card-warning-background: rgba(255, 255, 175, 1) !important;
+	--b3-card-info-background:    rgba(211, 255, 255, 1) !important;
+	--b3-card-success-background: rgba(211, 255, 207, 1) !important;
+	
+	/* 其他 */
+	/* --b3-search-highlight: #FFFF00 !important */;
+	--test-font-color-default: #000000 !important; /* 自定义变量，用于数据库中的单选/多选项颜色 */
+	
+	--test-highlight-border-color: rgba(0, 0, 0, 0.315) !important; /* 自定义变量，用于高亮边框颜色 */
+	--test-highlight-shadow-color: rgba(0, 0, 0, 0.322) !important; /* 自定义变量，用于高亮阴影颜色 */
+	--test-highlight-text-color: #000000 !important; /* 自定义变量，用于高亮文字颜色 */
+	
+	--test-inline-code-color: #003881 !important; /* 自定义变量，用于行内代码颜色 */
+	--test-inline-code-border-color: rgba(0, 0, 0, 0.342) !important; /* 自定义变量，用于行内代码边框颜色 */
+	--test-inline-code-shadow-color: rgba(0, 0, 0, 0.281) !important; /* 自定义变量，用于行内代码阴影颜色 */
+	--test-inline-code-background: #66e8ff13 !important;
+	
+	--test-inline-kbd-color: #660000 !important;
+	--test-inline-kbd-border-color: rgba(0, 0, 0, 0.342) !important;
+	--test-inline-kbd-shadow-color: rgba(0, 0, 0, 0.281) !important;
+	--test-inline-kbd-background: #ff8d8d13 !important;
+	
+	--test-code-background: #caf4ff21 !important; /* 自定义变量，用于行内代码背景颜色 */
+	--test-code-border-color: rgba(0, 68, 114, 1) !important; /* 自定义变量，用于行内代码边框颜色 */
+	--test-code-shadow-color: rgba(0, 88, 138, 0.281) !important; /* 自定义变量，用于行内代码阴影颜色 */
+	--test-code-color: #000000 !important; /* 自定义变量，用于伪代码块文字颜色 */
+	
+	--test-database-option-border-color: rgba(0, 0, 0, 0.55) !important; /* 自定义变量，用于数据库选项边框颜色 */
+	
+	--test-quote-background-color: #9e9e9e18 !important; /* 自定义变量，用于引用块背景颜色 */
+	--test-quote-font-color: #001947 !important;
+	--test-quote-border-color: rgba(0, 0, 0, 0.699) !important; /* 自定义变量，用于引用块边框颜色 */
+	--test-quote-shadow-color: rgba(0, 0, 0, 0.521) !important; /* 自定义变量，用于引用块阴影颜色 */
+	--test-quote-left-color: #3b3b3b83 !important; /* 自定义变量，用于引用块左侧竖线颜色 */
+	
+	--test-table-border-color: rgba(0, 0, 0, 0.623) !important; /* 自定义变量，用于表格外框颜色 */
+	--test-table-cell-border-color: rgba(0, 0, 0, 0.171) !important; /* 自定义变量，用于表格单元格边框颜色 */
+	--test-table-text-color: #000000 !important; /* 自定义变量，用于表格文字颜色 */
+	--test-table-first-row-background: #e0ffd6 !important; /* 自定义变量，用于表格表头背景颜色 */
+	--test-table-odd-row-background: #ffffff !important; /* 自定义变量，用于表格奇数行背景颜色 */
+	--test-table-even-row-background: #f8f8f8 !important; /* 自定义变量，用于表格偶数行背景颜色 */
+	
+	--test-tag-background-color: #003d83 !important;
+	--test-tag-text-color: #ffffff !important;
+	--test-tag-hash-color: #00ffff !important;
+	
+	--test-splitter-color: #0070a3c9 !important;
+	
+	--test-heading-color-1: #000000 !important;
+	--test-heading-color-2: #006edb !important;
+	--test-heading-color-3: #00a000 !important;
+	--test-heading-color-4: #e77b00 !important;
+	--test-heading-color-5: #8c00ff !important;
+	--test-heading-color-6: #6b6b6b !important;
+	
+	--test-list-color-1: #000000 !important;
+	--test-list-color-2: #0080ff !important;
+	--test-list-color-3: #00b600 !important;
+	--test-list-color-4: #fd8700 !important;
+	--test-list-color-5: #be6fff !important;
+	--test-list-color-6: #888888 !important;
+	
+	--test-callout-note-background: #50d6ff15 !important;
+	--test-callout-note-border: #0091cfff !important;
+	/* --test-callout-note-shadow: #0077b386 !important; */
+	--test-callout-tip-background: #6fff5915!important;
+	--test-callout-tip-border: #00a334ff !important;
+	--test-callout-important-background: #f478ff15 !important;
+	--test-callout-important-border: #c900dbff !important;
+	--test-callout-warning-background: #ffe77c15 !important;
+	--test-callout-warning-border: #815f00ff !important;
+	--test-callout-caution-background: #ff747418 !important;
+	--test-callout-caution-border: #dd0000ff !important;
+	
+	--test-mark-color: #cc0000 !important;
+	--test-mark-background-color: #FFFF00 !important;
+	--test-mark-border-color: rgba(0, 0, 0, 0.329) !important;
+	--test-mark-shadow-color: rgba(0,0,0,0.25) !important;
+	
+	--test-toolbar-background-color: #ffffff !important;
+	--test-toolbar-border-color: rgba(0, 0, 0, 0.39) !important;
+	--test-toolbar-shadow-color: rgba(0, 0, 0, 0.24) !important;
+	--test-toolbar-icon-color: #333333 !important;
+	
+	--test-database-background-color: #ffffff !important;
+	--test-database-border-color: rgba(0, 0, 0, 0.39) !important;
+	--test-database-container-color: #f6f6f6 !important;
+	--test-database-footer-background: #f0f0f0 !important;
+	
+	--test-top-title-background-color: #e9f4f5 !important;
+	
+}
+:root[data-theme-mode=dark] {
+	/* 文本颜色样式 */
+	--b3-font-color1:  #a0a0a0  !important;
+	--b3-font-color2:  #ff5252  !important;
+	--b3-font-color3:  #ffa46f  !important;
+	--b3-font-color4:  #fdfa54  !important;
+	--b3-font-color5:  #c9fc69  !important;
+	--b3-font-color6:  #2aff16  !important;
+	--b3-font-color7:  #2fd5ff  !important;
+	--b3-font-color8:  #7499ff  !important;
+	--b3-font-color9:  #ba7dff  !important;
+	--b3-font-color10: #ea47ff  !important;
+	--b3-font-color11: #ffffff  !important;
+	--b3-font-color12: #000000  !important; /* 特殊：伪代码块 */
+	--b3-font-color13: #000000; /* 特殊：挖空 */
+	--b3-database-font-color11: #000000  !important;
+	
+	--b3-font-background1:  #5f5f5f !important;
+	--b3-font-background2:  #862828 !important;
+	--b3-font-background3:  #884d2b !important;
+	--b3-font-background4:  #7a6315 !important;
+	--b3-font-background5:  #5b8115 !important;
+	--b3-font-background6:  #158d15 !important;
+	--b3-font-background7:  #157f83 !important;
+	--b3-font-background8:  #1952a8 !important;
+	--b3-font-background9:  #6138a3 !important;
+	--b3-font-background10: #86267d!important;
+	--b3-font-background11: #000000 !important;
+	--b3-font-background12: #00d100 !important; /* 特殊：伪代码块 */
+	--b3-font-background13: #00c7c7 !important; /* 特殊：挖空 */
+	--b3-database-font-background11: #f78282 !important;
+	--b3-database-font-background14: #d3d300 !important;
+	
+	/* 4种样式中文字的颜色 */
+	--b3-card-error-color:   #ffbfbf !important;
+	--b3-card-warning-color: #ffff77 !important;
+	--b3-card-info-color:    #4fffff !important;
+	--b3-card-success-color: #8fff8f !important;
+	--b3-card-error-background:   rgba(94, 0, 0, 1) !important;
+	--b3-card-warning-background: rgba(80, 80, 0, 1) !important;
+	--b3-card-info-background:    rgba(0, 66, 66, 1) !important;
+	--b3-card-success-background: rgba(6, 75, 0, 1) !important;
+	
+	/* 其他 */
+	/* --b3-search-highlight: #FFFF00 !important */;
+	--test-font-color-default: #ffffff !important; /* 自定义变量，用于数据库中的单选/多选项颜色 */
+	
+	--test-highlight-border-color: rgba(255, 255, 255, 0.479) !important; /* 自定义变量，用于高亮边框颜色 */
+	--test-highlight-shadow-color: rgba(255, 255, 255, 0) !important; /* 自定义变量，用于高亮阴影颜色 */
+	--test-highlight-text-color: #ffffff !important; /* 自定义变量，用于高亮文字颜色 */
+	
+	
+	--test-inline-code-color: #8de9f0 !important; /* 自定义变量，用于行内代码颜色 */
+	--test-inline-code-border-color: rgba(255, 255, 255, 0.39) !important; /* 自定义变量，用于行内代码边框颜色 */
+	--test-inline-code-shadow-color: rgba(255, 255, 255, 0) !important; /* 自定义变量，用于行内代码阴影颜色 */
+	--test-inline-code-background: #66faff1c !important;
+	
+	--test-inline-kbd-color: #ff8e8e !important;
+	--test-inline-kbd-border-color: rgba(255, 255, 255, 0.39) !important;
+	--test-inline-kbd-shadow-color: rgba(255, 255, 255, 0) !important;
+	--test-inline-kbd-background: #ff66661c !important;
+	
+	--test-code-background: #00689425 !important; /* 自定义变量，用于行内代码背景颜色 */
+	--test-code-border-color: #00ccff !important; /* 自定义变量，用于行内代码边框颜色 */
+	--test-code-shadow-color: rgba(0, 218, 247, 0.667) !important; /* 自定义变量，用于行内代码阴影颜色 */
+	--test-code-color: #ffffff !important; /* 自定义变量，用于伪代码块文字颜色 */
+	
+	--test-database-option-border-color: rgba(255, 255, 255, 0.55) !important; /* 自定义变量，用于数据库选项边框颜色 */
+	
+	--test-quote-background-color: #83838327 !important; /* 自定义变量，用于引用块背景颜色 */
+	--test-quote-font-color: #e8f0ff !important;
+	--test-quote-border-color: rgba(255, 255, 255, 0.801) !important; /* 自定义变量，用于引用块边框颜色 */
+	--test-quote-shadow-color: rgba(255, 255, 255, 0.438) !important; /* 自定义变量，用于引用块阴影颜色 */
+	--test-quote-left-color: #cccccc9d !important; /* 自定义变量，用于引用块左侧竖线颜色 */
+	
+	--test-table-border-color: rgba(255, 255, 255, 0.705) !important; /* 自定义变量，用于表格外框颜色 */
+	--test-table-cell-border-color: rgba(255, 255, 255, 0.24) !important; /* 自定义变量，用于表格单元格边框颜色 */
+	--test-table-text-color: #FFFFFF !important; /* 自定义变量，用于表格文字颜色 */
+	--test-table-first-row-background: #004b17 !important; /* 自定义变量，用于表格表头背景颜色 */
+	--test-table-odd-row-background: #161616 !important; /* 自定义变量，用于表格奇数行背景颜色 */
+	--test-table-even-row-background: #292929 !important; /* 自定义变量，用于表格偶数行背景颜色 */
+
+	--test-tag-background-color: #00f3fc !important;
+	--test-tag-text-color: #000000 !important;
+	--test-tag-hash-color: #005fdb !important;
+	
+	--test-splitter-color: #51e5ffd3 !important;
+	
+	--test-heading-color-1: #ffffff !important;
+	--test-heading-color-2: #52b1ff !important;
+	--test-heading-color-3: #00cc00 !important;
+	--test-heading-color-4: #f38200 !important;
+	--test-heading-color-5: #bb67ff !important;
+	--test-heading-color-6: #a1a1a1 !important;
+	
+	--test-list-color-1: #d1d1d1 !important;
+	--test-list-color-2: #52b1ff !important;
+	--test-list-color-3: #00cc00 !important;
+	--test-list-color-4: #f38200 !important;
+	--test-list-color-5: #bb67ff !important;
+	--test-list-color-6: #919191 !important;
+	
+	--test-callout-note-background: #50d6ff15 !important;
+	--test-callout-note-border: #2abfffff !important;
+	/* --test-callout-note-shadow: #0077b386 !important; */
+	--test-callout-tip-background: #6fff5915!important;
+	--test-callout-tip-border: #00c940ff !important;
+	--test-callout-important-background: #f478ff15 !important;
+	--test-callout-important-border: #ee35ffff !important;
+	--test-callout-warning-background: #ffe77c15 !important;
+	--test-callout-warning-border: #f3cf00ff !important;
+	--test-callout-caution-background: #ff747418 !important;
+	--test-callout-caution-border: #ff0000ff !important;
+	
+	--test-mark-color: #FFFF00 !important;
+	--test-mark-background-color: #662400FF !important;
+	--test-mark-border-color: rgba(255, 252, 58, 0.85) !important;
+	--test-mark-shadow-color: rgba(255,255,255,0.25) !important;
+	
+	--test-toolbar-background-color: #3f3f3f !important;
+	--test-toolbar-border-color: rgba(255, 255, 255, 0.473) !important;
+	--test-toolbar-shadow-color: rgba(255, 255, 255, 0.12) !important;
+	--test-toolbar-icon-color: #ebebeb !important;
+	
+	--test-database-background-color: #161d20 !important;
+	--test-database-border-color: rgba(255, 255, 255, 0.445) !important;
+	--test-databse-container-color: #262f33 !important;
+	--test-database-footer-background: #2b3a3f !important;
+	
+	--test-top-title-background-color: #2e3b40 !important;
+}
+
+/*
+	如需对暗色主题单独设置，在 .样式 前加个 `html[data-theme-mode="dark"]` 即可
+*/
+
+
+/** 字体颜色 */
+[style*="var(--b3-font-color1)"][style*="color"],
+[style*="var(--b3-font-color2)"][style*="color"],
+[style*="var(--b3-font-color3)"][style*="color"],
+[style*="var(--b3-font-color4)"][style*="color"],
+[style*="var(--b3-font-color5)"][style*="color"],
+[style*="var(--b3-font-color6)"][style*="color"],
+[style*="var(--b3-font-color7)"][style*="color"],
+[style*="var(--b3-font-color8)"][style*="color"],
+[style*="var(--b3-font-color9)"][style*="color"],
+[style*="var(--b3-font-color10)"][style*="color"],
+[style*="var(--b3-font-color11)"][style*="color"]
+{
+	font-weight: bold !important;
+}
+
+
+/** ==mark== 颜色*/
+span[data-type~="mark"] {
+	font-weight: bold;
+	text-decoration: none !important;
+	padding: 0.5px 1.0px 0.5px 1.0px;
+	border-radius: 4px;
+	margin: 0px 2px 0px 2px;
+	color: var(--test-mark-color) !important;
+	background-color: var(--test-mark-background-color) !important;
+	border: 1px solid var(--test-mark-border-color);   /* 用固定灰色；也可以改成 currentColor */
+	box-shadow: 0 1px 2px var(--test-mark-shadow-color);
+}
+/* 连续 mark 连成一个框：去掉相邻处的间隙与“中间竖线” */
+span[data-type~="mark"] + span[data-type~="mark"] {
+	margin-left: 0 !important;      /* 相邻处不留缝 */
+	border-left: none !important;   /* 去掉内侧左边框 */
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+/* 前一个 mark 后面还跟着 mark：把内侧右边框也去掉（否则会看到一条竖线） */
+span[data-type~="mark"]:has(+ span[data-type~="mark"]) {
+	margin-right: 0 !important;     /* 相邻处不留缝 */
+	border-right: none !important;  /* 去掉内侧右边框（关键） */
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+/* 数学公式，不显示上下边框，防止挡住  */
+span[data-type~="mark"][data-type~="inline-math"]{
+    border-top: none !important;
+    border-bottom: none !important;
+    padding-top: 3 !important;
+    padding-bottom: 3 !important;
+	box-shadow: none !important;
+}
+/* 代码块 */
+span[data-type~="mark"][data-type~="code"],
+span[data-type~="mark"][data-type~="kbd"]
+{
+	border-radius: 4px !important;
+	/* border: none !important; */
+	/* box-shadow: none !important; */
+	margin-inline: 1.5px !important;
+}
+
+/** 样式颜色 */
+[style*="var(--b3-card-error-background)"],
+[style*="var(--b3-card-warning-background)"],
+[style*="var(--b3-card-info-background)"],
+[style*="var(--b3-card-success-background)"] {
+	border: 1px solid var(--test-highlight-border-color);
+	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
+	padding: 0.5px 1.2px 0.5px 1.2px;
+	border-radius: 4px;
+	margin: 0px 1.0px 0px 1.0px;
+	/* font-weight: bold !important; */
+}
+
+[style*="var(--b3-card-error-background)"] + [style*="var(--b3-card-error-background)"],
+[style*="var(--b3-card-warning-background)"] + [style*="var(--b3-card-warning-background)"],
+[style*="var(--b3-card-info-background)"] + [style*="var(--b3-card-info-background)"],
+[style*="var(--b3-card-success-background)"] + [style*="var(--b3-card-success-background)"]
+{
+	margin-left: 0 !important;      /* 相邻处不留缝 */
+	border-left: none !important;   /* 去掉内侧左边框 */
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+[style*="var(--b3-card-error-background)"]:has(+ [style*="var(--b3-card-error-background)"]),
+[style*="var(--b3-card-warning-background)"]:has(+ [style*="var(--b3-card-warning-background)"]),
+[style*="var(--b3-card-info-background)"]:has(+ [style*="var(--b3-card-info-background)"]),
+[style*="var(--b3-card-success-background)"]:has(+ [style*="var(--b3-card-success-background)"])
+{
+	margin-right: 0 !important;     /* 相邻处不留缝 */
+	border-right: none !important;  /* 去掉内侧右边框（关键） */
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+[style*="var(--b3-card-error-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-warning-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-info-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-success-background)"][data-type~="inline-math"]
+{
+	border-top: none !important;
+	border-bottom: none !important;
+	padding-top: 3 !important;
+	padding-bottom: 3 !important;
+	box-shadow: none !important;
+}
+
+[style*="var(--b3-card-error-background)"][data-type~="code"],
+[style*="var(--b3-card-error-background)"][data-type~="kbd"],
+[style*="var(--b3-card-warning-background)"][data-type~="code"],
+[style*="var(--b3-card-warning-background)"][data-type~="kbd"],
+[style*="var(--b3-card-info-background)"][data-type~="code"],
+[style*="var(--b3-card-info-background)"][data-type~="kbd"],
+[style*="var(--b3-card-success-background)"][data-type~="code"],
+[style*="var(--b3-card-success-background)"][data-type~="kbd"]
+{
+	border-radius: 4px !important;
+	/* border: none !important; */
+	/* box-shadow: none !important; */
+	margin-inline: 1.5px !important;
+}
+
+/** 高亮颜色 */
+[style*="var(--b3-font-background1)"][style*="background"],
+[style*="var(--b3-font-background2)"][style*="background"],
+[style*="var(--b3-font-background3)"][style*="background"],
+[style*="var(--b3-font-background4)"][style*="background"],
+[style*="var(--b3-font-background5)"][style*="background"],
+[style*="var(--b3-font-background6)"][style*="background"],
+[style*="var(--b3-font-background7)"][style*="background"],
+[style*="var(--b3-font-background8)"][style*="background"],
+[style*="var(--b3-font-background9)"][style*="background"],
+[style*="var(--b3-font-background10)"][style*="background"],
+[style*="var(--b3-font-background11)"][style*="background"]
+{
+	/* display: inline-block; 让圆角/边框/间距控制更稳定 */
+	border: 1px solid var(--test-highlight-border-color);
+	/* border-top: 1px solid var(--test-highlight-border-color); */
+	/* border-bottom: 1px solid var(--test-highlight-border-color); */
+	/* border-left: none; */
+	/* border-right: none; */
+	box-shadow: 0 1px 2px var(--test-highlight-shadow-color);
+	padding: 1.0px 1.0px 1.0px 1.0px;
+	border-radius: 4px; /* 可选：想要“整体胶囊”效果就留着；不想要就删掉 */
+}
+
+/* 连续高亮：后一个贴上去，去掉左侧圆角 */
+[style*="var(--b3-font-background1)"][style*="background"] + [style*="var(--b3-font-background1)"][style*="background"],
+[style*="var(--b3-font-background2)"][style*="background"] + [style*="var(--b3-font-background2)"][style*="background"],
+[style*="var(--b3-font-background3)"][style*="background"] + [style*="var(--b3-font-background3)"][style*="background"],
+[style*="var(--b3-font-background4)"][style*="background"] + [style*="var(--b3-font-background4)"][style*="background"],
+[style*="var(--b3-font-background5)"][style*="background"] + [style*="var(--b3-font-background5)"][style*="background"],
+[style*="var(--b3-font-background6)"][style*="background"] + [style*="var(--b3-font-background6)"][style*="background"],
+[style*="var(--b3-font-background7)"][style*="background"] + [style*="var(--b3-font-background7)"][style*="background"],
+[style*="var(--b3-font-background8)"][style*="background"] + [style*="var(--b3-font-background8)"][style*="background"],
+[style*="var(--b3-font-background9)"][style*="background"] + [style*="var(--b3-font-background9)"][style*="background"],
+[style*="var(--b3-font-background10)"][style*="background"] + [style*="var(--b3-font-background10)"][style*="background"],
+[style*="var(--b3-font-background11)"][style*="background"] + [style*="var(--b3-font-background11)"][style*="background"] {
+	margin-left: 0px !important;
+	border-left: none !important;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/* 连续高亮：前一个后面还有高亮，去掉右侧圆角 */
+[style*="var(--b3-font-background1)"][style*="background"]:has(+ [style*="var(--b3-font-background1)"][style*="background"]),
+[style*="var(--b3-font-background2)"][style*="background"]:has(+ [style*="var(--b3-font-background2)"][style*="background"]),
+[style*="var(--b3-font-background3)"][style*="background"]:has(+ [style*="var(--b3-font-background3)"][style*="background"]),
+[style*="var(--b3-font-background4)"][style*="background"]:has(+ [style*="var(--b3-font-background4)"][style*="background"]),
+[style*="var(--b3-font-background5)"][style*="background"]:has(+ [style*="var(--b3-font-background5)"][style*="background"]),
+[style*="var(--b3-font-background6)"][style*="background"]:has(+ [style*="var(--b3-font-background6)"][style*="background"]),
+[style*="var(--b3-font-background7)"][style*="background"]:has(+ [style*="var(--b3-font-background7)"][style*="background"]),
+[style*="var(--b3-font-background8)"][style*="background"]:has(+ [style*="var(--b3-font-background8)"][style*="background"]),
+[style*="var(--b3-font-background9)"][style*="background"]:has(+ [style*="var(--b3-font-background9)"][style*="background"]),
+[style*="var(--b3-font-background10)"][style*="background"]:has(+ [style*="var(--b3-font-background10)"][style*="background"]),
+[style*="var(--b3-font-background11)"][style*="background"]:has(+ [style*="var(--b3-font-background11)"][style*="background"]) {
+	margin-right: 0 !important;
+	border-right: none !important;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+[style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background2)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background3)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background4)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background5)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background6)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background7)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background8)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background9)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background10)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background11)"][style*="background"][data-type~="inline-math"]
+{
+	border-top: none !important;
+	border-bottom: none !important;
+	padding-top: 3 !important;
+	padding-bottom: 3 !important;
+	box-shadow: none !important;
+}
+
+[style*="var(--b3-font-background1)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background1)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background2)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background2)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background3)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background3)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background4)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background4)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background5)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background5)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background6)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background6)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background7)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background7)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background8)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background8)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background9)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background9)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background10)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background10)"][style*="background"][data-type~="kbd"],
+[style*="var(--b3-font-background11)"][style*="background"][data-type~="code"],
+[style*="var(--b3-font-background11)"][style*="background"][data-type~="kbd"]
+{
+	border-radius: 4px !important;
+	/* border: none !important; */
+	/* box-shadow: none !important; */
+	margin-inline: 1.5px !important;
+}
+
+
+/* 伪代码块 */
+[style*="var(--b3-font-background12)"][style*="color"] {
+	font-family: var(--b3-font-family-code) !important;
+	font-size: 85% !important;
+	border-radius: 6px;
+	
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
+	
+	padding-left: 13px !important;
+	padding-right: 13px !important;
+	padding-top: 8px !important;
+	padding-bottom: 5px !important;
+	
+	border: 1.2px solid var(--test-code-border-color);
+	line-height: 1.4;
+	background-color: var(--test-code-background) !important;
+	box-shadow: var(--test-code-shadow-color) 2px 2px 2px, var(--test-code-shadow-color) 0px 0px 4px;
+	color: var(--test-code-color) !important;
+}
+
+
+/* 挖空配色 */
+[style*="var(--b3-font-background13)"][style*="color"] {
+	padding: 0.5px 1.0px 0.5px 1.0px;
+	color: transparent !important;
+	background:linear-gradient(145deg, #909090, #e4e4e4);
+	/* cursor: pointer; */
+	border-radius: 4px;
+	margin: 0px 1.0px 0px 1.0px;
+	box-shadow: rgba(0, 0, 0, 0.667) 1.4px 1.4px 1px, rgba(0, 0, 0, 0.533) 0px 0px 3px;
+	transition: linear 0.8s !important;
+	white-space: pre-wrap;
+}
+[style*="var(--b3-font-background13)"][style*="color"]:hover{
+	color: var(--b3-font-color13) !important;
+	transition-duration: 0.2s !important;
+}
+[style*="var(--b3-font-background13)"][style*="color"]:active{
+	color: var(--b3-font-color13) !important;
+	transition-duration: 0.2s !important;
+}
+
+
+/** 数据库 */
+.custom-attr__avvalue .b3-chip,
+.av__cell .b3-chip,
+.av__panel .b3-chip,
+.b3-menu__label .b3-chip
+[data-name="av-col-option"] .color__square,
+.av__group-title .b3-chip {
+	padding: 1px 3px !important;
+	margin: 1px 1px !important;
+	border-radius: 4px !important;
+	font-weight: normal !important;
+	border: 1px solid var(--test-database-option-border-color) !important;
+	color:var(--test-font-color-default) !important;
+	line-height: 1.0 !important;
+	box-shadow: none !important;
+}
+.protyle-wysiwyg .av__scroll {
+	background-color: var(--test-database-background-color) !important;
+	border: 1px solid var(--test-database-border-color) !important;
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	border-radius: 6px;
+	margin-inline: 2px;
+	margin-bottom: 3px;
+}
+.protyle-wysiwyg .av__row--header,
+.protyle-wysiwyg .av__row--header .av__firstcol {
+	background-color: var(--test-table-first-row-background) !important;
+}
+.protyle-wysiwyg .av__row--footer,
+.protyle-wysiwyg .av__row--footer.av__readonly--show {
+	background-color: var(--test-database-footer-background) !important;
+}
+/* .protyle-wysiwyg .av__header {
+	background-color: var(--test-top-title-background-color)  !important;
+} */
+/* .protyle-wysiwyg .av__container {
+	border-radius: 6px !important;
+	border: 1px solid var(--test-database-border-color) !important;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.239) !important;
+	background-color: var(--test-database-container-color) !important;
+} */
+
+/* color 1 到 color 10 必须这样手动指定，否则在部分第三方主题下会发生混乱 */
+.custom-attr__avvalue .b3-chip[style*="color1)"],
+.av__cell .b3-chip[style*="color1)"],
+.av__panel .b3-chip[style*="color1)"],
+[data-name="av-col-option"] .color__square[style*="color1)"],
+.b3-menu__label .b3-chip[data-color="1"],
+.av__group-title .b3-chip[style*="color1)"]{
+	background-color: var(--b3-font-background1) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color2)"],
+.av__cell .b3-chip[style*="color2)"],
+.av__panel .b3-chip[style*="color2)"],
+[data-name="av-col-option"] .color__square[style*="color2)"],
+.b3-menu__label .b3-chip[data-color="2"],
+.av__group-title .b3-chip[style*="color2)"]{
+	background-color: var(--b3-font-background2) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color3)"],
+.av__cell .b3-chip[style*="color3)"],
+.av__panel .b3-chip[style*="color3)"],
+[data-name="av-col-option"] .color__square[style*="color3)"],
+.b3-menu__label .b3-chip[data-color="3"],
+.av__group-title .b3-chip[style*="color3)"]{
+	background-color: var(--b3-font-background3) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color4)"],
+.av__cell .b3-chip[style*="color4)"],
+.av__panel .b3-chip[style*="color4)"],
+[data-name="av-col-option"] .color__square[style*="color4)"],
+.b3-menu__label .b3-chip[data-color="4"],
+.av__group-title .b3-chip[style*="color4)"]{
+	background-color: var(--b3-font-background4) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color5)"],
+.av__cell .b3-chip[style*="color5)"],
+.av__panel .b3-chip[style*="color5)"],
+[data-name="av-col-option"] .color__square[style*="color5)"],
+.b3-menu__label .b3-chip[data-color="5"],
+.av__group-title .b3-chip[style*="color5)"]{
+	background-color: var(--b3-font-background5) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color6)"],
+.av__cell .b3-chip[style*="color6)"],
+.av__panel .b3-chip[style*="color6)"],
+[data-name="av-col-option"] .color__square[style*="color6)"],
+.b3-menu__label .b3-chip[data-color="6"],
+.av__group-title .b3-chip[style*="color6)"]{
+	background-color: var(--b3-font-background6) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color7)"],
+.av__cell .b3-chip[style*="color7)"],
+.av__panel .b3-chip[style*="color7)"],
+[data-name="av-col-option"] .color__square[style*="color7)"],
+.b3-menu__label .b3-chip[data-color="7"],
+.av__group-title .b3-chip[style*="color7)"]{
+	background-color: var(--b3-font-background7) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color8)"],
+.av__cell .b3-chip[style*="color8)"],
+.av__panel .b3-chip[style*="color8)"],
+[data-name="av-col-option"] .color__square[style*="color8)"],
+.b3-menu__label .b3-chip[data-color="8"],
+.av__group-title .b3-chip[style*="color8)"]{
+	background-color: var(--b3-font-background8) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color9)"],
+.av__cell .b3-chip[style*="color9)"],
+.av__panel .b3-chip[style*="color9)"],
+[data-name="av-col-option"] .color__square[style*="color9)"],
+.b3-menu__label .b3-chip[data-color="9"],
+.av__group-title .b3-chip[style*="color9)"]{
+	background-color: var(--b3-font-background9) !important;
+	color: var(--test-font-color-default) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color10)"],
+.av__cell .b3-chip[style*="color10)"],
+.av__panel .b3-chip[style*="color10)"],
+[data-name="av-col-option"] .color__square[style*="color10)"],
+.b3-menu__label .b3-chip[data-color="10"],
+.av__group-title .b3-chip[style*="color10)"]{
+	background-color: var(--b3-font-background10) !important;
+	color: var(--test-font-color-default) !important;
+}
+/* color 12/13 因默认样式中被重写作其他用途, color 11 是白底与样式 14 相同，故手动重写为深色底色 */
+.custom-attr__avvalue .b3-chip[style*="color11)"],
+.av__cell .b3-chip[style*="color11)"],
+.av__panel .b3-chip[style*="color11)"],
+[data-name="av-col-option"] .color__square[style*="color11)"],
+.b3-menu__label .b3-chip[data-color="11"],
+.av__group-title .b3-chip[style*="color11)"]{
+	background-color: var(--b3-database-font-background11) !important;
+	color: var(--b3-database-font-color11) !important;
+	border: 1px solid var(--b3-database-font-background11) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color12)"],
+.av__cell .b3-chip[style*="color12)"],
+.av__panel .b3-chip[style*="color12)"],
+[data-name="av-col-option"] .color__square[style*="color12)"],
+.b3-menu__label .b3-chip[data-color="12"],
+.av__group-title .b3-chip[style*="color12)"]{
+	background: solid var(--b3-font-background12) !important;
+	background-color: var(--b3-font-background12) !important;
+	color: var(--b3-font-color12) !important;
+	border: 1px solid var(--b3-font-background12) !important;
+	font-family: revert !important;
+	font-size: revert !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color13)"],
+.av__cell .b3-chip[style*="color13)"],
+.av__panel .b3-chip[style*="color13)"],
+[data-name="av-col-option"] .color__square[style*="color13)"],
+.b3-menu__label .b3-chip[data-color="13"],
+.av__group-title .b3-chip[style*="color13)"]{
+	background: solid var(--b3-font-background13) !important;
+	background-color: var(--b3-font-background13) !important;
+	color: var(--b3-database-font-color11) !important;
+	transition: none !important;
+	border: 1px solid var(--b3-font-background13) !important;
+}
+.custom-attr__avvalue .b3-chip[style*="color14)"],
+.av__cell .b3-chip[style*="color14)"],
+.av__panel .b3-chip[style*="color14)"],
+[data-name="av-col-option"] .color__square[style*="color14)"],
+.b3-menu__label .b3-chip[data-color="14"],
+.av__group-title .b3-chip[style*="color14)"]{
+	background: solid var(--b3-database-font-background14) !important;
+	background-color: var(--b3-database-font-background14) !important;
+	color: var(--b3-database-font-color11) !important;
+	transition: none !important;
+	border: 1px solid var(--b3-database-font-background14) !important;
+}
+
+
+/** 引述块 */
+.protyle-wysiwyg .bq {
+	background: var(--test-quote-background-color);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-quote-border-color);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+.protyle-wysiwyg .bq::before {
+	background-color: var(--test-quote-left-color) !important;
+	/* left: 3px !important; */
+	/* margin-right: 3px !important; */
+	/* width: 3.5px !important; */
+}
+
+/** Callout 块 */
+.protyle-wysiwyg div[data-type="NodeCallout"].callout[data-subtype="NOTE"] {
+	background: var(--test-callout-note-background);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-callout-note-border);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+.protyle-wysiwyg div[data-type="NodeCallout"].callout[data-subtype="TIP"] {
+	background: var(--test-callout-tip-background);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-callout-tip-border);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+.protyle-wysiwyg div[data-type="NodeCallout"].callout[data-subtype="IMPORTANT"] {
+	background: var(--test-callout-important-background);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-callout-important-border);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+.protyle-wysiwyg div[data-type="NodeCallout"].callout[data-subtype="WARNING"] {
+	background: var(--test-callout-warning-background);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-callout-warning-border);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+.protyle-wysiwyg div[data-type="NodeCallout"].callout[data-subtype="CAUTION"] {
+	background: var(--test-callout-caution-background);
+	color: var(--test-quote-font-color) !important;
+	border: 0.8px solid var(--test-callout-caution-border);
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-top: 2.5px !important;
+	margin-bottom: 2.5px !important;
+}
+
+/** 行内代码 */
+.fn__code, .b3-typography code:not(.hljs), .b3-typography span[data-type~=code], .protyle-wysiwyg code:not(.hljs), .protyle-wysiwyg span[data-type~=code]{
+	color:var(--test-inline-code-color)  !important;
+	background-color: var(--test-inline-code-background) !important;
+	border: 1px solid var(--test-inline-code-border-color)  !important;
+	box-shadow: 0 1px 2px var(--test-inline-code-shadow-color);
+	margin: 0px 2.0px 0px 2.0px;
+	padding: 0.4px 3.0px 0.4px 3.0px;
+}
+
+/* 键盘按键块 */
+.fn__kbd, .b3-typography kbd:not(.hljs), .b3-typography span[data-type~=kbd], .protyle-wysiwyg kbd:not(.hljs), .protyle-wysiwyg span[data-type~=kbd]{
+	color:var(--test-inline-kbd-color)  !important;
+	background-color: var(--test-inline-kbd-background) !important;
+	border: 1px solid var(--test-inline-kbd-border-color)  !important;
+	box-shadow: 0 1px 2px var(--test-inline-kbd-shadow-color);
+	margin: 0px 2.0px 0px 2.0px;
+	padding: 0.4px 3.0px 0.4px 3.0px;
+	font-family: var(--b3-font-family-code) !important;
+	font-size: 85% !important;
+}
+
+/** 代码块 */
+.protyle-wysiwyg .code-block {
+	box-shadow: var(--test-code-shadow-color) 2px 2px 2px, var(--test-code-shadow-color) 0px 0px 4px;
+	border: 1.2px solid var(--test-code-border-color);
+	/* margin: 5px revert 5px revert;
+	padding: 5px revert 5px revert; */
+	
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
+	background-color: var(--test-code-background) !important;
+	
+}
+.protyle-wysiwyg div.hljs,
+.b3-typography div.hljs {
+	padding-top: 18px !important;
+	padding-bottom: 5px !important;
+	padding-left: 12px !important;
+	padding-right: 12px !important;
+}
+
+/** 表格样式 */
+/* 表格整体外框 */
+.protyle-wysiwyg table {
+	border-collapse: collapse !important;
+	border: 1px solid var(--test-table-border-color) !important;
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	margin-bottom: 3px !important;
+}
+
+/* 表格内部网格线 */
+.protyle-wysiwyg table th,
+.protyle-wysiwyg table td {
+	border: 1.5px solid var(--test-table-cell-border-color) !important;
+}
+
+/* 表头 */
+.protyle-wysiwyg table th {
+	background-color: var(--test-table-first-row-background) !important;
+	color: var(--test-table-text-color);
+}
+.protyle-wysiwyg table tr:nth-child(odd) {
+	background-color: var(--test-table-odd-row-background) !important;
+	color: var(--test-table-text-color);
+}
+.protyle-wysiwyg table tr:nth-child(even) {
+	background-color: var(--test-table-even-row-background) !important;
+	color: var(--test-table-text-color);
+}
+
+
+
+/** 标签 tag */
+.protyle-wysiwyg span[data-type="tag"], .sy__outline span[data-type="tag"]{
+	border-radius: 6px;
+	padding:0px 4px 0px 4px !important;
+	margin: 0px 2.0px 0px 2.0px !important;
+	color: var(--test-tag-text-color) !important;
+	border-bottom:none !important;
+	background-color: var(--test-tag-background-color) !important;
+	border: 1.0px solid var(--test-tag-background-color);
+	font-size: 90% !important;
+}
+.protyle-wysiwyg span[data-type="tag"]::before, .sy__outline span[data-type="tag"]::before{
+	content: "# ";
+	color: var(--test-tag-hash-color) !important;
+	font-weight: bold;
+	font-size: 75% !important;
+}
+.export-img span[data-type="tag"]::before{
+	content: "";
+}
+
+/** 公式块 */
+.katex-display {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+/* 覆盖 katex 颜色*/
+.katex span[style*="color:gray"]   {color: var(--b3-font-color1) !important;}
+.katex span[style*="color:red"]    {color: var(--b3-font-color2) !important;}
+.katex span[style*="color:orange"] {color: var(--b3-font-color3) !important;}
+.katex span[style*="color:yellow"],
+.katex span[style*="color:brown"]  {color: var(--b3-font-color4) !important;}
+.katex span[style*="color:olive"]  {color: var(--b3-font-color5) !important;}
+.katex span[style*="color:lime"],
+.katex span[style*="color:green"]  {color: var(--b3-font-color6) !important;}
+.katex span[style*="color:cyan"],
+.katex span[style*="color:teal"]   {color: var(--b3-font-color7) !important;}
+.katex span[style*="color:blue"],
+.katex span[style*="color:navy"]   {color: var(--b3-font-color8) !important;}
+.katex span[style*="color:purple"] {color: var(--b3-font-color9) !important;}
+.katex span[style*="color:magenta"],
+.katex span[style*="color:pink"]   {color: var(--b3-font-color10) !important;}
+.katex span[style*="color:black"]  {color: var(--b3-font-color11) !important;}
+.katex span[style*="color:white"]  {color: var(--b3-font-color12) !important;}
+
+.katex span[style*="background-color:"]    {color: var(--test-font-color-default) !important;}
+/* .katex span[background*="red"]     {background-color: var(--b3-font-background2) !important;}
+.katex span[background*="blue"]    {background-color: var(--b3-font-background8) !important;}
+.katex span[background*="green"]   {background-color: var(--b3-font-background6) !important;}
+.katex span[background*="yellow"]  {background-color: var(--b3-font-background4) !important;}
+.katex span[background*="orange"]  {background-color: var(--b3-font-background3) !important;}
+.katex span[background*="purple"]  {background-color: var(--b3-font-background9) !important;}
+.katex span[background*="cyan"]    {background-color: var(--b3-font-background7) !important;}
+.katex span[background*="magenta"],
+.katex span[background*="pink"]    {background-color: var(--b3-font-background10) !important;}
+.katex span[background*="gray"]    {background-color: var(--b3-font-background1) !important;} */
+
+
+/** 分割线 */
+.protyle-wysiwyg [data-node-id].hr>div:after {
+	display: none;
+}
+.hr {
+  border: none !important;
+  position: relative;
+  height: 4px;
+  background: #00000000 !important;
+  color: #00000000 !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 2px; /* 粗细 */
+  transform: translateY(-50%);
+  border-radius: 1px; /* 柔和一点 */
+  /*box-shadow: rgba(0, 0, 0, 0.667) 1.4px 1.4px 1px*/;
+  background-color: var(--test-splitter-color) !important;
+}
+
+
+/** 标题层级颜色 */
+:root {
+	--test-h1-padding-top: 30px !important;
+	--test-h2-padding-top: 20px !important;
+	--test-h3-padding-top: 10px !important;
+	--test-h4-padding-top: 5px !important;
+	--test-h5-padding-top: 2px !important;
+	--test-h6-padding-top: 2px !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype^="h"]:not(.bq *):not(.callout *) {
+	position: relative;
+	padding-top: 6px;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype^="h"]:not(.bq *):not(.callout *)::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h1"] {
+	color: var(--test-heading-color-1) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h1"] {
+	font-size: 20px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h1"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h1-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]:not(.bq *):not(.callout *)::before {
+	height: 3px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-1)) !important;
+	top: var(--test-h1-padding-top) !important;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h2"] {
+	color: var(--test-heading-color-2) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h2"] {
+	font-size: 18px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h2-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *)::before {
+	height: 2.5px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-2)) !important;
+	top: var(--test-h2-padding-top) !important;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h3"] {
+	color: var(--test-heading-color-3) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h3"] {
+	font-size: 16px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h3-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *)::before {
+	height: 2px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-3)) !important;
+	top: var(--test-h3-padding-top) !important;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h4"] {
+	color: var(--test-heading-color-4) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h4"] {
+	font-size: 14px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h4-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *)::before {
+	height: 1.5px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-4)) !important;
+	top: var(--test-h4-padding-top) !important;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h5"] {
+	color: var(--test-heading-color-5) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h5"] {
+	font-size: 14px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h5-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *)::before {
+	height: 1px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-5)) !important;
+	top: var(--test-h5-padding-top) !important;
+}
+
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h6"] {
+	color: var(--test-heading-color-6) !important;
+}
+.protyle-wysiwyg :is(.bq, .callout) div[data-type="NodeHeading"][data-subtype="h6"] {
+	font-size: 14px !important;
+}
+.protyle-wysiwyg [data-type="NodeHeading"][data-subtype="h6"]:not(.bq *):not(.callout *) {
+	padding-top: var(--test-h6-padding-top) !important;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h6"]:not(.bq *):not(.callout *)::before {
+	height: 0.8px;
+	background: linear-gradient(to right, transparent, var(--test-heading-color-6)) !important;
+	top: var(--test-h6-padding-top) !important;
+}
+
+
+
+/** 标题层级显示 */
+div[data-subtype^="h1"]:not([type])>div:first-child:after{
+	content:"  ❶";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+div[data-subtype^="h2"]>div:first-child:after{
+	content:"  ❷";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+div[data-subtype^="h3"]>div:first-child:after{
+	content:"  ❸";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+div[data-subtype^="h4"]>div:first-child:after{
+	content:"  ❹";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+div[data-subtype^="h5"]>div:first-child:after{
+	content:"  ❺";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+div[data-subtype^="h6"]>div:first-child:after{
+	content:"  ❻";
+	font-size: 11pt;
+	opacity: 0.4;
+}
+
+/** 标题 显示章节序号 */
+/* 统一在编辑区作用域内计数，避免被 DOM 拆分导致断号 */
+.protyle-wysiwyg {
+	counter-reset: h1-count 0 h2-count 0 h3-count 0 h4-count 0 h5-count 0 h6-count 0;
+}
+
+/* 只对“非 bq 内”的标题：遇到更高层级时重置低层级 */
+/* .protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]:not([type]):not(.bq *):not(.callout *) { counter-reset: h2-count 0 h3-count 0 h4-count 0 h5-count 0 h6-count 0; }
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *)             { counter-reset: h3-count 0 h4-count 0 h5-count 0 h6-count 0; }
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *)             { counter-reset: h4-count 0 h5-count 0 h6-count 0; }
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *)             { counter-reset: h5-count 0 h6-count 0; }
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *)             { counter-reset: h6-count 0; } */
+
+/* 显示编号：同样只对“非 bq 内”的标题生效 */
+/* .protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]:not([type]):not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h1-count;
+	content: counter(h1-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h2-count;
+	content: counter(h1-count, decimal) "." counter(h2-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h3-count;
+	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h4-count;
+	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h5-count;
+	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) "." counter(h5-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h6"]:not(.bq *):not(.callout *) > div:first-child::before{
+	counter-increment: h6-count;
+	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) "." counter(h5-count, decimal) "." counter(h6-count, decimal) ".  ";
+	font-size: 80%;
+	opacity: 0.6;
+} */
+
+/** 有序列表 */
+/* 隐藏原始编号 */
+.li[data-subtype="o"] .protyle-action--order {
+	font-weight: bold !important;
+	color: var(--test-list-color-1) !important;
+}
+.li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+	color: var(--test-list-color-2) !important;
+}
+.li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+	color: var(--test-list-color-3) !important;
+}
+.li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+	color: var(--test-list-color-4) !important;
+}
+.li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+	color: var(--test-list-color-5) !important;
+}
+.li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+	color: var(--test-list-color-6) !important;
+}
+
+
+/** 无序列表 */
+[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action svg {
+	color: transparent;
+}
+
+/* 设置无序列表标记的颜色 */
+[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::before {
+	font-size: 1.6em;
+	font-weight: bold;
+	font-family: Arial;
+	content: "•";
+	position: absolute;
+	color: var(--test-list-color-1) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "▪";
+	color: var(--test-list-color-2) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "•";
+	color: var(--test-list-color-3) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "▪";
+	color: var(--test-list-color-4) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "•";
+	color: var(--test-list-color-5) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "▪";
+	color: var(--test-list-color-6) !important;
+}
+[data-subtype="u"] > [data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] .li[data-subtype="u"] > .protyle-action::before {
+	content: "•";
+	color: var(--test-list-color-1) !important;
+}
+
+/** 工具栏 */
+.protyle-toolbar {
+	box-shadow:  1px 1px 2px var(--test-quote-shadow-color);
+	border: 1.0px solid var(--test-toolbar-border-color);
+	background-color: var(--test-toolbar-background-color) !important;
+}
+.protyle-toolbar .protyle-toolbar__item svg {
+	color: var(--test-toolbar-icon-color) !important;
+}
+
+
+
+/** 页面标题 */
+.protyle-top {
+	background-color: var(--test-top-title-background-color) !important;
+}
