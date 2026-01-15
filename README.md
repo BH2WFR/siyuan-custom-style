@@ -1,4 +1,4 @@
-# 思源笔记 个人使用 css 样式 （持续更新）
+# 思源笔记 个人 css 样式 （持续更新）
 
 test2
 
@@ -11,7 +11,6 @@ test2
 **致谢：**
 
 - （有序列表和无序列表部分） ：[[css] 自定义多级有序列表和无序列表 - 链滴](https://ld246.com/article/1746943932806)
-
 
 ## 更新内容
 
@@ -34,24 +33,20 @@ test2
 
 ![image.png](https://b3logfile.com/file/2026/01/image-WnAxOIy.png?imageView2/2/interlace/1/format/webp)
 
-
 ### 文本样式：
 
-![image.png](https://b3logfile.com/file/2026/01/image-0twkYja.png?imageView2/2/interlace/1/format/webp)
+![image.png](https://b3logfile.com/file/2026/01/image-4uI5ks8.png)
 
-![image.png](https://b3logfile.com/file/2026/01/image-B0ZTJ6M.png?imageView2/2/interlace/1/format/webp)
+![image.png](https://b3logfile.com/file/2026/01/image-sGKyx7Z.png)
 
 * 与**公式和代码块混排**时，特意做了优化，防止外框在中间断开，或上下外框遮挡公式：
-  ![image.png](https://b3logfile.com/file/2026/01/image-KvVY7rQ.png?imageView2/2/interlace/1/format/webp)
+  ![image.png](https://b3logfile.com/file/2026/01/image-7fdjo0t.png)
 * 支持 `==荧光==` ==荧光== 样式、`代码块 abcd` 样式，键盘热键 Ctrl+Z 样式
   ![image.png](https://b3logfile.com/file/2026/01/image-fVkb9Ux.png?imageView2/2/interlace/1/format/webp)
 * **样式 13** 为「 **挖空块** 」，鼠标移动或点击即可显示隐藏内容
-  ![image.png](https://b3logfile.com/file/2025/12/image-Y7JzHWl.png?imageView2/2/interlace/1/format/webp)
+  ![image.png](https://b3logfile.com/file/2026/01/image-2YARM61.png)
 * **样式 12** 为 「 **伪代码块** 」，可以对里面的文本进行高亮等格式化操作：
   ![image.png](https://b3logfile.com/file/2026/01/image-If1wHZV.png?imageView2/2/interlace/1/format/webp)
-
-  ![image.png](https://b3logfile.com/file/2025/12/image-RdgpXek.png?imageView2/2/interlace/1/format/webp)
-
 
 ### 数据库 及 数据库选择项的 样式：
 
@@ -59,14 +54,11 @@ test2
 
 ![image.png](https://b3logfile.com/file/2026/01/image-D6nnKWf.png?imageView2/2/interlace/1/format/webp)
 
-
 ### 引述块和 Callout 的样式：
 
 ![image.png](https://b3logfile.com/file/2025/12/image-x9chiPh.png?imageView2/2/interlace/1/format/webp)
 
 ![image.png](https://b3logfile.com/file/2025/12/image-3Fjwd1P.png?imageView2/2/interlace/1/format/webp)
-
-
 
 ### 标题、有序列表、无序列表的样式：
 
@@ -80,20 +72,11 @@ test2
 
 ![image.png](https://b3logfile.com/file/2025/12/image-PHi5F0j.png?imageView2/2/interlace/1/format/webp)
 
-
 ### 表格样式：
 
 ![image.png](https://b3logfile.com/file/2026/01/image-N5c1BmG.png?imageView2/2/interlace/1/format/webp)
 
 ![image.png](https://b3logfile.com/file/2026/01/image-70Vc8TA.png?imageView2/2/interlace/1/format/webp)
-
-
-### Tag 和 行内代码块样式：
-
-![image.png](https://b3logfile.com/file/2025/12/image-svYMIZ4.png?imageView2/2/interlace/1/format/webp)
-
-![image.png](https://b3logfile.com/file/2025/12/image-pZOz5y4.png?imageView2/2/interlace/1/format/webp)
-
 
 ### 公式颜色样式：
 
@@ -104,7 +87,6 @@ test2
 ![image.png](https://b3logfile.com/file/2025/12/image-PddvYHc.png?imageView2/2/interlace/1/format/webp)
 
 ![image.png](https://b3logfile.com/file/2025/12/image-lIouq4w.png?imageView2/2/interlace/1/format/webp)
-
 
 ### 浮动工具栏样式
 
