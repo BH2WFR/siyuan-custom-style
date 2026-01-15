@@ -53,7 +53,7 @@
 	--b3-font-color9:  #6e22e9;
 	--b3-font-color10: #dc31e2;
 	--b3-font-color11: #000000;
-	--b3-font-color12: #ffffff; /* 特殊：伪代码块 */
+	--b3-font-color12: #ffffff00; /* 特殊：伪代码块 */
 	--b3-font-color13: #000000; /* 特殊：挖空 */
 	--b3-database-font-color11: #FFFFFF ;
 	
@@ -193,7 +193,7 @@
 	--b3-font-color9:  #ba7dff ;
 	--b3-font-color10: #ea47ff ;
 	--b3-font-color11: #ffffff ;
-	--b3-font-color12: #000000 ; /* 特殊：伪代码块 */
+	--b3-font-color12: #00000000 ; /* 特殊：伪代码块 */
 	--b3-font-color13: #000000; /* 特殊：挖空 */
 	--b3-database-font-color11: #000000 ;
 	
@@ -541,7 +541,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	border: 0.8px solid var(--test-quote-border-color);
 }
 
-/* 连续高亮：后一个贴上去，去掉左侧圆角 */
+/* 连续高亮：后一个贴上去，去掉左侧圆角 (含伪代码块和挖空块） */
 [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]),
@@ -552,14 +552,17 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]) {
+[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]),
+[style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]),
+[style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"])
+{
 	margin-left: var(--test-highlight-continuous-margin-size) !important;
 	border-left: none !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-/* 连续高亮：前一个后面还有高亮，去掉右侧圆角 */
+/* 连续高亮：前一个后面还有高亮，去掉右侧圆角 (含伪代码块和挖空块） */
 [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"])),
@@ -570,12 +573,16 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"])) {
+[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"])),
+[style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"])),
+[style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]))
+{
 	margin-right: var(--test-highlight-continuous-margin-size) !important;
 	border-right: none !important;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
+
 /* 与公式块连接时 */
 [style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
 [style*="var(--b3-font-background2)"][style*="background"][data-type~="inline-math"],
@@ -656,7 +663,6 @@ span[data-type~="mark"][data-type~="kbd"]
 	line-height: var(--test-pseudo-codeblock-line-height);
 
 }
-
 
 /* 挖空配色 */
 [style*="var(--b3-font-background13)"][style*="color"] {
