@@ -846,7 +846,7 @@ span[data-type~="mark"][data-type~="kbd"]
 .av__group-title .b3-chip[style*="color12)"]{
 	background: solid var(--b3-font-background12) !important;
 	background-color: var(--b3-font-background12) !important;
-	color: var(--b3-font-color12) !important;
+	color: var(--b3-database-font-color11) !important;
 	border: 1px solid var(--b3-font-background12) !important;
 	font-family: revert !important;
 	font-size: revert !important;
