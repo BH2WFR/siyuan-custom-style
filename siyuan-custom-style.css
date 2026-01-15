@@ -21,6 +21,8 @@
 	--test-highlight-equation-margin-side: 0px;
 	--test-highlight-equation-padding-top-bottom: 4px;
 	
+	--test-highlight-database-padding: 0.5px 2px 0.5px 2px;
+	
 	--test-tag-padding: 1px 4.0px 2px 4.0px;
 	--test-tag-margin: 0px 2.0px 0px 2.0px;
 	
@@ -34,9 +36,6 @@
 	
 	--test-pseudo-codeblock-padding: 12px 15px 8px 15px;
 	--test-pseudo-codeblock-line-height: 1.55;
-	
-	
-
 	
 	
 }
@@ -650,8 +649,8 @@ span[data-type~="mark"][data-type~="kbd"]
 	color: var(--test-code-color) !important;
 }
 [style*="var(--b3-font-background12)"][style*="color"]:not([data-type="NodeParagraph"]) {
-	margin: var(--test-highlight-margin) !important;
-	padding: var(--test-highlight-padding) !important;
+	margin: var(--test-highlight-margin);
+	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
 }
@@ -673,8 +672,8 @@ span[data-type~="mark"][data-type~="kbd"]
 	white-space: pre-wrap;
 }
 [style*="var(--b3-font-background13)"][style*="color"]:not([data-type="NodeParagraph"]) {
-	margin: var(--test-highlight-margin) !important;
-	padding: var(--test-highlight-padding) !important;
+	margin: var(--test-highlight-margin);
+	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
 	border: 1px solid var(--test-highlight-border-color);
@@ -703,7 +702,7 @@ span[data-type~="mark"][data-type~="kbd"]
 .av__group-title .b3-chip {
 	border-radius: var(--test-highlight-border-radius);
 	margin: var(--test-highlight-margin) !important;
-	padding: var(--test-highlight-padding) !important;
+	padding: var(--test-highlight-database-padding) !important;
 	font-weight: normal !important;
 	border: 1px solid var(--test-database-option-border-color) !important;
 	color: var(--test-font-color-default) !important;
@@ -850,6 +849,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	border: 1px solid var(--b3-font-background12) !important;
 	font-family: revert !important;
 	font-size: revert !important;
+	padding: var(--test-highlight-database-padding) !important;
 }
 .custom-attr__avvalue .b3-chip[style*="color13)"],
 .av__cell .b3-chip[style*="color13)"],
@@ -862,6 +862,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	color: var(--b3-database-font-color11) !important;
 	transition: none !important;
 	border: 1px solid var(--b3-font-background13) !important;
+	padding: var(--test-highlight-database-padding) !important;
 }
 .custom-attr__avvalue .b3-chip[style*="color14)"],
 .av__cell .b3-chip[style*="color14)"],
