@@ -178,6 +178,8 @@
 	
 	--test-cloze-background: linear-gradient(145deg, #fffb11, #84c7ff);
 	--test-cloze-text-color: #000000;
+	--test-cloze-border-color: #000000ab;
+	
 }
 :root[data-theme-mode=dark] {
 	/* 文本颜色样式 */
@@ -319,6 +321,7 @@
 	
 	--test-cloze-background: linear-gradient(145deg, #555300, #004a86);
 	--test-cloze-text-color: #ffffff;
+	--test-cloze-border-color: #ffffffd0;
 }
 
 /*
@@ -676,7 +679,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
-	border: 1px solid var(--test-highlight-border-color);
+	border: 1px solid var(--test-cloze-border-color);
 }
 [style*="var(--b3-font-background13)"][style*="color"][data-type="NodeParagraph"] {
 	border-radius: var(--test-special-block-border-radius) !important;
