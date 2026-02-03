@@ -10,8 +10,8 @@
 /** 变量定义 */
 :root {
 	--test-highlight-padding: 0.5px 1.0px 0.5px 1.0px;
-	--test-highlight-margin: 0px 1px 0px 1px;
-	--test-highlight-border-radius: 4px;
+	--test-highlight-margin: 0px 0px 0px 0px;
+	--test-highlight-border-radius: 0px;
 	--test-highlight-continuous-padding-size: 1px;
 	--test-highlight-continuous-margin-size: 0px;
 	
@@ -350,7 +350,7 @@
 span[data-type~="mark"] {
 	font-weight: bold;
 	text-decoration: none !important;
-	color: var(--test-mark-color) !important;
+	/* color: var(--test-mark-color) !important; */
 	background-color: var(--test-mark-background-color) !important;
 	border-radius: var(--test-highlight-border-radius);
 	padding: var(--test-highlight-padding);
@@ -359,19 +359,19 @@ span[data-type~="mark"] {
 	box-shadow: 0 1px 2px var(--test-mark-shadow-color);
 }
 /* 连续 mark 连成一个框：去掉相邻处的间隙与“中间竖线” */
-span[data-type~="mark"] + span[data-type~="mark"] {
-	margin-left: var(--test-highlight-continuous-margin-size) !important;      /* 相邻处不留缝 */
-	border-left: none !important;   /* 去掉内侧左边框 */
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
+/* span[data-type~="mark"] + span[data-type~="mark"] { */
+	/* margin-left: var(--test-highlight-continuous-margin-size) !important;      相邻处不留缝 */
+	/* border-left: none !important;   去掉内侧左边框 */
+	/* border-top-left-radius: 0; */
+	/* border-bottom-left-radius: 0; */
+/* } */
 /* 前一个 mark 后面还跟着 mark：把内侧右边框也去掉（否则会看到一条竖线） */
-span[data-type~="mark"]:has(+ span[data-type~="mark"]) {
-	margin-right: var(--test-highlight-continuous-margin-size) !important;     /* 相邻处不留缝 */
-	border-right: none !important;  /* 去掉内侧右边框（关键） */
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
+/* span[data-type~="mark"]:has(+ span[data-type~="mark"]) { */
+	/* margin-right: var(--test-highlight-continuous-margin-size) !important;     相邻处不留缝 */
+	/* border-right: none !important;  去掉内侧右边框（关键） */
+	/* border-top-right-radius: 0; */
+	/* border-bottom-right-radius: 0; */
+/* } */
 /* 数学公式，不显示上下边框，防止挡住  */
 span[data-type~="mark"][data-type~="inline-math"]{
 	border-top: none !important;
@@ -439,7 +439,7 @@ span[data-type~="mark"][data-type~="kbd"]
 }
 
 /* 连续的样式块 */
-[style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]),
+/* [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"])
@@ -448,9 +448,9 @@ span[data-type~="mark"][data-type~="kbd"]
 	border-left: none !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-}
+} */
 
-[style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"])),
+/* [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]))
@@ -459,7 +459,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	border-right: none !important;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-}
+} */
 /* 与公式块连接时 */
 [style*="var(--b3-card-error-background)"][data-type~="inline-math"],
 [style*="var(--b3-card-warning-background)"][data-type~="inline-math"],
@@ -544,7 +544,7 @@ span[data-type~="mark"][data-type~="kbd"]
 }
 
 /* 连续高亮：后一个贴上去，去掉左侧圆角 (含伪代码块和挖空块） */
-[style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]),
+/* [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]),
@@ -562,10 +562,10 @@ span[data-type~="mark"][data-type~="kbd"]
 	border-left: none !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-}
+} */
 
 /* 连续高亮：前一个后面还有高亮，去掉右侧圆角 (含伪代码块和挖空块） */
-[style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"])),
+/* [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"])),
 [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"])),
@@ -583,7 +583,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	border-right: none !important;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-}
+} */
 
 /* 与公式块连接时 */
 [style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
@@ -1386,3 +1386,24 @@ div[data-subtype^="h6"]>div:first-child:after{
 .protyle-top {
 	background-color: var(--test-top-title-background-color) !important;
 }
+
+
+/* 小于 1100px：不要左右边距（或很小） */
+/* @media (max-width: 1199px) {
+  .protyle-wysiwyg .protyle-wysiwyg--attr {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+} */
+
+/* 大于等于 1100px：恢复左右边距 */
+/* @media (min-width: 1200px) {
+  .protyle-wysiwyg .protyle-wysiwyg--attr {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+  }
+} */
+/* .protyle-wysiwyg .protyle-wysiwyg--attr {
+  padding-left: clamp(16px, 6vw, 140px) !important;
+  padding-right: clamp(16px, 6vw, 140px) !important;
+} */

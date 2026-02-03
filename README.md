@@ -1,6 +1,6 @@
 # 思源笔记 个人 css 样式 （持续更新）
 
-test2
+
 
 ## 代码地址（欢迎 star 和 issues）：
 
@@ -24,6 +24,7 @@ test2
 * (2025-12-29): 增加了对 `<kbd>` (键盘) 键盘 abc行内块的样式
 * (2026-01-13): 增加了浮动工具栏、数据库的样式，调整了护眼底色的适用范围
 * (2026-01-14): 针对荧光和高亮格式，增加了与 代码块、公式 混合文本的样式处理逻辑
+* (2016-02-03): 删除荧光和高亮格式在连续的文本之间的特殊处理逻辑
 
 ## 截图：
 
@@ -35,17 +36,24 @@ test2
 
 ### 文本样式：
 
-![image.png](https://b3logfile.com/file/2026/01/image-4uI5ks8.png)
+![image.png](https://b3logfile.com/file/2026/02/image-usw0yYz.png)
 
-![image.png](https://b3logfile.com/file/2026/01/image-sGKyx7Z.png)
+![image.png](https://b3logfile.com/file/2026/02/image-fB13jwk.png)
 
-* 与**公式和代码块混排**时，特意做了优化，防止外框在中间断开，或上下外框遮挡公式：
-  ![image.png](https://b3logfile.com/file/2026/01/image-7fdjo0t.png)
+* 给一个有多种样式、或代码块、或公式的文本加同一颜色的高亮时，会视作一个个单独的块来渲染，故这里有已知 bug：
+  
+  ![image.png](https://b3logfile.com/file/2026/02/image-qQZvebm.png)
+  
 * 支持 `==荧光==` ==荧光== 样式、`代码块 abcd` 样式，键盘热键 Ctrl+Z 样式
-  ![image.png](https://b3logfile.com/file/2026/01/image-fVkb9Ux.png?imageView2/2/interlace/1/format/webp)
+
+  ![image.png](https://b3logfile.com/file/2026/02/image-VLnaUVL.png)
+
 * **样式 13** 为「 **挖空块** 」，鼠标移动或点击即可显示隐藏内容
+
   ![image.png](https://b3logfile.com/file/2026/01/image-2YARM61.png)
+
 * **样式 12** 为 「 **伪代码块** 」，可以对里面的文本进行高亮等格式化操作：
+  
   ![image.png](https://b3logfile.com/file/2026/01/image-If1wHZV.png?imageView2/2/interlace/1/format/webp)
 
 ### 数据库 及 数据库选择项的 样式：
