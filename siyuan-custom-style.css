@@ -19,7 +19,7 @@
 	--test-highlight-code-margin-side: 0px;
 	--test-highlight-equation-padding-side: 2px;
 	--test-highlight-equation-margin-side: 0px;
-	--test-highlight-equation-padding-top-bottom: 4px;
+	--test-highlight-equation-padding-top-bottom: 5px;
 	
 	--test-highlight-database-padding: 0.5px 2px 0.5px 2px;
 	
@@ -29,6 +29,7 @@
 	
 	--test-tag-padding: 1px 4.0px 2px 4.0px;
 	--test-tag-margin: 0px 2.0px 0px 2.0px;
+	--test-tag-border-radius: 6px;
 	
 	--test-inline-code-margin: 0px 1.5px 0px 1.5px;
 	--test-inline-code-padding: 0.4px 2.5px 0.4px 2.5px;
@@ -85,10 +86,10 @@
 	--b3-card-warning-background: rgba(255, 255, 187, 1);
 	--b3-card-info-background:    rgba(218, 253, 253, 1);
 	--b3-card-success-background: rgba(217, 255, 214, 1);
-	--test-card-error-border-color: #c20000;
-	--test-card-warning-border-color: #858000;
-	--test-card-info-border-color: #0093a3;
-	--test-card-success-border-color: #00aa3c;
+	--test-card-error-border-color: 	#d3000088;
+	--test-card-warning-border-color:	#55800088;
+	--test-card-info-border-color: 		#0093a388;
+	--test-card-success-border-color: 	#00aa3c88;
 	
 	/* 其他 */
 	/* --b3-search-highlight: #FFFF00 */;
@@ -182,7 +183,6 @@
 	
 	--test-cloze-background: linear-gradient(145deg, #fffb11, #84c7ff);
 	--test-cloze-text-color: #000000;
-	--test-cloze-border-color: #000000ab;
 	
 }
 :root[data-theme-mode=dark] {
@@ -227,10 +227,10 @@
 	--b3-card-warning-background: rgba(80, 80, 0, 1);
 	--b3-card-info-background:    rgba(0, 66, 66, 1);
 	--b3-card-success-background: rgba(6, 75, 0, 1);
-	--test-card-error-border-color: #ff7a7a;
-	--test-card-warning-border-color: #fff700;
-	--test-card-info-border-color: #00e5ff;
-	--test-card-success-border-color: #00ff59;
+	--test-card-error-border-color: 	#ff7171a6;
+	--test-card-warning-border-color: 	#fff70088;
+	--test-card-info-border-color: 		#00e5ff88;
+	--test-card-success-border-color: 	#00ff5988;
 	
 	/* 其他 */
 	/* --b3-search-highlight: #FFFF00 */;
@@ -325,7 +325,6 @@
 	
 	--test-cloze-background: linear-gradient(145deg, #555300, #004a86);
 	--test-cloze-text-color: #ffffff;
-	--test-cloze-border-color: #ffffffd0;
 }
 
 /*
@@ -358,7 +357,7 @@ span[data-type~="mark"] {
 	background-color: var(--test-mark-background-color) !important;
 	border-radius: var(--test-highlight-border-radius);
 	padding: var(--test-highlight-padding);
-	margin: var(--test-highlight-margin) !important;
+	margin: var(--test-highlight-margin);
 	border: 1px solid var(--test-mark-border-color) !important;
 	box-shadow: 0 1px 2px var(--test-mark-shadow-color);
 }
@@ -376,10 +375,30 @@ span[data-type~="mark"] {
 	/* border-top-right-radius: 0; */
 	/* border-bottom-right-radius: 0; */
 /* } */
-/* 数学公式，不显示上下边框，防止挡住  */
-span[data-type~="mark"][data-type~="inline-math"]{
-	border-top: none !important;
-	border-bottom: none !important;
+
+
+/** 数学公式，不显示上下边框，防止挡住  */
+span[data-type~="mark"][data-type~="inline-math"],
+[style*="var(--b3-card-error-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-warning-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-info-background)"][data-type~="inline-math"],
+[style*="var(--b3-card-success-background)"][data-type~="inline-math"],
+[style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background2)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background3)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background4)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background5)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background6)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background7)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background8)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background9)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background10)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background11)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background12)"][style*="background"][data-type~="inline-math"],
+[style*="var(--b3-font-background13)"][style*="background"][data-type~="inline-math"]
+{
+	/* border-top: none !important; */
+	/* border-bottom: none !important; */
 	box-shadow: none !important;
 	padding-inline: var(--test-highlight-equation-padding-side) !important;
 	margin-inline: var(--test-highlight-equation-margin-side) !important;
@@ -387,34 +406,63 @@ span[data-type~="mark"][data-type~="inline-math"]{
 	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
 
 }
-/* 代码块 */
+
+/* 与行内代码块或快捷键块连接时 */
 span[data-type~="mark"][data-type~="code"],
-span[data-type~="mark"][data-type~="kbd"]
+span[data-type~="mark"][data-type~="kbd"],
+[style*="var(--b3-card-error-background)"][data-type~="code"],
+[style*="var(--b3-card-error-background)"][data-type~="kbd"],
+[style*="var(--b3-card-warning-background)"][data-type~="code"],
+[style*="var(--b3-card-warning-background)"][data-type~="kbd"],
+[style*="var(--b3-card-info-background)"][data-type~="code"],
+[style*="var(--b3-card-info-background)"][data-type~="kbd"],
+[style*="var(--b3-card-success-background)"][data-type~="code"],
+[style*="var(--b3-card-success-background)"][data-type~="kbd"],
+:is(
+  [style*="var(--b3-font-background1)"][style*="background"],
+  [style*="var(--b3-font-background2)"][style*="background"],
+  [style*="var(--b3-font-background3)"][style*="background"],
+  [style*="var(--b3-font-background4)"][style*="background"],
+  [style*="var(--b3-font-background5)"][style*="background"],
+  [style*="var(--b3-font-background6)"][style*="background"],
+  [style*="var(--b3-font-background7)"][style*="background"],
+  [style*="var(--b3-font-background8)"][style*="background"],
+  [style*="var(--b3-font-background9)"][style*="background"],
+  [style*="var(--b3-font-background10)"][style*="background"],
+  [style*="var(--b3-font-background11)"][style*="background"],
+  [style*="var(--b3-font-background12)"][style*="background"],
+  [style*="var(--b3-font-background13)"][style*="background"]
+)[data-type~="kbd"],
+:is(
+  [style*="var(--b3-font-background1)"][style*="background"],
+  [style*="var(--b3-font-background2)"][style*="background"],
+  [style*="var(--b3-font-background3)"][style*="background"],
+  [style*="var(--b3-font-background4)"][style*="background"],
+  [style*="var(--b3-font-background5)"][style*="background"],
+  [style*="var(--b3-font-background6)"][style*="background"],
+  [style*="var(--b3-font-background7)"][style*="background"],
+  [style*="var(--b3-font-background8)"][style*="background"],
+  [style*="var(--b3-font-background9)"][style*="background"],
+  [style*="var(--b3-font-background10)"][style*="background"],
+  [style*="var(--b3-font-background11)"][style*="background"],
+  [style*="var(--b3-font-background12)"][style*="background"],
+  [style*="var(--b3-font-background13)"][style*="background"]
+)[data-type~="code"]
 {
 	border-radius: var(--test-highlight-border-radius) !important;
 	margin-inline: var(--test-highlight-code-margin-side) !important;
 	
 }
 
-/** 镂空配色 */
-
-
 
 /** 样式颜色 */
-/* [style*="var(--b3-card-error-background)"], */
-/* [style*="var(--b3-card-warning-background)"], */
-/* [style*="var(--b3-card-info-background)"], */
-/* [style*="var(--b3-card-success-background)"] { */
-	
-	/* font-weight: bold !important; */
-/* } */
 [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"])
 {
-	margin: var(--test-highlight-margin) !important;
-	padding: var(--test-highlight-padding) !important;
+	margin: var(--test-highlight-margin);
+	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
 	/* border: 1px solid var(--test-highlight-border-color); */
@@ -442,76 +490,9 @@ span[data-type~="mark"][data-type~="kbd"]
 	border: 1px solid var(--test-card-success-border-color) !important;
 }
 
-/* 连续的样式块 */
-/* [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"])
-{
-	margin-left: var(--test-highlight-continuous-margin-size) !important;
-	border-left: none !important;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-} */
 
-/* [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-error-background)"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-warning-background)"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-info-background)"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-card-success-background)"]:not([data-type="NodeParagraph"]))
-{
-	margin-right: var(--test-highlight-continuous-margin-size) !important;
-	border-right: none !important;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-} */
-/* 与公式块连接时 */
-[style*="var(--b3-card-error-background)"][data-type~="inline-math"],
-[style*="var(--b3-card-warning-background)"][data-type~="inline-math"],
-[style*="var(--b3-card-info-background)"][data-type~="inline-math"],
-[style*="var(--b3-card-success-background)"][data-type~="inline-math"]
-{
-	border-top: none !important;
-	border-bottom: none !important;
-	box-shadow: none !important;
-	padding-inline: var(--test-highlight-equation-padding-side) !important;
-	margin-inline: var(--test-highlight-equation-margin-side) !important;
-	padding-top: var(--test-highlight-equation-padding-top-bottom) !important;
-	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
-}
-/* 与行内代码块或快捷键块连接时 */
-[style*="var(--b3-card-error-background)"][data-type~="code"],
-[style*="var(--b3-card-error-background)"][data-type~="kbd"],
-[style*="var(--b3-card-warning-background)"][data-type~="code"],
-[style*="var(--b3-card-warning-background)"][data-type~="kbd"],
-[style*="var(--b3-card-info-background)"][data-type~="code"],
-[style*="var(--b3-card-info-background)"][data-type~="kbd"],
-[style*="var(--b3-card-success-background)"][data-type~="code"],
-[style*="var(--b3-card-success-background)"][data-type~="kbd"]
-{
-	border-radius: var(--test-highlight-border-radius) !important;
-	margin-inline: var(--test-highlight-code-margin-side) !important;
-}
 
 /** 高亮颜色 */
-/* [style*="var(--b3-font-background1)"][style*="background"],
-[style*="var(--b3-font-background2)"][style*="background"],
-[style*="var(--b3-font-background3)"][style*="background"],
-[style*="var(--b3-font-background4)"][style*="background"],
-[style*="var(--b3-font-background5)"][style*="background"],
-[style*="var(--b3-font-background6)"][style*="background"],
-[style*="var(--b3-font-background7)"][style*="background"],
-[style*="var(--b3-font-background8)"][style*="background"],
-[style*="var(--b3-font-background9)"][style*="background"],
-[style*="var(--b3-font-background10)"][style*="background"],
-[style*="var(--b3-font-background11)"][style*="background"]
-{ */
-	/* display: inline-block;*/
-	
-	/* border-top: 1px solid var(--test-highlight-border-color); */
-	/* border-bottom: 1px solid var(--test-highlight-border-color); */
-	/* border-left: none; */
-	/* border-right: none; */
-/* } */
 [style*="var(--b3-font-background1)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background2)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background3)"]:not([data-type="NodeParagraph"]),
@@ -537,7 +518,7 @@ span[data-type~="mark"][data-type~="kbd"]
 [style*="var(--b3-font-background5)"][data-type="NodeParagraph"],
 [style*="var(--b3-font-background6)"][data-type="NodeParagraph"],
 [style*="var(--b3-font-background7)"][data-type="NodeParagraph"],
-[style*="var(--b3-font-background8)"][data-type="NodeParagraph"],
+[style*="var(--b3-font-background8)"][data-type="NodeParagraph"],f
 [style*="var(--b3-font-background9)"][data-type="NodeParagraph"],
 [style*="var(--b3-font-background10)"][data-type="NodeParagraph"],
 [style*="var(--b3-font-background11)"][data-type="NodeParagraph"]
@@ -547,110 +528,12 @@ span[data-type~="mark"][data-type~="kbd"]
 	border: 0.8px solid var(--test-quote-border-color);
 }
 
-/* 连续高亮：后一个贴上去，去掉左侧圆角 (含伪代码块和挖空块） */
-/* [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background5)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background5)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background6)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background6)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background7)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background7)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]),
-[style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]) + [style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"])
-{
-	margin-left: var(--test-highlight-continuous-margin-size) !important;
-	border-left: none !important;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-} */
-
-/* 连续高亮：前一个后面还有高亮，去掉右侧圆角 (含伪代码块和挖空块） */
-/* [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background1)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background2)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background3)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background4)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background5)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background5)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background6)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background6)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background7)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background7)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background8)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background9)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background10)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background11)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background12)"][style*="background"]:not([data-type="NodeParagraph"])),
-[style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]):has(+ [style*="var(--b3-font-background13)"][style*="background"]:not([data-type="NodeParagraph"]))
-{
-	margin-right: var(--test-highlight-continuous-margin-size) !important;
-	border-right: none !important;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-} */
-
-/* 与公式块连接时 */
-[style*="var(--b3-font-background1)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background2)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background3)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background4)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background5)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background6)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background7)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background8)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background9)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background10)"][style*="background"][data-type~="inline-math"],
-[style*="var(--b3-font-background11)"][style*="background"][data-type~="inline-math"]
-{
-	border-top: none !important;
-	border-bottom: none !important;
-	box-shadow: none !important;
-	padding-inline: var(--test-highlight-equation-padding-side) !important;
-	margin-inline: var(--test-highlight-equation-margin-side) !important;
-	padding-top: var(--test-highlight-equation-padding-top-bottom) !important;
-	padding-bottom: var(--test-highlight-equation-padding-top-bottom) !important;
-}
-/* 与行内代码块或快捷键块连接时 */
-:is(
-  [style*="var(--b3-font-background1)"][style*="background"],
-  [style*="var(--b3-font-background2)"][style*="background"],
-  [style*="var(--b3-font-background3)"][style*="background"],
-  [style*="var(--b3-font-background4)"][style*="background"],
-  [style*="var(--b3-font-background5)"][style*="background"],
-  [style*="var(--b3-font-background6)"][style*="background"],
-  [style*="var(--b3-font-background7)"][style*="background"],
-  [style*="var(--b3-font-background8)"][style*="background"],
-  [style*="var(--b3-font-background9)"][style*="background"],
-  [style*="var(--b3-font-background10)"][style*="background"],
-  [style*="var(--b3-font-background11)"][style*="background"]
-)[data-type~="kbd"],
-:is(
-  [style*="var(--b3-font-background1)"][style*="background"],
-  [style*="var(--b3-font-background2)"][style*="background"],
-  [style*="var(--b3-font-background3)"][style*="background"],
-  [style*="var(--b3-font-background4)"][style*="background"],
-  [style*="var(--b3-font-background5)"][style*="background"],
-  [style*="var(--b3-font-background6)"][style*="background"],
-  [style*="var(--b3-font-background7)"][style*="background"],
-  [style*="var(--b3-font-background8)"][style*="background"],
-  [style*="var(--b3-font-background9)"][style*="background"],
-  [style*="var(--b3-font-background10)"][style*="background"],
-  [style*="var(--b3-font-background11)"][style*="background"]
-)[data-type~="code"]
-{
-	border-radius: var(--test-highlight-border-radius) !important;
-	margin-left: var(--test-highlight-code-margin-side) !important;
-	margin-right: var(--test-highlight-code-margin-side) !important;
-	/* border-left: 1px solid var(--test-inline-kbd-border-color) !important;
-	border-right: 1px solid var(--test-inline-kbd-border-color) !important; */
-}
 
 
 /* 伪代码块 */
 [style*="var(--b3-font-background12)"][style*="color"] {
 	font-family: var(--b3-font-family-code) !important;
 	font-size: 85%; /*不加 important*/
-	border: 1.2px solid var(--test-code-border-color);
 	background-color: var(--test-code-background) !important;
 	box-shadow: var(--test-code-shadow-color) 2px 2px 2px, var(--test-code-shadow-color) 0px 0px 4px;
 	color: var(--test-code-color) !important;
@@ -660,6 +543,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
+	border: 1.2px solid var(--test-inline-code-border-color);
 }
 [style*="var(--b3-font-background12)"][style*="color"][data-type="NodeParagraph"] {
 	margin-top: var(--test-special-block-margin-top-size) !important;
@@ -667,8 +551,10 @@ span[data-type~="mark"][data-type~="kbd"]
 	padding: var(--test-pseudo-codeblock-padding) !important;
 	border-radius: var(--test-special-block-border-radius) !important;
 	line-height: var(--test-pseudo-codeblock-line-height);
+	border: 1.2px solid var(--test-code-border-color);
 
 }
+
 
 /* 挖空配色 */
 [style*="var(--b3-font-background13)"][style*="color"] {
@@ -683,7 +569,7 @@ span[data-type~="mark"][data-type~="kbd"]
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
-	border: 1px solid var(--test-cloze-border-color);
+	border: 1px solid var(--test-highlight-border-color);
 }
 [style*="var(--b3-font-background13)"][style*="color"][data-type="NodeParagraph"] {
 	border-radius: var(--test-special-block-border-radius) !important;
@@ -732,15 +618,7 @@ span[data-type~="mark"][data-type~="kbd"]
 .protyle-wysiwyg .av__row--footer.av__readonly--show {
 	background-color: var(--test-database-footer-background) !important;
 }
-/* .protyle-wysiwyg .av__header {
-	background-color: var(--test-top-title-background-color)  !important;
-} */
-/* .protyle-wysiwyg .av__container {
-	border-radius: 6px !important;
-	border: 1px solid var(--test-database-border-color) !important;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.239) !important;
-	background-color: var(--test-database-container-color) !important;
-} */
+
 
 /* color 1 到 color 10 必须这样手动指定，否则在部分第三方主题下会发生混乱 */
 .custom-attr__avvalue .b3-chip[style*="color1)"],
@@ -937,7 +815,7 @@ span[data-type~="mark"][data-type~="kbd"]
 
 /** 行内代码 */
 .fn__code, .b3-typography code:not(.hljs), .b3-typography span[data-type~=code], .protyle-wysiwyg code:not(.hljs), .protyle-wysiwyg span[data-type~=code]{
-	color:var(--test-inline-code-color)  !important;
+	color:var(--test-inline-code-color);
 	background-color: var(--test-inline-code-background) !important;
 	border: 1px solid var(--test-inline-code-border-color)  !important;
 	box-shadow: 0 1px 2px var(--test-inline-code-shadow-color);
@@ -949,7 +827,7 @@ span[data-type~="mark"][data-type~="kbd"]
 
 /* 快捷键块 */
 .fn__kbd, .b3-typography kbd:not(.hljs), .b3-typography span[data-type~=kbd], .protyle-wysiwyg kbd:not(.hljs), .protyle-wysiwyg span[data-type~=kbd]{
-	color:var(--test-inline-kbd-color)  !important;
+	color:var(--test-inline-kbd-color);
 	background-color: var(--test-inline-kbd-background) !important;
 	border: 1px solid var(--test-inline-kbd-border-color)  !important;
 	box-shadow: 0 1px 2px var(--test-inline-kbd-shadow-color);
@@ -1016,7 +894,7 @@ span[data-type~="mark"][data-type~="kbd"]
 
 /** 标签 tag */
 .protyle-wysiwyg span[data-type~="tag"], .sy__outline span[data-type~="tag"]{
-	border-radius: var(--test-highlight-border-radius);
+	border-radius: var(--test-tag-border-radius);
 	padding: var(--test-tag-padding) !important;
 	margin: var(--test-tag-margin) !important;
 	color: var(--test-tag-text-color) !important;
@@ -1224,92 +1102,6 @@ span[data-type~="mark"][data-type~="kbd"]
 }
 
 
-
-/** 标题层级显示 */
-/** 已废弃，高分屏下渲染不正常；且目前已使用颜色来区分标题层级，无需再加入额外符号 */
-/* div[data-subtype^="h1"]:not([type])>div:first-child:after{
-	content:"  ❶";
-	font-size: 11pt;
-	opacity: 0.4;
-}
-div[data-subtype^="h2"]>div:first-child:after{
-	content:"  ❷";
-	font-size: 11pt;
-	opacity: 0.4;
-}
-div[data-subtype^="h3"]>div:first-child:after{
-	content:"  ❸";
-	font-size: 11pt;
-	opacity: 0.4;
-}
-div[data-subtype^="h4"]>div:first-child:after{
-	content:"  ❹";
-	font-size: 11pt;
-	opacity: 0.4;
-}
-div[data-subtype^="h5"]>div:first-child:after{
-	content:"  ❺";
-	font-size: 11pt;
-	opacity: 0.4;
-}
-div[data-subtype^="h6"]>div:first-child:after{
-	content:"  ❻";
-	font-size: 11pt;
-	opacity: 0.4;
-} */
-
-/** 标题 显示章节序号 */
-/** 已废弃，因为页面过长时，会导致编号混乱 */
-/* 统一在编辑区作用域内计数，避免被 DOM 拆分导致断号 */
-.protyle-wysiwyg {
-	counter-reset: h1-count 0 h2-count 0 h3-count 0 h4-count 0 h5-count 0 h6-count 0;
-}
-
-/* 只对“非 bq 内”的标题：遇到更高层级时重置低层级 */
-/* .protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]:not([type]):not(.bq *):not(.callout *) { counter-reset: h2-count 0 h3-count 0 h4-count 0 h5-count 0 h6-count 0; }
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *)             { counter-reset: h3-count 0 h4-count 0 h5-count 0 h6-count 0; }
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *)             { counter-reset: h4-count 0 h5-count 0 h6-count 0; }
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *)             { counter-reset: h5-count 0 h6-count 0; }
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *)             { counter-reset: h6-count 0; } */
-
-/* 显示编号：同样只对“非 bq 内”的标题生效 */
-/* .protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]:not([type]):not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h1-count;
-	content: counter(h1-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-}
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]:not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h2-count;
-	content: counter(h1-count, decimal) "." counter(h2-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-}
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]:not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h3-count;
-	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-}
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]:not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h4-count;
-	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-}
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]:not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h5-count;
-	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) "." counter(h5-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-}
-.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h6"]:not(.bq *):not(.callout *) > div:first-child::before{
-	counter-increment: h6-count;
-	content: counter(h1-count, decimal) "." counter(h2-count, decimal) "." counter(h3-count, decimal) "." counter(h4-count, decimal) "." counter(h5-count, decimal) "." counter(h6-count, decimal) ".  ";
-	font-size: 80%;
-	opacity: 0.6;
-} */
-
 /** 有序列表 */
 /* 隐藏原始编号 */
 .li[data-subtype="o"] .protyle-action--order {
@@ -1386,30 +1178,7 @@ div[data-subtype^="h6"]>div:first-child:after{
 	color: var(--test-toolbar-icon-color) !important;
 }
 
-
-
 /** 页面标题 */
 .protyle-top {
 	background-color: var(--test-top-title-background-color) !important;
 }
-
-
-/* 小于 1100px：不要左右边距（或很小） */
-/* @media (max-width: 1199px) {
-  .protyle-wysiwyg .protyle-wysiwyg--attr {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-} */
-
-/* 大于等于 1100px：恢复左右边距 */
-/* @media (min-width: 1200px) {
-  .protyle-wysiwyg .protyle-wysiwyg--attr {
-    padding-left: 120px !important;
-    padding-right: 120px !important;
-  }
-} */
-/* .protyle-wysiwyg .protyle-wysiwyg--attr {
-  padding-left: clamp(16px, 6vw, 140px) !important;
-  padding-right: clamp(16px, 6vw, 140px) !important;
-} */
