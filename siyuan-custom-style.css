@@ -333,7 +333,7 @@
 
 
 /** 字体颜色 */
-[style*="var(--b3-font-color1)"][style*="color"],
+/* [style*="var(--b3-font-color1)"][style*="color"],
 [style*="var(--b3-font-color2)"][style*="color"],
 [style*="var(--b3-font-color3)"][style*="color"],
 [style*="var(--b3-font-color4)"][style*="color"],
@@ -346,7 +346,7 @@
 [style*="var(--b3-font-color11)"][style*="color"]
 {
 	font-weight: bold !important;
-}
+} */
 
 
 /** ==mark== 颜色*/
