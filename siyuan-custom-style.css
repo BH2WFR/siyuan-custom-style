@@ -862,7 +862,7 @@ span[data-type~="mark"][data-type~="kbd"],
 /** 表格样式 */
 /* 表格整体外框 */
 .protyle-wysiwyg table {
-	border-collapse: collapse !important;
+	/* border-collapse: collapse !important; */ /*20260907 注释：思源 3.8+ 中要显示外框需注释这句*/
 	border: 1px solid var(--test-table-border-color) !important;
 	border-radius: var(--test-special-block-border-radius) !important;
 	overflow: hidden;
