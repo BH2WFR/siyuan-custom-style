@@ -1,0 +1,1017 @@
+/* 注意: custom styles 插件中的样式不要删掉, 那个是给编辑期间用的.
+		只有卡片显示预览时才遵循本 css 样式, 编辑时是不遵循本样式渲染的.
+	路径: %APPDATA%\Anki2\账户1\collection.media\_custom-anki-styles.css
+*/
+
+
+/** 自定义字体 */
+@font-face {
+  font-family: "TEST_CRM";
+  src: url("_TEST_CRM2.ttf");
+  font-synthesis: weight style small-caps;
+}
+/* @font-face { */
+	/* font-family: "TEST_ARI"; */
+	/* src: url("_TEST_ARI.ttf"); */
+	/* font-synthesis: weight style small-caps; */
+	/* font-weight: normal; */
+/* } */
+/* @font-face {
+	font-family: TEST_ARI;
+	src: url("_TEST_ARI_Bold.ttf");
+	font-synthesis: weight style small-caps;
+	font-weight: bold;
+} */
+
+
+/** 全局变量 */
+:root{
+	--test-front-font: "Arial", "Microsoft YaHei", sans-serif, "TEST_CRM";
+	--test-default-font: "Segoe UI", "Microsoft YaHei", "Roboto", "Helvetica Neue", "PingFang SC", sans-serif, "TEST_CRM";
+	--test-serif-font: "Times New Roman", "Microsoft YaHei", "Georgia", serif;
+	--test-pronunciation-font: "Arial", sans-serif;
+	
+	--test-default-font-size: 13px;
+	--test-default-margin: 10px;
+	--test-default-color: #000000;
+	--test-default-background: #FBFBFB;
+	
+	--test-selection-color: #FFFFFF;
+	--test-selection-bg: #1144DD;
+	
+	--test-hr-color: #005BB7FF;
+	--test-hr2-color: #000000FF;
+	
+	
+	--test-front-font-size: 22px;
+	--test-front-color: #000000;
+	--test-front-bg: #EDF2FE;
+	--test-front-border: 1px solid #5E8CFC;
+	--test-front-shadow: 5px 5px 5px rgba(72, 126, 255, 0.4);
+	--test-front-border-radius: 5px;
+	--test-front-padding: 5px 7px;
+	
+	--test-top-hint-color: #2256FD;
+	
+	--test-front-simple-font-size: 21px;
+	--test-block-font-size: 15px;
+	--test-extra-font-size: 13px;
+	--test-meaning-font-size: 18px;
+	
+	--test-block-padding: 5px;
+	--test-block-line-height: 130%;
+	--test-block-border-radius: 5px;
+	
+	--test-subfront-bg: #FDEEEC;
+	--test-subfront-border: 1px solid #FC998C;
+	--test-subfront-shadow: 2px 2px 4px rgba(252, 153, 140, 0.4);
+	
+	--test-sentence-bg: #FFFDD1;
+	--test-sentence-border: 1px solid #C4BA02;
+	--test-sentence-shadow: 2px 2px 4px rgba(220, 214, 2, 0.4);
+	
+	--test-meaning-bg: #E3F9FE;
+	--test-meaning-border: 1px solid #00C4F0;
+	--test-meaning-shadow: 2px 2px 4px rgba(33, 215, 255, 0.4);
+	
+	--test-others-bg: #E9FEE3;
+	--test-others-border: 1px solid #49CE28;
+	--test-others-shadow: 2px 2px 4px rgba(73, 206, 40, 0.4);
+	
+	--test-fg-rd: rgb(255, 0, 0);
+	--test-fg-bl: rgb(0, 47, 255);
+	--test-fg-gn: rgb(0, 131, 0); /* rgb(37, 120, 255) */
+	--test-fg-or: rgb(238, 143, 0); /* rgb(37, 120, 255) */
+	--test-fg-gy: rgb(134, 134, 134); /* rgb(37, 120, 255) */
+	--test-fg-text-shadow: none; /* 亮色模式下, 因高亮颜色比文字颜色亮很多, 所以同时存在同色高亮+文本 时无需用阴影来辨析 */
+	
+	--test-bg-yl: rgb(255, 255, 0); /*#e9e900 */
+	--test-bg-gn: rgb(0, 255, 0);
+	--test-bg-cy: rgb(0, 255, 255);
+	--test-bg-border: 1px solid #00000080;
+	
+	--test-st-inv-bg: rgb(0, 0, 0);
+	--test-st-inv-fg: #FFFFFF;
+	
+	--test-cl-margin: 1.5px; /*bg, inv 也借用此数值 */
+	--test-cl-padding: 1.5px;
+	--test-cl-shadow: 1.2px 1.2px 1px #00000099, 0px 0px 3px #00000066;
+	--test-cl-cursor: arrow;
+	--test-cl-radius: 4px;
+	--test-cl-line-height: 1.5;
+	--test-cl-transition-out: color 1.5s ease;
+	--test-cl-transition-in: color 0s;
+	
+	--test-cl-color: transparent;
+	--test-cl-hover-color: #000000;
+	--test-cl-gy-bg: linear-gradient(110deg, #bebebe, #eeeeee);
+	--test-cl-or-bg: linear-gradient(110deg, #ffb97b, #fff78d);
+	--test-cl-bl-bg: linear-gradient(110deg, #91c4ff, #abffff);
+	--test-cl-gn-bg: linear-gradient(110deg, #3dee8d, #d1ffbf);
+	--test-cl-border-color: #000000aa;
+	
+	--test-sz-large-font-size: x-large;
+	--test-sz-large-line-height: 1.5;
+
+	/* Markdown / 富文本元素（配色参考 siyuan-custom-styles2.css） */
+	--test-markdown-code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+	--test-inline-code-color: #003881;
+	--test-inline-code-background: #f5fdff;
+	--test-inline-code-border-color: rgba(0, 0, 0, 0.342);
+	--test-inline-code-shadow-color: rgba(0, 0, 0, 0.281);
+	--test-inline-kbd-color: #660000;
+	--test-inline-kbd-background: #ff8d8d13;
+	--test-inline-kbd-border-color: rgba(0, 0, 0, 0.342);
+	--test-inline-kbd-shadow-color: rgba(0, 0, 0, 0.281);
+	--test-code-color: #000000;
+	--test-code-background: rgba(232, 250, 255, 0.85);
+	--test-code-border-color: rgba(0, 50, 83, 1);
+	--test-code-shadow-color: rgba(0, 88, 138, 0.281);
+	--test-quote-color: #001947;
+    --test-quote-background: #fbfaf7;
+    --test-quote-border-color: rgba(0, 0, 0, 0.90);
+	--test-quote-shadow-color: rgba(0, 0, 0, 0.521);
+    --test-quote-left-color: #868686;
+    --test-quote-nested-background: #9e9e9e18;
+    --test-quote-nested-border-color: rgba(0, 0, 0, 0.90);
+    --test-quote-nested-left-color: #868686;
+    --test-table-border-color: rgba(0, 0, 0, 0.82);
+	--test-table-cell-border-color: rgba(0, 0, 0, 0.41);
+	--test-table-text-color: #000000;
+	--test-table-first-row-background: #e0ffd6;
+    --test-table-odd-row-background: #ffffff;
+    --test-table-even-row-background: #f5f5f5;
+	--test-heading-color-1: #000000;
+	--test-heading-color-2: #006edb;
+	--test-heading-color-3: #00a000;
+	--test-heading-color-4: #e77b00;
+	--test-heading-color-5: #8c00ff;
+	--test-heading-color-6: #6b6b6b;
+	--test-list-color-1: #000000;
+	--test-list-color-2: #0080ff;
+	--test-list-color-3: #00b600;
+	--test-list-color-4: #fd8700;
+	--test-list-color-5: #be6fff;
+	--test-list-color-6: #888888;
+	
+}
+body.nightMode,
+body.night_mode {
+	--test-default-color: #FFFFFF;
+	--test-default-background: #000000; /* 暗色下的背景颜色, 为了护眼设置成 #2a2a2a*/
+	
+	--test-selection-color: #FFFFFF;
+	--test-selection-bg: #2266DD;
+
+	--test-hr-color: #6dfff8ff;
+	--test-hr2-color: #FFFFFFFF;
+	
+	--test-front-color: #000000;
+	--test-front-bg: #79eefd;
+	--test-front-border: 1px solid #588EFF;
+	--test-front-shadow: 5px 5px 5px rgba(72, 126, 255, 0.6);
+	
+	--test-top-hint-color: #4CA4FF;
+	
+	--test-subfront-bg: #ff000015;
+	--test-subfront-border: 1px solid #F81901;
+	--test-subfront-shadow: 2px 2px 4px rgba(255, 100, 60, 0.4);
+	
+	--test-sentence-bg: #ffff0012;
+	--test-sentence-border: 1px solid #F9EF01;
+	--test-sentence-shadow: 2px 2px 4px rgba(249, 239, 2, 0.4);
+	
+	--test-meaning-bg: #00CDFC14;
+	--test-meaning-border: 1px solid #00CDFC;
+	--test-meaning-shadow: 2px 2px 4px rgba(0, 206, 255, 0.4);
+	
+	--test-others-bg: #00ff0013;
+	--test-others-border: 1px solid #28D049;
+	--test-others-shadow: 2px 2px 4px rgba(40, 210, 73, 0.4);
+	
+	--test-fg-rd: rgb(255, 136, 102);
+	--test-fg-bl: rgb(66, 225, 254);
+	--test-fg-gn: rgb(0, 255, 0);
+	--test-fg-or: rgb(255, 204, 0);
+	--test-fg-gy: rgb(150, 150, 150);
+	--test-fg-text-shadow: -1px 0 0 black, 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, 0 0 2px rgba(0,0,0,0.9); /* 同色高亮+文本 同时存在时, 通过描边来进行轮廓辨析 */
+	
+	--test-bg-yl: #FFFF55;
+	--test-bg-gn: #55FF55;
+	--test-bg-cy: #55FFFF;
+	--test-bg-border: none;
+	
+	--test-st-inv-bg: rgb(255, 255, 255);
+	--test-st-inv-fg: #000000;
+	
+	--test-cl-hover-color: #ffffff;
+	--test-cl-gy-bg: linear-gradient(110deg, #5f5f5f, #242424);
+	--test-cl-or-bg: linear-gradient(110deg, #8f4301, #242100);
+	--test-cl-bl-bg: linear-gradient(110deg, #004a9e, #002323);
+	--test-cl-gn-bg: linear-gradient(110deg, #007434, #0a2400);
+	--test-cl-border-color: #ffffffd0;
+
+	--test-inline-code-color: #8de9f0;
+	--test-inline-code-background: #163438;
+	--test-inline-code-border-color: rgba(255, 255, 255, 0.39);
+	--test-inline-code-shadow-color: rgba(255, 255, 255, 0);
+	--test-inline-kbd-color: #ff8e8e;
+	--test-inline-kbd-background: #ff66661c;
+	--test-inline-kbd-border-color: rgba(255, 255, 255, 0.39);
+	--test-inline-kbd-shadow-color: rgba(255, 255, 255, 0);
+	--test-code-color: #ffffff;
+	--test-code-background: rgba(0, 104, 148, 0.28);
+	--test-code-border-color: #00ccff;
+	--test-code-shadow-color: rgba(0, 218, 247, 0.32);
+	--test-quote-color: #e8f0ff;
+    --test-quote-background: #35393e;
+    --test-quote-border-color: rgba(210, 220, 230, 0.72);
+    --test-quote-shadow-color: rgba(255, 255, 255, 0.438);
+    --test-quote-left-color: #9e9e9e;
+    --test-quote-nested-background: #83838327;
+    --test-quote-nested-border-color: rgba(210, 220, 230, 0.72);
+    --test-quote-nested-left-color: #9e9e9e;
+    --test-table-border-color: rgba(210, 220, 230, 0.78);
+	--test-table-cell-border-color: rgba(255, 255, 255, 0.32);
+	--test-table-text-color: #f4f6f8;
+	--test-table-first-row-background: #164f2a;
+    --test-table-odd-row-background: #1b1d1f;
+    --test-table-even-row-background: #27292c;
+	--test-heading-color-1: #ffffff;
+	--test-heading-color-2: #52b1ff;
+	--test-heading-color-3: #00cc00;
+	--test-heading-color-4: #f38200;
+	--test-heading-color-5: #bb67ff;
+	--test-heading-color-6: #a1a1a1;
+	--test-list-color-1: #d1d1d1;
+	--test-list-color-2: #52b1ff;
+	--test-list-color-3: #00cc00;
+	--test-list-color-4: #f38200;
+	--test-list-color-5: #bb67ff;
+	--test-list-color-6: #919191;
+}
+
+
+/** 卡片整体样式 */
+.card {
+	font-family: var(--test-default-font) !important;
+	font-size: var(--test-default-font-size) !important;
+	color: var(--test-default-color) !important;
+	background-color: var(--test-default-background) !important;
+	margin-inline: var(--test-default-margin) !important; /*页边距*/
+	text-align: left;
+}
+
+
+/** 各模块样式 */
+front_title {
+	--test-default-color: var(--test-front-color); /* front_title 暗色模式下反色，故重写变量 */
+	font-family: var(--test-front-font) !important;
+	font-weight : bold;
+	font-size: var(--test-front-font-size) !important;
+	line-height: 120%;
+	display: inline-block;
+	padding: var(--test-front-padding) !important;
+	border-radius: var(--test-front-border-radius) !important;
+	box-sizing: border-box;
+	color: var(--test-front-color);
+	background-color: var(--test-front-bg);
+	box-shadow: var(--test-front-shadow);
+	border: var(--test-front-border);
+}
+
+front_simple { /* 简易卡片 和 仓颉的 front */
+	font-family: var(--test-front-font) !important;
+	font-weight: normal;
+	font-size: var(--test-front-simple-font-size) !important;
+	text-align: left;
+	line-height: 120%;
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: var(--test-front-padding) !important;
+	border-radius: var(--test-block-border-radius) !important;
+	background-color: var(--test-meaning-bg) !important;
+	box-shadow: var(--test-meaning-shadow) !important;
+	border: var(--test-meaning-border) !important;
+}
+
+top_hint { /* 仓颉中, front 上面会有一行 "仓颉输入法" 的提示 */
+  color: var(--test-top-hint-color) !important;
+  font-weight:bold;
+  margin-left: 10px;
+}
+
+pronunciation,
+pronuntiation {
+	font-family: var(--test-pronunciation-font) !important;
+	display: block;
+	font-size: 13px;
+	text-align: center;
+}
+
+
+sub_front { /* 颜色 同 front_simple */
+	font-weight: normal;
+	font-size: var(--test-block-font-size) !important;
+	text-align: left;
+	line-height: 120%;
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: var(--test-front-padding) !important;
+	border-radius: var(--test-block-border-radius) !important;
+	background-color: var(--test-subfront-bg) !important;
+	box-shadow: var(--test-subfront-shadow) !important;
+	border: var(--test-subfront-border) !important;
+}
+
+sentence,
+answer{
+	font-size: var(--test-block-font-size) !important;
+	line-height: var(--test-block-line-height) !important;
+	padding: var(--test-block-padding) !important;
+	border-radius: var(--test-block-border-radius) !important;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: var(--test-sentence-bg) !important;
+	box-shadow: var(--test-sentence-shadow) !important;
+	border: var(--test-sentence-border) !important;
+}
+sentence {
+	padding-bottom: 15px !important;
+}
+
+meaning {
+	font-size: var(--test-meaning-font-size) !important;
+	line-height: var(--test-block-line-height) !important;
+	padding: var(--test-block-padding) !important;
+	border-radius: var(--test-block-border-radius) !important;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: var(--test-meaning-bg) !important;
+	box-shadow: var(--test-meaning-shadow) !important;
+	border: var(--test-meaning-border) !important;
+}
+
+others{
+	font-size: var(--test-block-font-size) !important;
+	line-height: var(--test-block-line-height) !important;
+	padding: var(--test-block-padding) !important;
+	border-radius: var(--test-block-border-radius) !important;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: var(--test-others-bg) !important;
+	box-shadow: var(--test-others-shadow) !important;
+	border: var(--test-others-border) !important;
+}
+
+
+/* 从词典粘贴时, 覆写颜色 */
+span[style^="color: rgb(0, 0, 0)"],
+span[style*=";color: rgb(0, 0, 0)"], /*此设计是为了排除掉 background-color 也被匹配上*/
+span[style*="; color: rgb(0, 0, 0)"],
+span[style^="color: #000000"],
+span[style*=";color: #000000"],
+span[style*="; color: #000000"],
+span[style^="color: black"],
+span[style*=";color: black"],
+span[style*="; color: black"],
+span[style^="color: rgb(52, 49, 49)"],
+span[style*=";color: rgb(52, 49, 49)"],
+span[style*="; color: rgb(52, 49, 49)"],
+span[style^="color: rgb(32, 33, 36)"],
+span[style*=";color: rgb(32, 33, 36)"],
+span[style*="; color: rgb(32, 33, 36)"],
+span[style^="color: rgb(0, 128, 128)"], /* MALDPE 词典 */
+span[style*=";color: rgb(0, 128, 128)"],
+span[style*="; color: rgb(0, 128, 128)"],
+span[style^="color: rgb(102, 102, 102)"], /* OALDPE 词典 */
+span[style*=";color: rgb(102, 102, 102)"],
+span[style*="; color: rgb(102, 102, 102)"],
+span[style^="color: rgb(51, 51, 51)"],
+span[style*=";color: rgb(51, 51, 51)"],
+span[style*="; color: rgb(51, 51, 51)"]
+{
+	color: var(--test-default-color) !important;
+}
+
+/** fg 颜色 样式 */
+.fg_rd,
+span[style^="color: red"],
+span[style*=";color: red"],
+span[style*="; color: red"],
+span[style^="color:red"],
+span[style*=";color:red"],
+span[style*="; color:red"],
+span[style^="color:#ff0000"],
+span[style*=";color: #ff0000"],
+span[style*="; color: #ff0000"],
+span[style^="color:#ff8866"],
+span[style*=";color: #ff8866"],
+span[style*="; color: #ff8866"],
+span[style^="color: rgb(255, 0, 0)"],
+span[style*=";color: rgb(255, 0, 0)"],
+span[style*="; color: rgb(255, 0, 0)"],
+span[style^="color: rgb(255, 136, 102)"],
+span[style*=";color: rgb(255, 136, 102)"],
+span[style*="; color: rgb(255, 136, 102)"]
+{
+	color: var(--test-fg-rd) !important;
+	font-weight: bold !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+	text-decoration: none !important;
+}
+
+.fg_bl,
+span[style^="color: blue"],
+span[style*=";color: blue"],
+span[style*="; color: blue"],
+span[style^="color:blue"],
+span[style*=";color:blue"],
+span[style*="; color:blue"],
+span[style^="color:#0000ff"],
+span[style*=";color: #0000ff"],
+span[style*="; color: #0000ff"],
+span[style^="color:#42e1fe"],
+span[style*=";color: #42e1fe"],
+span[style*="; color: #42e1fe"],
+span[style^="color: rgb(0, 0, 255)"],
+span[style*=";color: rgb(0, 0, 255)"],
+span[style*="; color: rgb(0, 0, 255)"],
+span[style^="color: rgb(0, 47, 255)"],
+span[style*=";color: rgb(0, 47, 255)"],
+span[style*="; color: rgb(0, 47, 255)"],
+span[style^="color: rgb(37, 120, 255)"],
+span[style*=";color: rgb(37, 120, 255)"],
+span[style*="; color: rgb(37, 120, 255)"],
+span[style^="color: rgb(66, 225, 254)"],
+span[style*=";color: rgb(66, 225, 254)"],
+span[style*="; color: rgb(66, 225, 254)"]
+{
+	color: var(--test-fg-bl) !important;
+	font-weight: bold !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+	text-decoration: none !important;
+}
+
+.fg_gn,
+span[style^="color: green"],
+span[style*=";color: green"],
+span[style*="; color: green"],
+span[style^="color:green"],
+span[style*=";color:green"],
+span[style*="; color:green"],
+span[style^="color:#008000"],
+span[style*=";color: #008000"],
+span[style*="; color: #008000"],
+span[style^="color:#00ff00"],
+span[style*=";color: #00ff00"],
+span[style*="; color: #00ff00"],
+span[style^="color: rgb(0, 128, 0)"],
+span[style*=";color: rgb(0, 128, 0)"],
+span[style*="; color: rgb(0, 128, 0)"],
+span[style^="color: rgb(0, 255, 0)"],
+span[style*=";color: rgb(0, 255, 0)"],
+span[style*="; color: rgb(0, 255, 0)"],
+span[style^="color: rgb(0, 158, 0)"],
+span[style*=";color: rgb(0, 158, 0)"],
+span[style*="; color: rgb(0, 158, 0)"]
+{
+	color: var(--test-fg-gn) !important;
+	font-weight: bold !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+	text-decoration: none !important;
+}
+
+.fg_or,
+span[style^="color: orange"],
+span[style*=";color: orange"],
+span[style*="; color: orange"],
+span[style^="color:orange"],
+span[style*=";color:orange"],
+span[style*="; color:orange"],
+span[style^="color:#ffa500"],
+span[style*=";color: #ffa500"],
+span[style*="; color: #ffa500"],
+span[style^="color:#ffcc00"],
+span[style*=";color: #ffcc00"],
+span[style*="; color: #ffcc00"],
+span[style^="color: rgb(255, 165, 0)"],
+span[style*=";color: rgb(255, 165, 0)"],
+span[style*="; color: rgb(255, 165, 0)"],
+span[style^="color: rgb(226, 135, 0)"],
+span[style*=";color: rgb(226, 135, 0)"],
+span[style*="; color: rgb(226, 135, 0)"],
+span[style^="color: rgb(255, 204, 0)"],
+span[style*=";color: rgb(255, 204, 0)"],
+span[style*="; color: rgb(255, 204, 0)"]
+{
+	color: var(--test-fg-or) !important;
+	font-weight: bold !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+	text-decoration: none !important;
+}
+
+.fg_gy,
+span[style^="color: gray"],
+span[style*=";color: gray"],
+span[style*="; color: gray"],
+span[style^="color:gray"],
+span[style*=";color:gray"],
+span[style*="; color:gray"],
+span[style^="color:#808080"],
+span[style*=";color: #808080"],
+span[style*="; color: #808080"],
+span[style^="color:#969696"],
+span[style*=";color: #969696"],
+span[style*="; color: #969696"],
+span[style^="color: rgb(128, 128, 128)"],
+span[style*=";color: rgb(128, 128, 128)"],
+span[style*="; color: rgb(128, 128, 128)"],
+span[style^="color: rgb(150, 150, 150)"],
+span[style*=";color: rgb(150, 150, 150)"],
+span[style*="; color: rgb(150, 150, 150)"]
+{
+	color: var(--test-fg-gy) !important;
+	font-weight: bold !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+	text-decoration: none !important;
+}
+
+
+/** bg 高亮 样式 */
+.st_inv,
+span[style*="background-color: black"],
+span[style*="background-color:black"],
+span[style*="background-color: #000000"],
+span[style*="background-color: rgb(0, 0, 0)"]
+/* body.nightMode span[style*="background-color: white"], */
+/* body.nightMode span[style*="background-color: #ffffff"], */
+/* body.nightMode span[style*="background-color: rgb(255, 255, 255)"] */
+{
+	background-color: 	var(--test-st-inv-bg) !important;
+	color: 				var(--test-st-inv-fg) !important;
+	font-weight: 	bold;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	border: 		var(--test-bg-border) !important;
+}
+/*body:not(.nightMode)*/ span[style*="background-color: white"],
+/*body:not(.nightMode)*/ span[style*="background-color: #ffffff"],
+/*body:not(.nightMode)*/ span[style*="background-color: rgb(255, 255, 255)"]
+{
+	background-color: transparent !important;
+} /* 从词典粘贴进来的, 忽略背景颜色 */
+
+.bg_yl,
+span[style*="background-color: yellow"],
+span[style*="background-color:yellow"],
+span[style*="background-color: #ffff00"],
+span[style*="background-color: rgb(255, 255, 0)"],
+span[style*="background-color: #e9e900"],
+span[style*="background-color: rgb(233, 233, 0)"] {
+	background-color: var(--test-bg-yl) !important;
+	color: #000000 !important;
+	font-weight: 	bold;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	border: 		var(--test-bg-border) !important;
+}
+
+.bg_cy,
+span[style*="background-color: cyan"],
+span[style*="background-color:cyan"],
+span[style*="background-color: #00ffff"],
+span[style*="background-color: rgb(0, 255, 255)"] {
+	background-color: var(--test-bg-cy) !important;
+	color: #000000 !important;
+	font-weight: 	bold;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	border: 		var(--test-bg-border) !important;
+}
+
+.bg_lm,
+.bg_gn,
+span[style*="background-color: lime"],
+span[style*="background-color:lime"],
+span[style*="background-color: #00ff00"],
+span[style*="background-color: rgb(0, 255, 0)"] {
+	background-color: var(--test-bg-gn) !important;
+	color: #000000 !important;
+	font-weight: 	bold;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	border: 		var(--test-bg-border) !important;
+}
+
+
+/** Markdown / 富文本元素 */
+/* 行内代码 */
+.card code {
+	display: inline-block;
+	box-sizing: border-box;
+	font-family: var(--test-markdown-code-font) !important;
+	font-size: 85%;
+	line-height: 1.2;
+	color: var(--test-inline-code-color);
+	background-color: var(--test-inline-code-background) !important;
+	border: 1px solid var(--test-inline-code-border-color) !important;
+	box-shadow: 0 1px 2px var(--test-inline-code-shadow-color);
+	margin-inline: 1.5px;
+	padding: 1px 4px;
+	border-radius: 5px;
+	vertical-align: baseline;
+}
+
+/* 代码块 */
+.card pre {
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow-x: auto;
+	white-space: pre;
+	font-family: var(--test-markdown-code-font) !important;
+	font-size: 0.92em;
+	line-height: 1.55;
+	color: var(--test-code-color);
+	background-color: var(--test-code-background) !important;
+	border: 1.2px solid var(--test-code-border-color) !important;
+	box-shadow: 2px 2px 2px var(--test-code-shadow-color), 0 0 4px var(--test-code-shadow-color);
+	border-radius: 6px;
+	margin: 3px 0;
+	padding: 12px 15px 8px;
+}
+.card pre code {
+	display: block;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+/* 键盘按键 */
+.card kbd {
+	display: inline-block;
+	box-sizing: border-box;
+	font-family: var(--test-markdown-code-font) !important;
+	font-size: 85%;
+	line-height: 1.2;
+	color: var(--test-inline-kbd-color);
+	background-color: var(--test-inline-kbd-background) !important;
+	border: 1px solid var(--test-inline-kbd-border-color) !important;
+	box-shadow: 0 1px 2px var(--test-inline-kbd-shadow-color);
+	margin-inline: 1.5px;
+	padding: 1px 4px;
+	border-radius: 5px;
+	vertical-align: baseline;
+}
+
+/* 引述块 */
+.card blockquote {
+	box-sizing: border-box;
+	color: var(--test-quote-color) !important;
+	background: var(--test-quote-background) !important;
+    border: 1px solid var(--test-quote-border-color) !important;
+	border-left: 4px solid var(--test-quote-left-color) !important;
+	box-shadow: 1px 1px 2px var(--test-quote-shadow-color);
+	border-radius: 6px;
+    margin: 2.5px 0;
+	padding: 7px 10px;
+}
+.card blockquote > :first-child {
+	margin-top: 0;
+}
+.card blockquote > :last-child {
+	margin-bottom: 0;
+}
+.card blockquote blockquote {
+	color: var(--test-quote-color) !important;
+	background: var(--test-quote-nested-background) !important;
+	border-color: var(--test-quote-nested-border-color) !important;
+	border-left-color: var(--test-quote-nested-left-color) !important;
+	box-shadow: 1px 1px 2px var(--test-quote-shadow-color);
+    margin: 2.5px 0 0;
+}
+.card blockquote h1,
+.card blockquote h2,
+.card blockquote h3,
+.card blockquote h4,
+.card blockquote h5,
+.card blockquote h6 {
+	margin: 5px 0 2px;
+}
+.card blockquote h1 { font-size: 20px; }
+.card blockquote h2 { font-size: 18px; }
+.card blockquote h3 { font-size: 16px; }
+.card blockquote h4,
+.card blockquote h5,
+.card blockquote h6 { font-size: 14px; }
+
+/* 表格 */
+.card table {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid var(--test-table-border-color) !important;
+	border-radius: 6px;
+	overflow: hidden;
+    box-shadow: 1px 1px 2px var(--test-quote-shadow-color);
+	margin: 3px 0;
+	color: var(--test-table-text-color);
+}
+.card table th,
+.card table td {
+	box-sizing: border-box;
+	border: 0 !important;
+	border-right: 0.8px solid var(--test-table-cell-border-color) !important;
+	border-bottom: 0.8px solid var(--test-table-cell-border-color) !important;
+	padding: 5px 7px;
+	vertical-align: top;
+	color: var(--test-table-text-color);
+}
+.card table tr > :last-child {
+	border-right: 0 !important;
+}
+.card table tr:last-child > th,
+.card table tr:last-child > td {
+	border-bottom: 0 !important;
+}
+.card table tr:nth-child(odd) {
+	background-color: var(--test-table-odd-row-background) !important;
+}
+.card table tr:nth-child(even) {
+	background-color: var(--test-table-even-row-background) !important;
+}
+.card table th,
+.card table thead tr,
+.card table tbody > tr:first-child {
+	background-color: var(--test-table-first-row-background) !important;
+}
+
+/* 标题层级配色 */
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+	position: relative;
+	line-height: 1.3;
+	margin: 5px 0 2px;
+	padding: 0;
+}
+.card h1::before,
+.card h2::before,
+.card h3::before,
+.card h4::before,
+.card h5::before,
+.card h6::before {
+	content: "§";
+	display: inline-block;
+	margin-right: 0.35em;
+	font-size: 0.72em;
+	font-weight: 600;
+	opacity: 0.78;
+	vertical-align: 0.08em;
+}
+.card h1 { color: var(--test-heading-color-1) !important; }
+.card h2 { color: var(--test-heading-color-2) !important; }
+.card h3 { color: var(--test-heading-color-3) !important; }
+.card h4 { color: var(--test-heading-color-4) !important; }
+.card h5 { color: var(--test-heading-color-5) !important; }
+.card h6 { color: var(--test-heading-color-6) !important; }
+
+/* 紧凑列表及嵌套层级颜色 */
+.card .markdown-tight {
+	margin-block: 0.2em;
+	padding-inline-start: 1.6em;
+}
+.card .markdown-tight li {
+	margin-block: 0.08em;
+}
+.card .markdown-tight > li::marker { color: var(--test-list-color-1); font-weight: bold; }
+.card .markdown-tight .markdown-tight > li::marker { color: var(--test-list-color-2); }
+.card .markdown-tight .markdown-tight .markdown-tight > li::marker { color: var(--test-list-color-3); }
+.card .markdown-tight .markdown-tight .markdown-tight .markdown-tight > li::marker { color: var(--test-list-color-4); }
+.card .markdown-tight .markdown-tight .markdown-tight .markdown-tight .markdown-tight > li::marker { color: var(--test-list-color-5); }
+.card .markdown-tight .markdown-tight .markdown-tight .markdown-tight .markdown-tight .markdown-tight > li::marker { color: var(--test-list-color-6); }
+
+/** bg + fg 组合时, 明确保留 fg 文字颜色 */
+.bg_yl.fg_rd, .bg_cy.fg_rd, .bg_lm.fg_rd, .bg_gn.fg_rd {
+	color: var(--test-fg-rd) !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+}
+.bg_yl.fg_bl, .bg_cy.fg_bl, .bg_lm.fg_bl, .bg_gn.fg_bl {
+	color: var(--test-fg-bl) !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+}
+.bg_yl.fg_gn, .bg_cy.fg_gn, .bg_lm.fg_gn, .bg_gn.fg_gn {
+	color: var(--test-fg-gn) !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+}
+.bg_yl.fg_or, .bg_cy.fg_or, .bg_lm.fg_or, .bg_gn.fg_or {
+	color: var(--test-fg-or) !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+}
+.bg_yl.fg_gy, .bg_cy.fg_gy, .bg_lm.fg_gy, .bg_gn.fg_gy {
+	color: var(--test-fg-gy) !important;
+	text-shadow: var(--test-fg-text-shadow) !important;
+}
+
+/** cl 挖空 样式 */
+/* 临时改为新的蓝黄配色 background: linear-gradient(145deg, #a3a3a3, #e4e4e4); */
+.cl_gy,
+span[style*="background-color: gray"],
+span[style*="background-color:gray"],
+span[style*="background-color: #a3a3a3"],
+span[style*="background-color: rgb(163, 163, 163)"] {
+	background: var(--test-cl-gy-bg) !important;
+	color: var(--test-cl-color) !important;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	transition: 	var(--test-cl-transition-out) !important;
+	cursor: 		var(--test-cl-cursor) !important;
+	border: 1px solid var(--test-cl-border-color);
+	text-shadow: none !important;
+	
+}
+.cl_gy:active,
+/* .cl_gy:hover, */
+/* span[style*="background-color: rgb(163, 163, 163)"]:hover, */
+span[style*="background-color: gray"]:active,
+span[style*="background-color:gray"]:active,
+span[style*="background-color: #a3a3a3"]:active,
+span[style*="background-color: rgb(163, 163, 163)"]:active {
+	color: var(--test-cl-hover-color) !important;
+	transition: var(--test-cl-transition-in) !important;
+}
+
+
+.cl_or,
+span[style*="background-color: orange"],
+span[style*="background-color:orange"],
+span[style*="background-color: #e97f22"],
+span[style*="background-color: rgb(233, 127, 34)"] {
+	background: var(--test-cl-or-bg) !important;
+	color: var(--test-cl-color) !important;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	transition: 	var(--test-cl-transition-out) !important;
+	cursor: 		var(--test-cl-cursor) !important;
+	border: 1px solid var(--test-cl-border-color);
+	text-shadow: none !important;
+}
+.cl_or:active,
+/* .cl_or:hover, */
+/* span[style*="background-color: rgb(233, 127, 34)"]:hover, */
+span[style*="background-color: orange"]:active,
+span[style*="background-color:orange"]:active,
+span[style*="background-color: #e97f22"]:active,
+span[style*="background-color: rgb(233, 127, 34)"]:active {
+	color: var(--test-cl-hover-color) !important;
+	transition: var(--test-cl-transition-in) !important;
+}
+
+
+.cl_bl,
+span[style*="background-color: blue"],
+span[style*="background-color:blue"],
+span[style*="background-color: #59b2ee"],
+span[style*="background-color: rgb(89, 178, 238)"] {
+	background: var(--test-cl-bl-bg) !important;
+	color: var(--test-cl-color) !important;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	transition: 	var(--test-cl-transition-out) !important;
+	cursor: 		var(--test-cl-cursor) !important;
+	border: 1px solid var(--test-cl-border-color);
+	text-shadow: none !important;
+}
+.cl_bl:active,
+/* .cl_bl:hover, */
+/* span[style*="background-color: rgb(89, 178, 238)"]:hover, */
+span[style*="background-color: blue"]:active,
+span[style*="background-color:blue"]:active,
+span[style*="background-color: #59b2ee"]:active,
+span[style*="background-color: rgb(89, 178, 238)"]:active {
+	color: var(--test-cl-hover-color) !important;
+	transition: var(--test-cl-transition-in) !important;
+}
+
+
+.cl_gn,
+span[style*="background-color: green"],
+span[style*="background-color:green"],
+span[style*="background-color: #00d15e"],
+span[style*="background-color: rgb(0, 209, 94)"] {
+	background: var(--test-cl-gn-bg) !important;
+	color: var(--test-cl-color) !important;
+	padding-inline: var(--test-cl-padding) !important;
+	margin-inline: 	var(--test-cl-margin) !important;
+	border-radius: 	var(--test-cl-radius) !important;
+	box-shadow: 	var(--test-cl-shadow) !important;
+	line-height: 	var(--test-cl-line-height) !important;
+	transition: 	var(--test-cl-transition-out) !important;
+	cursor: 		var(--test-cl-cursor) !important;
+	border: 1px solid var(--test-cl-border-color);
+	text-shadow: none !important;
+}
+.cl_gn:active,
+/* .cl_gn:hover, */
+/* span[style*="background-color: rgb(0, 209, 94)"]:hover, */
+span[style*="background-color: green"]:active,
+span[style*="background-color:green"]:active,
+span[style*="background-color: #00d15e"]:active,
+span[style*="background-color: rgb(0, 209, 94)"]:active {
+	color: var(--test-cl-hover-color) !important;
+	transition: var(--test-cl-transition-in) !important;
+}
+
+
+/** sz_large 样式 */
+.sz_large,
+span[style*="font-size: large"],
+span[style*="font-size: x-large"],
+span[style*="font-size:large"],
+span[style*="font-size:x-large"],
+span[style*="font-size: xx-large"] {
+	font-size: var(--test-sz-large-font-size) !important;
+	line-height: var(--test-sz-large-line-height) !important;
+	font-weight: bold;
+}
+
+/** 其他覆写样式 */
+span[style*="text-decoration-line: underline"] {
+	text-decoration-line: none !important;
+}
+span[style*="text-decoration-style: initial"] {
+	text-decoration: none !important;
+}
+
+/** horizontal bar 样式*/
+hr {
+	border: none;
+	position: relative;
+	height: 4px;
+	background-color: #FF000000;
+	margin-block: 5px !important;
+}
+hr::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	right: 15px;
+	height: 2px;
+	transform: translateY(-50%);
+	border-radius: 2px;
+	background-color: var(--test-hr-color) !important;
+}
+
+/* 第二种 (用于分隔 front 和 back) 的样式 */
+.hr2::before{
+	background-color: var(--test-hr2-color) !important;
+	border-radius: 2px;
+}
+
+
+/** 文本选中效果, iOS 无效 */
+::selection{
+	background-color: var(--test-selection-bg) !important;
+	color: var(--test-selection-color) !important;
+}
