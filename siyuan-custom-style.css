@@ -136,6 +136,7 @@
 	--test-table-first-row-background: #e0ffd6; /* 自定义变量，用于表格表头背景颜色 */
 	--test-table-odd-row-background: #ffffff; /* 自定义变量，用于表格奇数行背景颜色 */
 	--test-table-even-row-background: #f5f5f5; /* 自定义变量，用于表格偶数行背景颜色 */
+	--test-table-add-row-warning-stripe-color: rgba(80, 80, 80, 0.24);
 	
 	--test-tag-background-color: #003d83;
 	--test-tag-text-color: #ffffff;
@@ -300,6 +301,7 @@
 	--test-table-first-row-background: #164f2a; /* 自定义变量，用于表格表头背景颜色 */
 	--test-table-odd-row-background: #1b1d1f; /* 自定义变量，用于表格奇数行背景颜色 */
 	--test-table-even-row-background: #27292c; /* 自定义变量，用于表格偶数行背景颜色 */
+	--test-table-add-row-warning-stripe-color: rgba(210, 210, 210, 0.24);
 
 	--test-tag-background-color: #00d1d8ff;
 	--test-tag-text-color: #000000;
@@ -1035,6 +1037,45 @@ span[data-type~="mark"][data-type~="kbd"],
 	color: var(--test-table-text-color);
 }
 
+/*
+	新版思源中，表格下方会有一个很大的空隙，鼠标移动过去后会显示「添加行」的按钮。
+	本设置是在这个地方加入一个肉眼课件的阴影提示条，防止鼠标点击下一段落时误点到「添加行」按钮。
+	此外，本代码也会重新设置表格末端到下一段之间的高度空隙。
+*/
+.protyle-wysiwyg [data-type="NodeTable"] {
+	padding-bottom: 0px !important;
+}
+
+.protyle-wysiwyg [data-type="NodeTable"]::after {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	width: auto;
+	height: 16px;
+	margin: 10px 15px 0;
+	background-color: transparent;
+	background-image: repeating-linear-gradient(
+		135deg,
+		var(--test-table-add-row-warning-stripe-color) 0 3px,
+		transparent 3px 6px
+	);
+	border: 0;
+	border-radius: 4px;
+	box-shadow: none;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 80ms linear;
+	pointer-events: none;
+	user-select: none;
+}
+
+/* 原生“添加行”操作条出现时完全隐藏警示条，并保留其布局空间。 */
+.protyle:has(.protyle-table-control__add--row:not(.fn__none))
+	.protyle-wysiwyg [data-type="NodeTable"]::after {
+	opacity: 0 !important;
+	visibility: hidden;
+}
+
 
 
 /** 标签 tag */
@@ -1142,6 +1183,46 @@ span[data-type~="mark"][data-type~="kbd"],
 	--test-h5-padding-top: 2px !important;
 	--test-h6-padding-top: 2px !important;
 }
+
+/* 所有标题的目录层级标记：放在文字容器内，避免占用标题块的折叠伪元素。 */
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype^="h"]
+	> [contenteditable="true"]::before {
+	display: inline-block;
+	margin-right: 0.35em;
+	font-size: clamp(13px, 82%, 20px);
+	font-weight: 600;
+	line-height: 1;
+	color: currentColor;
+	opacity: 0.9;
+	vertical-align: 0.12em;
+	pointer-events: none;
+	user-select: none;
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h1"]
+	> [contenteditable="true"]::before {
+	content: "❶";
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h2"]
+	> [contenteditable="true"]::before {
+	content: "❷";
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h3"]
+	> [contenteditable="true"]::before {
+	content: "❸";
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h4"]
+	> [contenteditable="true"]::before {
+	content: "❹";
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h5"]
+	> [contenteditable="true"]::before {
+	content: "❺";
+}
+.protyle-wysiwyg div[data-type="NodeHeading"][data-subtype="h6"]
+	> [contenteditable="true"]::before {
+	content: "❻";
+}
+
 .protyle-wysiwyg div[data-type="NodeHeading"][data-subtype^="h"]:not(.bq *):not(.callout *) {
 	position: relative;
 	padding-top: 6px;
@@ -1244,6 +1325,39 @@ span[data-type~="mark"][data-type~="kbd"],
 	height: 0.8px;
 	background: linear-gradient(to right, transparent, var(--test-heading-color-6)) !important;
 	top: var(--test-h6-padding-top) !important;
+}
+
+
+/* 有序/无序列表中的标题沿用 quote/callout 的紧凑样式。 */
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"][data-subtype^="h"] {
+	padding-top: 0 !important;
+	line-height: 1.625 !important;
+}
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"][data-subtype^="h"]::before {
+	content: none !important;
+	display: none !important;
+}
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"][data-subtype="h1"] {
+	font-size: 20px !important;
+}
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"][data-subtype="h2"] {
+	font-size: 18px !important;
+}
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"][data-subtype="h3"] {
+	font-size: 16px !important;
+}
+.protyle-wysiwyg :is(.li[data-subtype="o"], .li[data-subtype="u"])
+	div[data-type="NodeHeading"]:is(
+		[data-subtype="h4"],
+		[data-subtype="h5"],
+		[data-subtype="h6"]
+	) {
+	font-size: 14px !important;
 }
 
 
