@@ -758,8 +758,8 @@ span[style*="background-color: rgb(0, 255, 0)"] {
 .card table tr > :last-child {
 	border-right: 0 !important;
 }
-.card table tr:last-child > th,
-.card table tr:last-child > td {
+.card table > :last-child > tr:last-child > th,
+.card table > :last-child > tr:last-child > td {
 	border-bottom: 0 !important;
 }
 .card table tr:nth-child(odd) {
@@ -770,7 +770,8 @@ span[style*="background-color: rgb(0, 255, 0)"] {
 }
 .card table th,
 .card table thead tr,
-.card table tbody > tr:first-child {
+.card table > tbody:first-child > tr:first-child,
+.card table > colgroup:first-child + tbody > tr:first-child {
 	background-color: var(--test-table-first-row-background) !important;
 }
 
