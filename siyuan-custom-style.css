@@ -584,21 +584,21 @@ span[data-type~="mark"][data-type~="kbd"],
 
 
 /* 伪代码块 */
-[style*="var(--b3-font-background12)"][style*="color"] {
+[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip) {
 	font-family: var(--b3-font-family-code) !important;
 	font-size: 85%; /*不加 important*/
 	background-color: var(--test-code-background) !important;
 	box-shadow: var(--test-code-shadow-color) 2px 2px 2px, var(--test-code-shadow-color) 0px 0px 4px;
 	color: var(--test-code-color) !important;
 }
-[style*="var(--b3-font-background12)"][style*="color"]:not([data-type="NodeParagraph"]) {
+[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]) {
 	margin: var(--test-highlight-margin);
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
 	border: 1.2px solid var(--test-inline-code-border-color);
 }
-[style*="var(--b3-font-background12)"][style*="color"][data-type="NodeParagraph"] {
+[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip)[data-type="NodeParagraph"] {
 	margin-top: var(--test-special-block-margin-top-size) !important;
 	margin-bottom: var(--test-special-block-margin-top-size) !important;
 	padding: var(--test-pseudo-codeblock-padding) !important;
@@ -610,40 +610,42 @@ span[data-type~="mark"][data-type~="kbd"],
 
 
 /* 挖空配色 */
-[style*="var(--b3-font-background13)"][style*="color"] {
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip) {
 	color: transparent !important;
 	background: var(--test-cloze-background);
 	box-shadow: rgba(0, 0, 0, 0.667) 1.4px 1.4px 1px, rgba(0, 0, 0, 0.533) 0px 0px 3px;
 	transition: linear 0.8s !important;
 	white-space: pre-wrap;
 }
-[style*="var(--b3-font-background13)"][style*="color"]:not([data-type="NodeParagraph"]) {
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]) {
 	margin: var(--test-highlight-margin);
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
 	box-shadow: 1px 1px 2px var(--test-highlight-shadow-color);
 	border: 1px solid var(--test-highlight-border-color);
 }
-[style*="var(--b3-font-background13)"][style*="color"][data-type="NodeParagraph"] {
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip)[data-type="NodeParagraph"] {
 	border-radius: var(--test-special-block-border-radius) !important;
 	box-shadow: 1px 1px 2px var(--test-quote-shadow-color);
 	border: 0.8px solid var(--test-quote-border-color);
 }
-[style*="var(--b3-font-background13)"][style*="color"]:hover{
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):hover{
 	color: var(--test-cloze-text-color) !important;
 	transition-duration: 0.1s !important;
 }
-[style*="var(--b3-font-background13)"][style*="color"]:active{
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):active{
 	color: var(--test-cloze-text-color) !important;
 	transition-duration: 0.1s !important;
 }
 
 
 /** 数据库 */
+/* 日历字段与表格单元格共用标签样式；正文的伪代码块/挖空规则排除 b3-chip。 */
 .custom-attr__avvalue .b3-chip,
 .av__cell .b3-chip,
+.av__calendar-field .b3-chip,
 .av__panel .b3-chip,
-.b3-menu__label .b3-chip
+.b3-menu__label .b3-chip,
 [data-name="av-col-option"] .color__square,
 .av__group-title .b3-chip {
 	border-radius: var(--test-database-option-border-radius);
@@ -682,10 +684,109 @@ span[data-type~="mark"][data-type~="kbd"],
 	background-color: var(--test-database-footer-background) !important;
 }
 
+/* 日历视图：保留原生网格、跨周事件端点、字段换行及拖动命中区域。 */
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar {
+	--test-calendar-accent: var(--b3-font-color8);
+	--test-calendar-border: color-mix(in srgb, var(--test-database-border-color) 65%, transparent);
+	--test-calendar-grid-line: color-mix(in srgb, var(--test-database-cell-border-color) 65%, transparent);
+	--b3-av-calendar-weekend-background: color-mix(in srgb, var(--test-database-footer-background) 65%, var(--test-database-background-color));
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-toolbar {
+	padding: 6px 2px;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-label {
+	color: var(--test-table-text-color);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-weekdays {
+	color: var(--test-table-text-color);
+	background-color: var(--test-table-first-row-background);
+	border: var(--test-frame-border-width) solid var(--test-calendar-border);
+	border-bottom: 0;
+	border-radius: var(--test-special-block-border-radius) var(--test-special-block-border-radius) 0 0;
+	padding: 0;
+	font-weight: 600;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-weekdays > * {
+	padding-block: 8px;
+	align-self: stretch;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-weekdays > :not(:last-child) {
+	border-right: 1px solid var(--test-calendar-grid-line);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-grid {
+	/* 原生周分隔线与纵向背景网格一并使用数据库边框颜色。 */
+	--b3-border-color: var(--test-calendar-grid-line);
+	background-color: var(--test-database-background-color);
+	border: var(--test-frame-border-width) solid var(--test-calendar-border);
+	border-radius: 0 0 var(--test-special-block-border-radius) var(--test-special-block-border-radius);
+	box-shadow: 0 2px 4px color-mix(in srgb, var(--test-database-border-color) 12%, transparent);
+	margin-bottom: 3px;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-grid--empty {
+	border-radius: var(--test-special-block-border-radius);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-week-row:first-child .av__calendar-week {
+	border-top-right-radius: 0;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-week-number {
+	background-color: var(--b3-av-calendar-weekend-background);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-week-row:last-child .av__calendar-week-number {
+	border-bottom-left-radius: max(0px, calc(var(--test-special-block-border-radius) - var(--test-frame-border-width)));
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-day--outside {
+	color: var(--b3-theme-on-surface-light);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-day--today {
+	background-color: transparent;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-day--today > span {
+	background-color: var(--test-calendar-accent);
+	color: var(--b3-database-font-color11);
+	border-radius: var(--test-database-option-border-radius);
+	font-weight: 600;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item {
+	background: color-mix(in srgb, var(--b3-av-calendar-background, var(--b3-font-background8)) 14%, var(--test-database-background-color));
+	color: var(--test-table-text-color);
+	border-color: var(--test-calendar-grid-line);
+	padding-block: 5px;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-events {
+	/* 卡片随自身内容取高，避免被同排较长事件拉成空盒子。 */
+	align-items: start;
+	row-gap: 4px;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-field[data-dtype="block"]:has(> .av__celltext:empty):not(:has(> .b3-menu__avemoji:not(.fn__none))) {
+	/* 空主字段仍带有隐藏的行操作按钮；仅取消占位高度，保留标题、图标及模板内容。 */
+	min-height: 0;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item--start {
+	border-top-left-radius: var(--test-database-option-border-radius);
+	border-bottom-left-radius: var(--test-database-option-border-radius);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item--end {
+	border-top-right-radius: var(--test-database-option-border-radius);
+	border-bottom-right-radius: var(--test-database-option-border-radius);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item:is(:hover, :focus-visible, .av__gallery-item--select, .av__calendar-preview) {
+	border-color: var(--test-calendar-accent);
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item:focus-visible {
+	outline: 2px solid var(--test-calendar-accent);
+	outline-offset: -2px;
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar--dragging .av__calendar-item:not(.av__calendar-preview) {
+	border-color: transparent;
+}
 
 /* color 1 到 color 10 必须这样手动指定，否则在部分第三方主题下会发生混乱 */
 .custom-attr__avvalue .b3-chip[style*="color1)"],
 .av__cell .b3-chip[style*="color1)"],
+.av__calendar-field .b3-chip:is([data-color="1"], [style*="color1)"]),
 .av__panel .b3-chip[style*="color1)"],
 [data-name="av-col-option"] .color__square[style*="color1)"],
 .b3-menu__label .b3-chip[data-color="1"],
@@ -695,6 +796,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color2)"],
 .av__cell .b3-chip[style*="color2)"],
+.av__calendar-field .b3-chip:is([data-color="2"], [style*="color2)"]),
 .av__panel .b3-chip[style*="color2)"],
 [data-name="av-col-option"] .color__square[style*="color2)"],
 .b3-menu__label .b3-chip[data-color="2"],
@@ -704,6 +806,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color3)"],
 .av__cell .b3-chip[style*="color3)"],
+.av__calendar-field .b3-chip:is([data-color="3"], [style*="color3)"]),
 .av__panel .b3-chip[style*="color3)"],
 [data-name="av-col-option"] .color__square[style*="color3)"],
 .b3-menu__label .b3-chip[data-color="3"],
@@ -713,6 +816,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color4)"],
 .av__cell .b3-chip[style*="color4)"],
+.av__calendar-field .b3-chip:is([data-color="4"], [style*="color4)"]),
 .av__panel .b3-chip[style*="color4)"],
 [data-name="av-col-option"] .color__square[style*="color4)"],
 .b3-menu__label .b3-chip[data-color="4"],
@@ -722,6 +826,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color5)"],
 .av__cell .b3-chip[style*="color5)"],
+.av__calendar-field .b3-chip:is([data-color="5"], [style*="color5)"]),
 .av__panel .b3-chip[style*="color5)"],
 [data-name="av-col-option"] .color__square[style*="color5)"],
 .b3-menu__label .b3-chip[data-color="5"],
@@ -731,6 +836,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color6)"],
 .av__cell .b3-chip[style*="color6)"],
+.av__calendar-field .b3-chip:is([data-color="6"], [style*="color6)"]),
 .av__panel .b3-chip[style*="color6)"],
 [data-name="av-col-option"] .color__square[style*="color6)"],
 .b3-menu__label .b3-chip[data-color="6"],
@@ -740,6 +846,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color7)"],
 .av__cell .b3-chip[style*="color7)"],
+.av__calendar-field .b3-chip:is([data-color="7"], [style*="color7)"]),
 .av__panel .b3-chip[style*="color7)"],
 [data-name="av-col-option"] .color__square[style*="color7)"],
 .b3-menu__label .b3-chip[data-color="7"],
@@ -749,6 +856,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color8)"],
 .av__cell .b3-chip[style*="color8)"],
+.av__calendar-field .b3-chip:is([data-color="8"], [style*="color8)"]),
 .av__panel .b3-chip[style*="color8)"],
 [data-name="av-col-option"] .color__square[style*="color8)"],
 .b3-menu__label .b3-chip[data-color="8"],
@@ -758,6 +866,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color9)"],
 .av__cell .b3-chip[style*="color9)"],
+.av__calendar-field .b3-chip:is([data-color="9"], [style*="color9)"]),
 .av__panel .b3-chip[style*="color9)"],
 [data-name="av-col-option"] .color__square[style*="color9)"],
 .b3-menu__label .b3-chip[data-color="9"],
@@ -767,6 +876,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color10)"],
 .av__cell .b3-chip[style*="color10)"],
+.av__calendar-field .b3-chip:is([data-color="10"], [style*="color10)"]),
 .av__panel .b3-chip[style*="color10)"],
 [data-name="av-col-option"] .color__square[style*="color10)"],
 .b3-menu__label .b3-chip[data-color="10"],
@@ -777,6 +887,7 @@ span[data-type~="mark"][data-type~="kbd"],
 /* color 12/13 因默认样式中被重写作其他用途, color 11 是白底与样式 14 相同，故手动重写为深色底色 */
 .custom-attr__avvalue .b3-chip[style*="color11)"],
 .av__cell .b3-chip[style*="color11)"],
+.av__calendar-field .b3-chip:is([data-color="11"], [style*="color11)"]),
 .av__panel .b3-chip[style*="color11)"],
 [data-name="av-col-option"] .color__square[style*="color11)"],
 .b3-menu__label .b3-chip[data-color="11"],
@@ -787,6 +898,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color12)"],
 .av__cell .b3-chip[style*="color12)"],
+.av__calendar-field .b3-chip:is([data-color="12"], [style*="color12)"]),
 .av__panel .b3-chip[style*="color12)"],
 [data-name="av-col-option"] .color__square[style*="color12)"],
 .b3-menu__label .b3-chip[data-color="12"],
@@ -802,6 +914,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color13)"],
 .av__cell .b3-chip[style*="color13)"],
+.av__calendar-field .b3-chip:is([data-color="13"], [style*="color13)"]),
 .av__panel .b3-chip[style*="color13)"],
 [data-name="av-col-option"] .color__square[style*="color13)"],
 .b3-menu__label .b3-chip[data-color="13"],
@@ -816,6 +929,7 @@ span[data-type~="mark"][data-type~="kbd"],
 }
 .custom-attr__avvalue .b3-chip[style*="color14)"],
 .av__cell .b3-chip[style*="color14)"],
+.av__calendar-field .b3-chip:is([data-color="14"], [style*="color14)"]),
 .av__panel .b3-chip[style*="color14)"],
 [data-name="av-col-option"] .color__square[style*="color14)"],
 .b3-menu__label .b3-chip[data-color="14"],
