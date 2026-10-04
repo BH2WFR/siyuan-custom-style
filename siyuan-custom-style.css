@@ -546,6 +546,7 @@ span[data-type~="mark"][data-type~="kbd"],
 
 
 /** 高亮颜色 */
+:is(
 [style*="var(--b3-font-background1)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background2)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background3)"]:not([data-type="NodeParagraph"]),
@@ -557,6 +558,7 @@ span[data-type~="mark"][data-type~="kbd"],
 [style*="var(--b3-font-background9)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background10)"]:not([data-type="NodeParagraph"]),
 [style*="var(--b3-font-background11)"]:not([data-type="NodeParagraph"])
+):not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch))
 {
 	margin: var(--test-highlight-margin) !important;
 	padding: var(--test-highlight-padding) !important;
@@ -584,14 +586,14 @@ span[data-type~="mark"][data-type~="kbd"],
 
 
 /* 伪代码块 */
-[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip) {
+[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip):not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)) {
 	font-family: var(--b3-font-family-code) !important;
 	font-size: 85%; /*不加 important*/
 	background-color: var(--test-code-background) !important;
 	box-shadow: var(--test-code-shadow-color) 2px 2px 2px, var(--test-code-shadow-color) 0px 0px 4px;
 	color: var(--test-code-color) !important;
 }
-[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]) {
+[style*="var(--b3-font-background12)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]):not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)) {
 	margin: var(--test-highlight-margin);
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
@@ -610,14 +612,14 @@ span[data-type~="mark"][data-type~="kbd"],
 
 
 /* 挖空配色 */
-[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip) {
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)) {
 	color: transparent !important;
 	background: var(--test-cloze-background);
 	box-shadow: rgba(0, 0, 0, 0.667) 1.4px 1.4px 1px, rgba(0, 0, 0, 0.533) 0px 0px 3px;
 	transition: linear 0.8s !important;
 	white-space: pre-wrap;
 }
-[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]) {
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):not([data-type="NodeParagraph"]):not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)) {
 	margin: var(--test-highlight-margin);
 	padding: var(--test-highlight-padding);
 	border-radius: var(--test-highlight-border-radius);
@@ -629,11 +631,11 @@ span[data-type~="mark"][data-type~="kbd"],
 	box-shadow: 1px 1px 2px var(--test-quote-shadow-color);
 	border: 0.8px solid var(--test-quote-border-color);
 }
-[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):hover{
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):hover:not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)){
 	color: var(--test-cloze-text-color) !important;
 	transition-duration: 0.1s !important;
 }
-[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):active{
+[style*="var(--b3-font-background13)"][style*="color"]:not(.b3-chip):active:not(:where(.av [style*="--b3-av-"], .av__option-colors .color__square, .av__conditional-swatch)){
 	color: var(--test-cloze-text-color) !important;
 	transition-duration: 0.1s !important;
 }
@@ -788,6 +790,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color1)"],
 .av__calendar-field .b3-chip:is([data-color="1"], [style*="color1)"]),
 .av__panel .b3-chip[style*="color1)"],
+.av__option-colors .color__square[data-color="1"],
 [data-name="av-col-option"] .color__square[style*="color1)"],
 .b3-menu__label .b3-chip[data-color="1"],
 .av__group-title .b3-chip[style*="color1)"]{
@@ -798,6 +801,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color2)"],
 .av__calendar-field .b3-chip:is([data-color="2"], [style*="color2)"]),
 .av__panel .b3-chip[style*="color2)"],
+.av__option-colors .color__square[data-color="2"],
 [data-name="av-col-option"] .color__square[style*="color2)"],
 .b3-menu__label .b3-chip[data-color="2"],
 .av__group-title .b3-chip[style*="color2)"]{
@@ -808,6 +812,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color3)"],
 .av__calendar-field .b3-chip:is([data-color="3"], [style*="color3)"]),
 .av__panel .b3-chip[style*="color3)"],
+.av__option-colors .color__square[data-color="3"],
 [data-name="av-col-option"] .color__square[style*="color3)"],
 .b3-menu__label .b3-chip[data-color="3"],
 .av__group-title .b3-chip[style*="color3)"]{
@@ -818,6 +823,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color4)"],
 .av__calendar-field .b3-chip:is([data-color="4"], [style*="color4)"]),
 .av__panel .b3-chip[style*="color4)"],
+.av__option-colors .color__square[data-color="4"],
 [data-name="av-col-option"] .color__square[style*="color4)"],
 .b3-menu__label .b3-chip[data-color="4"],
 .av__group-title .b3-chip[style*="color4)"]{
@@ -828,6 +834,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color5)"],
 .av__calendar-field .b3-chip:is([data-color="5"], [style*="color5)"]),
 .av__panel .b3-chip[style*="color5)"],
+.av__option-colors .color__square[data-color="5"],
 [data-name="av-col-option"] .color__square[style*="color5)"],
 .b3-menu__label .b3-chip[data-color="5"],
 .av__group-title .b3-chip[style*="color5)"]{
@@ -838,6 +845,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color6)"],
 .av__calendar-field .b3-chip:is([data-color="6"], [style*="color6)"]),
 .av__panel .b3-chip[style*="color6)"],
+.av__option-colors .color__square[data-color="6"],
 [data-name="av-col-option"] .color__square[style*="color6)"],
 .b3-menu__label .b3-chip[data-color="6"],
 .av__group-title .b3-chip[style*="color6)"]{
@@ -848,6 +856,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color7)"],
 .av__calendar-field .b3-chip:is([data-color="7"], [style*="color7)"]),
 .av__panel .b3-chip[style*="color7)"],
+.av__option-colors .color__square[data-color="7"],
 [data-name="av-col-option"] .color__square[style*="color7)"],
 .b3-menu__label .b3-chip[data-color="7"],
 .av__group-title .b3-chip[style*="color7)"]{
@@ -858,6 +867,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color8)"],
 .av__calendar-field .b3-chip:is([data-color="8"], [style*="color8)"]),
 .av__panel .b3-chip[style*="color8)"],
+.av__option-colors .color__square[data-color="8"],
 [data-name="av-col-option"] .color__square[style*="color8)"],
 .b3-menu__label .b3-chip[data-color="8"],
 .av__group-title .b3-chip[style*="color8)"]{
@@ -868,6 +878,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color9)"],
 .av__calendar-field .b3-chip:is([data-color="9"], [style*="color9)"]),
 .av__panel .b3-chip[style*="color9)"],
+.av__option-colors .color__square[data-color="9"],
 [data-name="av-col-option"] .color__square[style*="color9)"],
 .b3-menu__label .b3-chip[data-color="9"],
 .av__group-title .b3-chip[style*="color9)"]{
@@ -878,6 +889,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color10)"],
 .av__calendar-field .b3-chip:is([data-color="10"], [style*="color10)"]),
 .av__panel .b3-chip[style*="color10)"],
+.av__option-colors .color__square[data-color="10"],
 [data-name="av-col-option"] .color__square[style*="color10)"],
 .b3-menu__label .b3-chip[data-color="10"],
 .av__group-title .b3-chip[style*="color10)"]{
@@ -889,6 +901,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color11)"],
 .av__calendar-field .b3-chip:is([data-color="11"], [style*="color11)"]),
 .av__panel .b3-chip[style*="color11)"],
+.av__option-colors .color__square[data-color="11"],
 [data-name="av-col-option"] .color__square[style*="color11)"],
 .b3-menu__label .b3-chip[data-color="11"],
 .av__group-title .b3-chip[style*="color11)"]{
@@ -900,6 +913,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color12)"],
 .av__calendar-field .b3-chip:is([data-color="12"], [style*="color12)"]),
 .av__panel .b3-chip[style*="color12)"],
+.av__option-colors .color__square[data-color="12"],
 [data-name="av-col-option"] .color__square[style*="color12)"],
 .b3-menu__label .b3-chip[data-color="12"],
 .av__group-title .b3-chip[style*="color12)"]{
@@ -916,6 +930,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color13)"],
 .av__calendar-field .b3-chip:is([data-color="13"], [style*="color13)"]),
 .av__panel .b3-chip[style*="color13)"],
+.av__option-colors .color__square[data-color="13"],
 [data-name="av-col-option"] .color__square[style*="color13)"],
 .b3-menu__label .b3-chip[data-color="13"],
 .av__group-title .b3-chip[style*="color13)"]{
@@ -931,6 +946,7 @@ span[data-type~="mark"][data-type~="kbd"],
 .av__cell .b3-chip[style*="color14)"],
 .av__calendar-field .b3-chip:is([data-color="14"], [style*="color14)"]),
 .av__panel .b3-chip[style*="color14)"],
+.av__option-colors .color__square[data-color="14"],
 [data-name="av-col-option"] .color__square[style*="color14)"],
 .b3-menu__label .b3-chip[data-color="14"],
 .av__group-title .b3-chip[style*="color14)"]{
@@ -939,6 +955,54 @@ span[data-type~="mark"][data-type~="kbd"],
 	color: var(--b3-database-font-color11) !important;
 	transition: none !important;
 	border: 1px solid var(--b3-database-font-background14) !important;
+}
+
+
+/* 数据库条件格式：仅在原生着色目标和数据库调色板中重映射特殊配色。 */
+.av [style*="--b3-av-"],
+.av__option-colors,
+.av__conditional-swatch {
+	--b3-font-background11: var(--b3-database-font-background11);
+	--b3-font-background14: var(--b3-database-font-background14);
+}
+.av [style*="--b3-av-"] {
+	/* 单元格另有条件时覆盖行的文字颜色；默认/自定义底色沿用普通数据库文字。 */
+	--test-av-conditional-color: var(--test-font-color-default);
+}
+.av [style*="--b3-av-"]:is(
+	[style*="var(--b3-font-background11)"],
+	[style*="var(--b3-font-background12)"],
+	[style*="var(--b3-font-background13)"],
+	[style*="var(--b3-font-background14)"]
+) {
+	--test-av-conditional-color: var(--b3-database-font-color11);
+}
+.av .av__row--conditional:not(.av__row--select):not(.av__row--hl),
+.av .av__row--conditional:not(.av__row--select):not(.av__row--hl) .av__cell,
+.av .av__gallery-item[style*="--b3-av-item-background"] {
+	color: var(--test-av-conditional-color, var(--test-font-color-default));
+}
+.protyle-wysiwyg .av[data-av-type="calendar"] .av__calendar-item[style*="--b3-av-calendar-background"] {
+	/* 显式指定的事件颜色完整显示；普通事件仍使用柔和底色。 */
+	background: var(--b3-av-calendar-background);
+	color: var(--test-av-conditional-color, var(--test-font-color-default));
+}
+.av__option-colors .color__square[data-color] {
+	/* 与选项共用配色、圆角和边框，保留色板按钮的尺寸及选中提示。 */
+	box-sizing: border-box;
+	border: 1px solid var(--test-database-option-border-color);
+	border-radius: var(--test-database-option-border-radius) !important;
+	margin: 4px !important;
+	padding: 0 !important;
+	font-family: inherit !important;
+	font-size: 16px !important;
+	font-weight: normal;
+	line-height: 1 !important;
+}
+.av__conditional-swatch {
+	border: 1px solid var(--test-database-option-border-color);
+	border-radius: var(--test-database-option-border-radius);
+	box-sizing: border-box;
 }
 
 
